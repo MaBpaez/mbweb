@@ -1,0 +1,243 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Analítica Web | mbSocialWeb{% endblock %}
+{% block description %}Analizamos y medimos tu web para optimizar sus puntos débiles. Mediante la auditoría de analítica web.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/marketingDigital/analitica-web-resultados-mbSocialWeb.png{% endblock %}
+{% block facebooktitle %}Analítica Web | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Analizamos y medimos tu web para optimizar sus puntos débiles. Mediante la auditoría de analítica web.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/marketingDigital/analitica-web-resultados-mbSocialWeb.png{% endblock %}
+{% block twittertitle %}Analítica Web | mbSocialWeb{% endblock %}
+{% block twitterdescription %}Analizamos y medimos tu web para optimizar sus puntos débiles. Mediante la auditoría de analítica web.{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'core/css/lightbox.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/marketing-digital.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/appsfb/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha %}
+
+{% block content %}
+  <div class="cabecera">
+    <svg width="600" height="100" viewBox="-100 -27 600 100"
+         xmlns="http://www.w3.org/2000/svg" class="figura-top-right">
+      <defs>
+        <linearGradient id="b" x1="2454" x2="5472" y1="7787" y2="13013"
+                        gradientUnits="userSpaceOnUse">
+          <stop stop-color="#babdb6" offset="0"/>
+          <stop stop-color="#999" offset="1"/>
+        </linearGradient>
+      </defs>
+      <g transform="matrix(1.7242 0 0 1.7242 -79.473 128.62)"
+         fill-rule="evenodd"
+         stroke-linejoin="round"
+         stroke-width="28.222">
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path
+              d="m1978 8166-17 1-17 3-16 5-16 6-15 8-15 10-14 11-13 12-12 13-11 14-10 15-8 15-6 16-5 16-3 17-1 17v4110l1 17 3 16 5 17 6 16 8 15 10 15 11 14 12 13 13 12 14 11 30 18 16 6 16 5 17 3 17 1h3969l17-1 17-3 16-5 16-6 16-9 15-9 14-11 13-12 12-13 11-14 18-30 6-16 5-17 3-16 1-17v-4110l-1-17-3-17-5-16-6-16-18-30-11-14-12-13-13-12-14-11-15-10-16-8-16-6-16-5-17-3-17-1z"
+              fill="url(#b)"/>
+          <path
+              d="m1978 8166c-90 0-179 89-179 179v4110c0 89 89 179 179 179h3969c90 0 180-90 180-179v-4110c0-90-90-179-180-179z"
+              fill="none" stroke="#808080" stroke-linejoin="round"
+              stroke-width="100"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path
+              d="m3775 8676c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194zm-194 0zm893 1022z"
+              fill="#fff"/>
+          <path
+              d="m3775 8676c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194z"
+              fill="none" stroke="#808080" stroke-linejoin="round"
+              stroke-width="100"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path
+              d="m3775 11101c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194zm-194 0zm893 1022z"
+              fill="#fff"/>
+          <path
+              d="m3775 11101c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194z"
+              fill="none" stroke="#808080" stroke-linejoin="round"
+              stroke-width="100"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path d="m1800 10464h636v-383h764v255h2036v-255h764v255h127"
+                fill="none"
+                stroke="#808080"
+                stroke-linejoin="round" stroke-width="100"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path d="m6e3 7400v6e3h5982l2036-1532h3182v-3064h-3436l-1909-1404z"
+                fill="#181818"/>
+          <path d="m6e3 7400v6e3h5982l2036-1532h3182v-3064h-3436l-1909-1404z"
+                fill="none"
+                stroke="url(#orange-to-purple)"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path
+              d="m7486 8549c-298 0-595 297-595 595v2384c0 298 297 596 595 596h3646c298 0 596-298 596-596v-2384c0-298-298-595-596-595zm-595 0zm4837 3575z"
+              fill="url(#orange-to-purple)"/>
+          <path
+              d="m7486 8549c-298 0-595 297-595 595v2384c0 298 297 596 595 596h3646c298 0 596-298 596-596v-2384c0-298-298-595-596-595z"
+              fill="none" stroke="#29d0be" stroke-linejoin="round"
+              stroke-width="100"/>
+        </g>
+      </g>
+    </svg>
+
+    <header class="page-header">
+      <h1>Analítica Web</h1>
+
+      <div class="page-intro">
+        <p>
+        <span class="text-gradient-3 f-bold">Con Google Analytics mejoramos tu rendimiento.</span>
+        </p>
+        <p>
+          Si tienes una web corporativa, tienda online o blog, es muy importante la analítica web, sobre todo
+          si tienes un e-Commerce (comercio electrónico).
+        </p>
+        <p>
+          <span class="text-gradient-3 f-bold">¿Qué es Google Analytics? </span>
+          Es una herramienta de Google que permite medir las visitas a tu web o aplicaciones móviles, con el
+          fin de que puedas mejorar tu canal de ventas online para hacer crecer tu negocio.
+        </p>
+        <p>
+          <span class="text-gradient-3 f-bold">¿Qué datos me ofrece?</span>
+          Puedes obtener datos concretos de lo que sucede en tu web como la cantidad de visitas, a través de
+          que canales llegan, su procedencia, que contenidos funcionan mejor, que campañas o acciones están
+          generando ventas o en donde está fallando.
+        </p>
+      </div>
+
+      <svg viewBox="0 0 100 20" class="header-line-only-purple">
+        <path d="M 0 20 L 90 20 Q 100 20 100 10 L 100 -10">
+        </path>
+      </svg>
+    </header>
+  </div>
+
+  <!-- Llamada a la acción -->
+  <p class="center-align pt-2 mt-4">
+    <a data-target="modal1" class="button-mb modal-trigger">Solicita Presupuesto</a>
+  </p>
+
+  <div class="separador-grupo">
+    <h2 class="titulo-separador"><span class="long">¿Qué hacemos?</span></h2>
+  </div>
+
+  <!-- CONTENIDO -->
+  <main>
+    <section class="anality-web">
+      <div class="wrapp-anality-web">
+        <section class="anality-grid">
+          <!-- Item-1 -->
+          <div class="anality--item">
+            <h3 class="text-gradient-5">¿Cuál es la finalidad?</h3>
+            <p>
+              Una vez realizada la auditoría, conseguiremos mejorar la experiencia del usuario al visitar tu
+              web y así, al aumentar el nivel de satisfacción de los clientes, conseguimos que la tasa de
+              conversión aumente.
+            </p>
+          </div>
+          <!-- Item-2 -->
+          <div class="anality--item">
+            <img src="{% static 'core/img/marketingDigital/analytics-tracking.png' %}" alt="">
+          </div>
+          <!-- Item-3 -->
+          <div class="anality--item">
+            <h3 class="text-gradient-5">
+              Seguimiento
+            </h3>
+            <p>
+              Realizamos seguimiento para ir analizando e informando para saber si las medidas que se realizan
+              , nos ofrecen los resultados que esperamos.
+            </p>
+          </div>
+          <!-- Item-4 -->
+          <div class="anality--item">
+          </div>
+          <!-- Item-5 -->
+          <div class="anality--item">
+            <img
+              src="{% static 'core/img/marketingDigital/analitica-web-en-malaga-mbsocialweb.svg'%}"
+              alt="Analítica web en Málaga, MBSOCIALWEB">
+          </div>
+          <!-- Item-6 -->
+          <div class="anality--item"></div>
+          <!-- Item-7 -->
+          <div class="anality--item"></div>
+          <!-- Item-8 -->
+          <div class="anality--item">
+            <img
+              src="{% static 'core/img/marketingDigital/analitica-web-resultados-mbSocialWeb.png' %}"
+              alt="Conseguir resultados con la analítica web">
+          </div>
+          <!-- Item-9 -->
+          <div class="anality--item">
+            <h3 class="text-gradient-5">Auditoría</h3>
+            <p>
+              Mediante la auditoría de analítica web, descubriremos que ocurre con tu página, tienda o blog.
+              Con ella, conseguiremos una visión panorámica del sitio web y de la competencia, como se
+              comportan lo usuarios y podrás detectar que funciona y que no.
+            </p>
+            <p>
+              Para empezar el camino del análisis web es importante tener claro nuestro objetivo y lo que
+              queremos conseguir del usuario.
+            </p>
+          </div>
+          <!-- Item-10 -->
+          <div class="anality--item">
+            <h3 class="text-gradient-5">Resultados</h3>
+            <p>
+              Una vez que obtengamos los datos de la auditoría, te propondremos los cambios y mejoras de tu
+              sitio web, con el fin de mejorar tanto los resultados de tu página web como la tasa de
+              conversión.
+            </p>
+            <p>
+              Es decir, mejoraremos la experiencia de usuario de tu página web de modo, que el nivel de
+              satisfacción aumente y la tasa de conversión sea mayor.
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block svg %}
+  <!-- Orange to purple -->
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+        <stop offset="20%" stop-color="#f06024"></stop>
+        <stop offset="70%" stop-color="#de235c"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Multicolor -->
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="multicolor" x1="1" x2="0" y1="1" y2="0">
+        <stop offset="20%" stop-color="#ff5959"></stop>
+        <stop offset="35%" stop-color="#29d0be"></stop>
+        <stop offset="50%" stop-color="#e1f549"></stop>
+        <stop offset="70%" stop-color="#6cb8ea"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{page.title}} | mbSocialWeb{% endblock %}
+{% block description %}Descripción{% endblock %}
+
+{% block content %}
+  <main>
+    <section class="section">
+     <div class="row mb-line mb-0 sample">
+      <div class="sample-content">
+        {{ page.content|safe }}
+      </div>
+     </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block script %}
+<script>
+  $(document).ready(function () {
+    $(".button-collapse").sideNav();
+    $(".dropdown-button").dropdown({
+      hover: false
+    });
+    $(".parallax").parallax();
+    $(".modal").modal();
+  });
+</script>
+{% endblock %}

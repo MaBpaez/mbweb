@@ -1,0 +1,286 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Contacto | mbSocialWeb{% endblock %}
+{% block description %}Complete nuestro formulario online{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/contacto/contacto-mbsocialweb-web-corporativa.jpg{% endblock %}
+{% block facebooktitle %}Contacto mbSocialWeb | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Complete nuestro formulario online{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/contacto/contacto-mbsocialweb-web-corporativa.jpg{% endblock %}
+{% block twittertitle %}Contacto mbSocialWeb | mbSocialWeb{% endblock %}
+{% block twitterdescription %}Complete nuestro formulario online{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/contacto.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/contact/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response1').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+  <div class="cabecera box-with-bottom-radius contact">
+    <header class="page-header header-contact">
+      <h1>Contacto</h1>
+      <h2>Cuéntanos tu proyecto, encontraremos la mejor solución a tus necesidades.</h2>
+    </header>
+  </div>
+  <div class="box-with-gradient-purple">
+    <div class="box-gradient-content page-header">
+      <h2>Nos gusta crear páginas diferentes, Webs originales y únicas, que desarrollen ideas innovadoras.</h2>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <main>
+    <section class="section pt-2 mt-4">
+      <div class="form-contact-grid">
+        <!-- Item-1 -->
+        <div class="item--form-contact">
+          <!-- Formulario de contacto -->
+          <div class="row">
+            {% if form.errors %}
+              <p class="pl4 text-red-form">Por favor corrija lo siguiente</p>
+            {% endif %}
+            <form class="col s12 np mt-1r" action="" method="POST">
+              {% csrf_token %}
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  {{ form.nombre }}
+                  <label for="id_nombre" data-error="¿Seguro que ese es su nombre?">Nombre</label>
+                  {{ form.nombre.errors }}
+                </div>
+                <div class="input-field col s12 m6">
+                  {{ form.telefono }}
+                  <label for="id_telefono" data-error="Teléfono no válido">Teléfono</label>
+                  {{ form.telefono.errors }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 l6">
+                  {{ form.email }}
+                  <label for="id_email" data-error="E-mail no válido">Email</label>
+                  {{ form.email.errors }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  {{ form.asunto }}
+                  <label for="id_asunto" data-error="Asunto no válido">Asunto</label>
+                  {{ form.asunto.errors }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  {{ form.mensaje }}
+                  <label for="id_mensaje">Mensaje</label>
+                  {{ form.mensaje.errors }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  {% load pages_extras %}
+                  {% get_page_privacy as page %}
+
+                  <p class="title-checkbox">
+                    {{ form.politica }}
+                    <span class="custom-checkbox"></span>
+                    <label for id="id_politica"><a href="{% url 'pagina:page' page.id page.title|slugify %}" aria-label="Aceptar la política de privacidad">Aceptar política de privacidad</label>
+                    </a>
+                  </p>
+                </div>
+                <div class="col s12 m6 l6 right">
+                  <!-- reCAPTCHA input -->
+                  <input type="hidden" id="g-recaptcha-response1" name="g-recaptcha-response">
+                  <button class="button-mb little right" type="submit" name="action">Enviar
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Item-2 -->
+        <div class="item--form-contact">
+          <div>
+            <h2><span class="text-gradient-2">Donde estamos</span></h2>
+            <ul class="contact-address">
+              <li><p>Escribanos, 15</p></li>
+              <li><p>Alora - Málaga</p></li>
+              <li><p>29500</p></li>
+              <li>
+                <div class="divider mt-1r mb-1"></div>
+              </li>
+              <li><p>Móvil : 673 793 247</p></li>
+              <li>
+                <div class="divider mt-1r mb-1"></div>
+              </li>
+              <li><p>info@mbsocialweb.net</p></li>
+            </ul>
+          </div>
+          <div>
+            <h2><span class="text-gradient-2">horario oficina</span></h2>
+            <table class="bordered responsive-table working-hours">
+              <tbody>
+              <tr>
+                <td>Lun-Vier</td>
+                <td>09:00-14:00</td>
+                <td>17:00-20:00</td>
+              </tr>
+              <tr>
+                <td>Sáb-Dom</td>
+                <td>Cerrado</td>
+                <td>Cerrado</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Item-3 -->
+        <div class="item--form-contact">
+          <div id="map"
+               style="width:100%;height:450px;border-radius:0;color:#141414"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Fin contenido principal -->
+{% endblock %}
+
+{% block svg %}
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+        <stop offset="20%" stop-color="#FF7200"></stop>
+        <stop offset="70%" stop-color="#B362FF"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+{% endblock %}
+
+{% block map %}
+  <script>
+    function initMap() {
+      var uluru = {
+        lat: 36.8235141,
+        lng: -4.7059586999999965
+      };
+      var contentString = 'mbSocialWeb';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 18,
+        center: uluru,
+        mapTypeId: 'roadmap',
+        disableDefaultUI: true,
+        styles: [
+          {elementType: 'geometry', stylers: [{color: '#1E1E3F'}]},
+          {elementType: 'labels.text.stroke', stylers: [{color: '#1E1E3F'}]},
+          {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+          {
+            featureType: 'administrative.locality',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'poi',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'geometry',
+            stylers: [{color: '#263c3f'}]
+          },
+          {
+            featureType: 'poi.park',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#6b9a76'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{color: '#38414e'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#212a37'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#9ca5b3'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry',
+            stylers: [{color: '#746855'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'geometry.stroke',
+            stylers: [{color: '#1f2835'}]
+          },
+          {
+            featureType: 'road.highway',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#f3d19c'}]
+          },
+          {
+            featureType: 'transit',
+            elementType: 'geometry',
+            stylers: [{color: '#2f3948'}]
+          },
+          {
+            featureType: 'transit.station',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#d59563'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'geometry',
+            stylers: [{color: '#17263c'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#515c6d'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'labels.text.stroke',
+            stylers: [{color: '#17263c'}]
+          }
+        ]
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+        title: 'mbSocialWeb',
+        animation: google.maps.Animation.DROP,
+      });
+
+      function ventana() {
+        infowindow.open(map, marker);
+      }
+
+      ventana();
+    }
+  </script>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0IKk2R9rM0F89UUXhi0ONwxV0g_acIZA&callback=initMap">
+  </script>
+{% endblock map %}

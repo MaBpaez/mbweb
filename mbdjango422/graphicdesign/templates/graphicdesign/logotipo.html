@@ -1,0 +1,226 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Diseño de Logotipos| mbSocialWeb{% endblock %}
+{% block description %}Creación de Logotipos{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/disenoGrafico/ink.png{% endblock %}
+{% block facebooktitle %}Diseño de Logotipos | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Creación de Logotipos{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/disenoGrafico/ink.png{% endblock %}
+{% block twittertitle %}Diseño de Logotipos | mbSocialWeb{% endblock %}
+{% block twitterdescription %}Creación de Logotipos.{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/diseno-grafico.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/logotipo/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+<div class="cabecera">
+  <svg width="600" height="100" viewBox="-100 -27 600 100"
+    xmlns="http://www.w3.org/2000/svg" class="figura-top-right">
+    <defs>
+      <linearGradient id="b" x1="2454" x2="5472" y1="7787" y2="13013"
+        gradientUnits="userSpaceOnUse">
+        <stop stop-color="#babdb6" offset="0" />
+        <stop stop-color="#999" offset="1" />
+      </linearGradient>
+    </defs>
+    <g transform="matrix(1.7242 0 0 1.7242 -79.473 128.62)" fill-rule="evenodd"
+      stroke-linejoin="round" stroke-width="28.222">
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path
+          d="m1978 8166-17 1-17 3-16 5-16 6-15 8-15 10-14 11-13 12-12 13-11 14-10 15-8 15-6 16-5 16-3 17-1 17v4110l1 17 3 16 5 17 6 16 8 15 10 15 11 14 12 13 13 12 14 11 30 18 16 6 16 5 17 3 17 1h3969l17-1 17-3 16-5 16-6 16-9 15-9 14-11 13-12 12-13 11-14 18-30 6-16 5-17 3-16 1-17v-4110l-1-17-3-17-5-16-6-16-18-30-11-14-12-13-13-12-14-11-15-10-16-8-16-6-16-5-17-3-17-1z"
+          fill="url(#b)" />
+        <path
+          d="m1978 8166c-90 0-179 89-179 179v4110c0 89 89 179 179 179h3969c90 0 180-90 180-179v-4110c0-90-90-179-180-179z"
+          fill="none" stroke="#808080" stroke-linejoin="round"
+          stroke-width="100" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path
+          d="m3775 8676c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194zm-194 0zm893 1022z"
+          fill="#fff" />
+        <path
+          d="m3775 8676c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194z"
+          fill="none" stroke="#808080" stroke-linejoin="round"
+          stroke-width="100" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path
+          d="m3775 11101c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194zm-194 0zm893 1022z"
+          fill="#fff" />
+        <path
+          d="m3775 11101c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194z"
+          fill="none" stroke="#808080" stroke-linejoin="round"
+          stroke-width="100" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path d="m1800 10464h636v-383h764v255h2036v-255h764v255h127"
+          fill="none" stroke="#808080" stroke-linejoin="round"
+          stroke-width="100" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path d="m6e3 7400v6e3h5982l2036-1532h3182v-3064h-3436l-1909-1404z"
+          fill="#181818" />
+        <path d="m6e3 7400v6e3h5982l2036-1532h3182v-3064h-3436l-1909-1404z"
+          fill="none" stroke="url(#orange-to-purple)" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path
+          d="m7486 8549c-298 0-595 297-595 595v2384c0 298 297 596 595 596h3646c298 0 596-298 596-596v-2384c0-298-298-595-596-595zm-595 0zm4837 3575z"
+          fill="url(#orange-to-purple)" />
+        <path
+          d="m7486 8549c-298 0-595 297-595 595v2384c0 298 297 596 595 596h3646c298 0 596-298 596-596v-2384c0-298-298-595-596-595z"
+          fill="none" stroke="#29d0be" stroke-linejoin="round"
+          stroke-width="100" />
+      </g>
+    </g>
+  </svg>
+
+  <header class="page-header">
+    <h1>Diseño de Logotipos</h1>
+
+    <div class="page-intro">
+      <p class="page-intro">
+        <span class="text-mark">Un logotipo,</span>
+        coloquialmente también llamado logo, es un signo gráfico que identifica
+        a una empresa, un producto comercial,un proyecto, o en general, a cualquier entidad pública o privada.
+      </p>
+      <p>
+        Para que un resulte <span class="text-mark">atractivo y exitoso</span>,
+        debe basarse en el principio fundamental del diseño donde <span class="text-mark">«menos es más»</span>.
+      </p>
+      <p>
+        Creamos tu logo con un diseño profesional y atractivo de tu marca, que identificará tu empresa y atraerá a
+        tu público objetivo de forma efectiva.
+      </p>
+    </div>
+
+    <svg viewBox="0 0 100 20" class="header-line-only-purple">
+      <path d="M 0 20 L 90 20 Q 100 20 100 10 L 100 -3">
+      </path>
+    </svg>
+  </header>
+</div>
+
+<!-- Llamada a la acción -->
+<p class="center-align pt-2 mt-4">
+  <a data-target="modal1" class="button-mb modal-trigger">Solicita Presupuesto</a>
+</p>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+
+  <div class="ink-stan-up">
+    <div class="ink">
+      <img src="{% static 'core/img/disenoGrafico/ink.svg' %}"
+        alt="Diseño gráfico mbsocialweb Málaga">
+    </div>
+
+    <div class="ink">
+      <img src="{% static 'core/img/disenoGrafico/ink-up.svg' %}"
+        alt="Logotipos mbsocialweb Málaga">
+    </div>
+  </div>
+
+  <div class="container-logo-grid pt-2 mt-4">
+    <!-- Item--1 -->
+    <div class="item--container-logo">
+
+      <div class="content-logo">
+        <h2>01</h2>
+        <h3>Menos es más</h3>
+
+        <p>Creamos logotipos que son:</p>
+
+        <ul class="logo-features">
+          <li>
+            <p>Legibles - hasta el tamaño más pequeño.</p>
+          </li>
+          <li>
+            <p>Escalables - a cualquier tamaño requerido.</p>
+          </li>
+          <li>
+            <p>Reproducibles.</p>
+          </li>
+          <li>
+            <p>Distinguibles.</p>
+          </li>
+          <li>
+            <p>Memorables - que impacte y no se olvide.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Item--2 -->
+    <div class="item--container-logo">
+
+      <div class="content-logo">
+        <h2>02</h2>
+        <h3>Logotipos funcionales</h3>
+        <p>
+          La funcionalidad de un logotipo radica en su capacidad para comunicar el mensaje que se desea, como, por
+          ejemplo: somos una empresa responsable o este producto es de alta calidad.
+        </p>
+        <p>
+          Y para conseguir esto se necesitan colores y formas que contribuyan a que el espectador final le dé esta
+          interpretación.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item--3 -->
+    <div class="item--container-logo">
+
+      <div class="content-logo">
+        <h2>03</h2>
+        <h3>Comunicación</h3>
+        <p>
+          Un logotipo tiene que lograr la adecuada comunicación del mensaje y la interpretación por parte del
+          espectador más cercana a este mensaje.
+        </p>
+        <p>
+          Tiene que haber una coherencia entre lo que se entiende y lo que realmente busca representar la imagen.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- FIN CONTENIDO PRINCIPAL -->
+{% endblock %}
+
+{% block svg %}
+<svg width="0" height="0">
+  <defs>
+    <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+      <stop offset="20%" stop-color="#f06024"></stop>
+      <stop offset="70%" stop-color="#de235c"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+
+<svg width="0" height="0">
+  <defs>
+    <linearGradient id="multicolor" x1="1" x2="0" y1="1" y2="0">
+      <stop offset="20%" stop-color="#ff5959"></stop>
+      <stop offset="35%" stop-color="#29d0be"></stop>
+      <stop offset="50%" stop-color="#e1f549"></stop>
+      <stop offset="70%" stop-color="#6cb8ea"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+{% endblock %}

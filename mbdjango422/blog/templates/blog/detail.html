@@ -1,0 +1,276 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{ post.title }}| mbSocialWeb{% endblock %}
+{% block description %}{{ post.body|truncatewords:12|striptags|safe }}{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}{{ post.image.url }}{% endblock %}
+{% block facebooktitle %}{{ post.title }}{% endblock %}
+{% block facebookdescription %}{{ post.body|truncatewords:20|striptags|safe }}{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}{{ post.image.url }}{% endblock %}
+{% block twittertitle %}{{ post.title }}{% endblock %}
+{% block twitterdescription %}{{ post.body|truncatewords:20|striptags|safe }}{% endblock %}
+
+{% block csspage %}
+<link href="https://cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    #mc_embed_signup {
+      background: #fff;
+      clear: left;
+      font: 14px Helvetica, Arial, sans-serif;
+      width: 600px;
+    }
+  </style>
+<link rel="stylesheet" href="{% static 'core/css/blog.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/post_detail/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response1').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+  <div class="cabecera box-with-bottom-radius blog-detail"
+       style="background-image:radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #1E1E3F),url('{{ post.image.url }}')">
+    <header class="page-header header-blog">
+      <h1>{{ post.title }}</h1>
+      <div class="page-intro">
+        <p>
+          <span>Publicado {{ post.publish|date:"SHORT_DATETIME_FORMAT" }} por<strong
+            class="text-highlight">{{ post.author }}</strong></span>
+        </p>
+        <p class="tags">Etiquetas:
+          {% for tag in post.tags.all %}
+            <a class="text-highlight" href="{% url 'blog:post_list_by_tag' tag.slug %}">{{ tag.name }}</a>
+            {% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        </p>
+      </div>
+    </header>
+  </div>
+
+  <div class="box-with-gradient-purple">
+    <div class="box-gradient-content page-header">
+      <h2>Nos gusta crear páginas diferentes, Webs originales y únicas, que desarrollen ideas innovadoras.
+      </h2>
+    </div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <section class="mt-4">
+      <div class="detail-grid">
+        <div class="item-detail">
+          <nav class="bread-crumb">
+            <div class="nav-wrapper">
+              <div class="col s12">
+                <a href="{% url 'blog:post-list' %}" class="breadcrumb">Blog</a>
+                <a class="breadcrumb">{{ post.title }}</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="item-detail">
+          <article>
+            <div class="content-detail">{{ post.body|safe }}</div>
+          </article>
+        </div>
+        <div class="item-detail">
+          <div class="content-detail">
+            <button class="button-mb little mt-2r">
+              <a href="{% url 'blog:post_share' post.id %}">Compartir este post</a>
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+        <div class="item-detail">
+          <div class="content-detail">
+            {% with comments.count as total_comments %}
+            <h2>{{ total_comments }} comentario{{ total_comments|pluralize }}</h2>
+            {% endwith %}
+            {% for comment in comments %}
+              <p class="text-highlighted">
+                Comentario {{ forloop.counter }} de {{ comment.name }} {{ comment.created }}
+              </p>
+              <div class="comment-detail">{{ comment.body|linebreaks }}</div>
+            {% empty %}
+              <p>No hay comentarios.</p>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="item-detail">
+          <div class="content-detail-comment">
+            <h2>Añadir un comentario al post</h2>
+            <form action="" method="post"> {% csrf_token %}
+              <div class="row">
+                <div class="input-field col s12 m6 l6">
+                  {{ comment_form.name }}
+                  <label for="id_name" data-error="¿Seguro que ese es su nombre?">Nombre</label>
+                  {{ comment_form.name.errors }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 l6">
+                  {{ comment_form.email }}
+                  <label for="id_email" data-error="E-mail no válido">Email</label>
+                  {{ comment_form.email.errors }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  {{ comment_form.body }}
+                  <label for="id_body">Comentario</label>{{ comment_form.body.errors }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6 l6">
+                  {% load pages_extras %}
+                  {% get_page_privacy as page %}
+
+                  <p class="title-checkbox">
+                    {{ comment_form.politica }}
+                    <span class="custom-checkbox"></span>
+                    <a href="{% url 'pagina:page' page.id page.title|slugify %}">Aceptar política de privacidad
+                    </a>
+                  </p>
+                </div>
+                <div class="col s12 m6 right">
+                  <!-- reCAPTCHA input -->
+                  <input type="hidden" id="g-recaptcha-response1" name="g-recaptcha-response">
+                  <button class="button-mb little right" type="submit" name="action">Añadir comentario
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Newsletter -->
+        <div class="item-detail-newsletter">
+          <!-- Begin Mailchimp Signup Form -->
+          <div id="mc_embed_signup">
+            <form
+              action="https://mbsocialweb.us20.list-manage.com/subscribe/post?u=05f30816a6a153bb08ccfba79&amp;id=ca234d38c3"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+              novalidate
+            >
+              <div id="mc_embed_signup_scroll">
+                <h2>mbSocialWeb Noticias</h2>
+                <div class="indicates-required"><span class="asterisk">*</span> campos obligatorios</div>
+                <div class="mc-field-group">
+                  <label for="mce-FNAME">Nombre <span class="asterisk">*</span> </label>
+                  <input type="text" value="" name="FNAME" class="required" id="mce-FNAME" />
+                </div>
+                <div class="mc-field-group">
+                  <label for="mce-EMAIL">Email <span class="asterisk">*</span> </label>
+                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" />
+                </div>
+                <div class="mc-field-group input-group">
+                  <strong>Política de privacidad</strong> <span class="asterisk">*</span>
+                  <ul>
+                    <li>
+                      <input type="checkbox" value="1" name="group[228577][1]" class="required" id="mce-group[228577]-228577-0" /><label
+                        for="mce-group[228577]-228577-0"
+                        >He leído y acepto la <a href="https://www.mbsocialweb.net/pagina/2/politica-privacidad/">política de privacidad</a></label
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div id="mce-responses" class="clear foot">
+                  <div class="response" id="mce-error-response" style="display: none"></div>
+                  <div class="response" id="mce-success-response" style="display: none"></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px" aria-hidden="true">
+                  <input type="text" name="b_05f30816a6a153bb08ccfba79_ca234d38c3" tabindex="-1" value="" />
+                </div>
+                <div class="optionalParent">
+                  <div class="clear foot">
+                    <input type="submit" value="Suscribirme" name="subscribe" id="mc-embedded-subscribe" class="button" />
+                    <p class="brandingLogo">
+                      <a href="http://eepurl.com/hYWwiH" title="Mailchimp - email marketing made easy and fun"
+                        ><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"
+                      /></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- FIN CONTENIDO PRINCIPAL -->
+{% endblock %}
+
+{% block svg %}
+  <svg width="0" height="0">
+    <defs>
+    <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+    <stop offset="20%" stop-color="#FF7200"></stop>
+    <stop offset="70%" stop-color="#B362FF"></stop>
+    </linearGradient>
+    </defs>
+  </svg>
+
+  <svg width="0" height="0">
+    <defs>
+    <linearGradient id="multicolor" x1="1" x2="0" y1="1" y2="0">
+    <stop offset="20%" stop-color="#ff5959"></stop>
+    <stop offset="35%" stop-color="#29d0be"></stop>
+    <stop offset="50%" stop-color="#e1f549"></stop>
+    <stop offset="70%" stop-color="#6cb8ea"></stop>
+    </linearGradient>
+    </defs>
+  </svg>
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script type="text/javascript">
+    (function ($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[1] = "FNAME";
+      ftypes[1] = "text";
+      fnames[0] = "EMAIL";
+      ftypes[0] = "email";
+      /*
+       * Translated default messages for the $ validation plugin.
+       * Locale: ES
+       */
+      $.extend($.validator.messages, {
+        required: "Este campo es obligatorio.",
+        remote: "Por favor, rellena este campo.",
+        email: "Por favor, escribe una dirección de correo válida",
+        url: "Por favor, escribe una URL válida.",
+        date: "Por favor, escribe una fecha válida.",
+        dateISO: "Por favor, escribe una fecha (ISO) válida.",
+        number: "Por favor, escribe un número entero válido.",
+        digits: "Por favor, escribe sólo dígitos.",
+        creditcard: "Por favor, escribe un número de tarjeta válido.",
+        equalTo: "Por favor, escribe el mismo valor de nuevo.",
+        accept: "Por favor, escribe un valor con una extensión aceptada.",
+        maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
+        minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
+        rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+        range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+        max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+        min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+      });
+    })(jQuery);
+    var $mcj = jQuery.noConflict(true);
+  </script>{% endblock script %}

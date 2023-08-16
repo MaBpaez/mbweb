@@ -1,0 +1,280 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Posicionamiento SEO Málaga | mbSocialWeb{% endblock %}
+{% block description %}mbSocialWeb estudio de Diseño y Desarrollo Web en Málaga, Posicionamiento SEO en Málaga.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/seo/onpagevsoffpage-mbsocialweb-posicionamiento-seo.png{% endblock %}
+{% block facebooktitle %}Posicionamiento SEO Málaga | mbSocialWeb{% endblock %}
+{% block facebookdescription %}mbSocialWeb estudio de Diseño y Desarrollo Web en Málaga, Posicionamiento SEO en Málaga.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/seo/onpagevsoffpage-mbsocialweb-posicionamiento-seo.png{% endblock %}
+{% block twittertitle %}Posicionamiento SEO Málaga| mbSocialWeb{% endblock %}
+{% block twitterdescription %}mbSocialWeb estudio de Diseño y Desarrollo Web en Málaga, Posicionamiento SEO en Málaga.{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/lightbox.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/marketing-digital.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/appsfb/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha %}
+
+{% block content %}
+<div class="cabecera">
+  <svg width="600" height="100" viewBox="-100 -27 600 100"
+       xmlns="http://www.w3.org/2000/svg" class="figura-top-right">
+    <defs>
+      <linearGradient id="b" x1="2454" x2="5472" y1="7787" y2="13013"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#babdb6" offset="0" />
+        <stop stop-color="#999" offset="1" />
+      </linearGradient>
+    </defs>
+    <g transform="matrix(1.7242 0 0 1.7242 -79.473 128.62)" fill-rule="evenodd"
+       stroke-linejoin="round" stroke-width="28.222">
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path d="m1978 8166-17 1-17 3-16 5-16 6-15 8-15 10-14 11-13 12-12 13-11 14-10 15-8 15-6 16-5 16-3 17-1 17v4110l1 17 3 16 5 17 6 16 8 15 10 15 11 14 12 13 13 12 14 11 30 18 16 6 16 5 17 3 17 1h3969l17-1 17-3 16-5 16-6 16-9 15-9 14-11 13-12 12-13 11-14 18-30 6-16 5-17 3-16 1-17v-4110l-1-17-3-17-5-16-6-16-18-30-11-14-12-13-13-12-14-11-15-10-16-8-16-6-16-5-17-3-17-1z"
+              fill="url(#b)" />
+        <path d="m1978 8166c-90 0-179 89-179 179v4110c0 89 89 179 179 179h3969c90 0 180-90 180-179v-4110c0-90-90-179-180-179z"
+              fill="none" stroke="#808080" stroke-linejoin="round" stroke-width="100" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path d="m3775 8676c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194zm-194 0zm893 1022z"
+              fill="#fff" />
+        <path d="m3775 8676c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194z"
+              fill="none" stroke="#808080" stroke-linejoin="round" stroke-width="100" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path d="m3775 11101c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194zm-194 0zm893 1022z"
+              fill="#fff" />
+        <path d="m3775 11101c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194z"
+              fill="none" stroke="#808080" stroke-linejoin="round" stroke-width="100" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path d="m1800 10464h636v-383h764v255h2036v-255h764v255h127" fill="none"
+              stroke="#808080" stroke-linejoin="round" stroke-width="100" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path d="m6e3 7400v6e3h5982l2036-1532h3182v-3064h-3436l-1909-1404z"
+              fill="#181818" />
+        <path d="m6e3 7400v6e3h5982l2036-1532h3182v-3064h-3436l-1909-1404z" fill="none"
+              stroke="url(#orange-to-purple)" />
+      </g>
+      <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+        <path d="m7486 8549c-298 0-595 297-595 595v2384c0 298 297 596 595 596h3646c298 0 596-298 596-596v-2384c0-298-298-595-596-595zm-595 0zm4837 3575z"
+              fill="url(#orange-to-purple)" />
+        <path d="m7486 8549c-298 0-595 297-595 595v2384c0 298 297 596 595 596h3646c298 0 596-298 596-596v-2384c0-298-298-595-596-595z"
+              fill="none" stroke="#29d0be" stroke-linejoin="round" stroke-width="100" />
+      </g>
+    </g>
+  </svg>
+
+  <header class="page-header">
+    <h1>SEO</h1>
+    <p class="page-intro">
+      <span class="text-gradient-3 f-bold">¿Qué es SEO?</span>
+      , el SEO (Search Engine Optimization) consiste en un conjunto de
+      técnicas estratégicas de optimización para motores de búsqueda, con el fin de
+      conseguir que los buscadores de internet posicionen tu web en las primeras páginas y
+      aumente la visibilidad de la misma.
+    </p>
+    <svg viewBox="0 0 100 20" class="header-line-only-purple">
+      <path d="M 0 20 L 90 20 Q 100 20 100 10 L 100 4">
+      </path>
+    </svg>
+  </header>
+</div>
+
+<!-- Llamada a la acción -->
+<p class="center-align pt-2 mt-4">
+  <a data-target="modal1" class="button-mb modal-trigger">Solicita Presupuesto</a>
+</p>
+
+<!-- Introducción -->
+<header class="seo-header">
+  <div>
+    <h2 class="fs-32-b">Mejora tu presencia en Internet e incrementa tu visibilidad en
+      Google.</h2>
+    <p>
+      Ahora que el 85% de todo el tráfico por internet es orgánico, la optimización de
+      los motores de búsqueda (SEO) es fundamental. Sea cual sea tu estrategia, todos los
+      proyectos SEO tienen un objetivo común: cuanto más arriba estés en los resultados de
+      búsqueda, más posibilidades tendrás de conseguir atraer a clientes potenciales a tu
+      página en lugar de que vayan a la de la competencia.
+    </p>
+  </div>
+  <div>
+    <h2 class="fs-32-b">Llega más alto en las búsquedas para atraer a más gente a tu
+      página</h2>
+    <p>
+      Realizamos un análisis de tu web detenidamente y mediante optimización, diferentes
+      tipos de estrategias y técnicas, logramos que tu página web, escale posiciones.
+      Hacemos un estudio de las palabras clave que más visitas puedan atraer hacia tu
+      página web, para conseguir ventas directas, nuevos clientes o contactos interesados.
+      El SEO debe ir de la mano junto con la creación de tu web.
+    </p>
+  </div>
+</header>
+
+<div class="separador-grupo mt-0">
+  <h2 class="titulo-separador"><span class="text-yellow-dark long-2">Servicios
+      SEO</span></h2>
+</div>
+
+<main>
+  <!-- CONTENIDO PRINCIPAL -->
+  <section id="seo" class="animation-element slide-left">
+    <div class="grid-container-seo">
+      <div class="item--seo" data-aos="fade-in">
+        <div class="on-page">
+          <h2 class="fs-32-b text-gris"># Análisis on-page</h2>
+          <p class="mb-2">
+            Realizamos un examen interno del estado inicial de tu página web, vemos su
+            código, keywords… y todos los parámetros que influyen en el SEO para trazar el
+            mejor plan de trabajo.
+          </p>
+          <ul>
+            <li>
+              <p>
+                <i class="material-icons">check_circle_outline</i>
+                <span class="text-gradient-yellow-green">Estudio Posicionamiento web –
+                  SEO</span> del contenido de tu web, analizamos como optimizarlo y
+                mejorarlo a nivel SEO On page.
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="material-icons"> check_circle_outline</i>
+                <span class="text-gradient-yellow-green">Optimización de imágenes</span>
+                y contenido de tu web.
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="material-icons">check_circle_outline</i>
+                <span class="text-gradient-yellow-green">Mejora WPO</span> consiguiendo
+                una mayor velocidad de carga y mejorando la experiencia de los usuarios de
+                tu web, es decir, hacer todo lo que esté en nuestras manos para que cargue
+                lo más rápido posible.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+      <div class="item--seo" data-aos="fade-left">
+        <div class="image-on-page"></div>
+      </div>
+
+      <!-- Imagen -->
+      <div class="item--seo" data-aos="fade-in">
+        <div class="image-off-page"></div>
+      </div>
+
+      <div class="item--seo" data-aos="fade-left">
+        <div class="off-page">
+          <h2 class="fs-32-b text-gris"># Análisis off-page</h2>
+          <p class="mb-2">
+            Tanto el SEO off-page como el SEO on-page tienen un objetivo común: mejorar
+            el posicionamiento de una web en buscadores. Sin embargo, la principal
+            diferencia radica en que las acciones de SEO off-page se realizan fuera
+            de nuestra página web, mientras que todas las acciones on-page, como su nombre
+            indica, son dentro de la página.
+          </p>
+          <ul>
+            <li>
+              <p>
+                <i class="material-icons">check_circle_outline</i>
+                <span class="text-gradient-yellow-green">Estudio de enlaces entrantes o
+                  backlinks,</span> un
+                backlink
+                es un enlace entrante que apunta a nuestra página web.
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="material-icons"> check_circle_outline</i>
+                <span class="text-gradient-yellow-green">Análisis del perfil de enlaces
+                  de la web,</span>
+                mediante
+                herramientas adecuadas analizaremos los backlinks.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item--seo" data-aos="zoom-in">
+        <div class="estudio-seo">
+          <h2 class="fs-32-b text-gris"># Estudio y selección</h2>
+          <p class="mb-2">
+            Seleccionamos las palabras clave más relevantes utilizadas por tus posibles
+            clientes
+            potenciales, para encontrarte, optimizando de esta forma, las búsquedas en los
+            principales
+            buscadores.
+          </p>
+          <ul>
+            <li>
+              <p>
+                <i class="material-icons">check_circle_outline</i>
+                <span class="text-gradient-yellow-green">Estudio de palabras claves
+                  SEO</span>
+                o keywords de
+                tu
+                negocio.
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="material-icons"> check_circle_outline</i>
+                <span class="text-gradient-yellow-green">Análisis de la
+                  competencia.</span>
+                Vemos por qué
+                palabras
+                claves se están
+                posicionando, y los enlaces externos que están recibiendo.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block svg %}
+<svg width="0" height="0">
+  <defs>
+    <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+      <stop offset="20%" stop-color="#f06024"></stop>
+      <stop offset="70%" stop-color="#de235c"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'core/js/base.js' %}"></script>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>{% endblock script %}
+
+{% block javascript %}
+  AOS.init({
+    once: true,
+  });{% endblock javascript %}

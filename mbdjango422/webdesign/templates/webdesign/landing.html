@@ -1,0 +1,159 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Creación Landing Pages | mbSocialWeb{% endblock %}
+{% block description %}Una landing Page o página de aterrizaje es una página web diseñada para convertir las visitas en clientes potenciales.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/disenoWeb/space-travel.jpg{% endblock %}
+{% block facebooktitle %}Creación Landing Pages | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Una landing Page o página de aterrizaje es una página web diseñada para convertir las visitas en clientes potenciales.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/disenoWeb/space-travel.jpg{% endblock %}
+{% block twittertitle %}Creación Landing Pages | mbSocialWeb{% endblock %}
+{% block twitterdescription %}Una landing Page o página de aterrizaje es una página web diseñada para convertir las visitas en clientes potenciales.{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/diseno-web.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/landingpage/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+  <div class="cabecera box-with-bottom-radius landing-page">
+    <header class="page-header">
+      <h1>Landing Pages</h1>
+      <p>
+        <span
+            class="text-gradient-3 f-bold">¿Qué es una landing page?</span>
+      </p>
+      <p>
+        Una landing Page o página de aterrizaje es una página web diseñada para
+        convertir las visitas en clientes potenciales. El diseño y el contenido
+        deben captar el interés de los usuarios para que estén dispuestos,
+        mediante un formulario, a dejarnos información personal y así
+        mostrarnos su interés por nuestros productos, promociones, descuentos,
+        servicios, etc.
+      </p>
+      <p>
+        De ese modo posteriormente, podremos contactar con ellos de manera
+        personalizada y poder convertirlos en clientes finales. Por ese motivo
+        trataremos de conseguir el mayor número de visitas a través de nuestra
+        landing page.
+      </p>
+    </header>
+  </div>
+
+  <div class="box-with-gradient-purple">
+    <div class="box-gradient-content page-header">
+      <h2>
+        Nos gusta crear páginas diferentes, Webs originales y únicas, que desarrollen ideas innovadoras.
+      </h2>
+    </div>
+  </div>
+
+  <!-- Llamada a la acción -->
+  <p class="center-align pt-2 mt-4">
+    <a data-target="modal1" class="button-mb modal-trigger">Solicita
+      Presupuesto</a>
+  </p>
+
+  <main>
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="section landing">
+      <header>
+        <h2 class="center-align uppercase fs-46-b">La importancia de una landing page</h2>
+        <p class="center-align">
+          Una Landing Page es un método efectivo para traer tráfico a tu sitio web, mejorar tu posicionamiento
+          orgánico (SEO) y construir tu marca.
+        </p>
+      </header>
+
+      <div class="landing-page-grid">
+        <div class="item--landing-page-grid"></div>
+
+        <div class="item--landing-page-grid">
+          <h2><span class="text-gradient-2">Características</span></h2>
+
+          <ul>
+            <li>
+              <div>
+                <header>
+                  <h3>Diseño exclusivo</h3>
+                  <p>
+                    Diferénciate de la multitud, con una atractiva página de aterrizaje diseñada a medida. Destacaremos
+                    las ventajas de tus servicios y productos de forma directa.
+                  </p>
+                </header>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <header>
+                  <h3>Objetivo</h3>
+                  <p>
+                    Son el complemento perfecto de una campaña de marketing online. El objetivo principal de una
+                    landing page es que el público objetivo nos deje su información personal para posteriormente
+                    ponernos en contacto con ellos.
+                  </p>
+                </header>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <header>
+                  <h3>Uso de landing page</h3>
+                  <p>
+                    Una página de aterrizaje es perfecta para complementar una campaña de marketing online, bien sea
+                    en redes sociales, medios digitales o convencionales. Puede crearse de manera independiente con un
+                    dominio diferente al de tu web, con distinta imagen o bien mantener la imagen corporativa de la
+                    empresa.
+                  </p>
+                </header>
+              </div>
+            </li>
+
+            <li>
+              <div>
+                <header>
+                  <h3>Optimizada para cada dispositivo</h3>
+                  <p>
+                    Las landing pages altamente eficaces son aquellas que se han optimizado para adaptarse
+                    perfectamente a cualquier dispositivo. De ese modo podrás llegar a más usuarios, ya que el 80%
+                    utilizan sus dispositivos móviles, y aumentar tus ganancias.
+                  </p>
+                </header>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="item--landing-page-grid">
+          <p>Una landing page está asociada a una oferta pensada para nuestros usuarios.</p>
+        </div>
+      </div>
+    </section>
+    <!-- FIN CONTENIDO PRINCIPAL -->
+  </main>
+{% endblock %}
+
+{% block svg %}
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="yellow-to-purple" x1="1" x2="0" y1="1" y2="0">
+        <stop offset="20%" stop-color="#FF7200"/>
+        <stop offset="70%" stop-color="#B362FF"/>
+      </linearGradient>
+    </defs>
+  </svg>
+{% endblock %}

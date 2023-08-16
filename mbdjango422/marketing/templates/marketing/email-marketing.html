@@ -1,0 +1,247 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Campañas Email Marketing | mbSocialWeb{% endblock %}
+{% block description %}Diseñamos, maquetamos, enviamos, analizamos y optimizamos tus campañas de Email Marketing.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/nosotros/mbsocialweb-redes-sociales.png{% endblock %}
+{% block facebooktitle %}Campañas Email Marketing | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Diseñamos, maquetamos, enviamos, analizamos y optimizamos tus campañas de Email Marketing.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/nosotros/mbsocialweb-redes-sociales.png{% endblock %}
+{% block twittertitle %}Campañas Email Marketing | mbSocialWeb{% endblock %}
+{% block twitterdescription %}Diseñamos, maquetamos, enviamos, analizamos y optimizamos tus campañas de Email Marketing.{% endblock %}
+
+{% block scriptparallax %}
+  <script>
+      function parallax() {
+          var prlx_lyr_1 = document.getElementById('prlx_lyr_1');
+          prlx_lyr_1.style.top = -(window.pageYOffset / 2) + 'px';
+      }
+
+      window.addEventListener("scroll", parallax, false);
+  </script>
+{% endblock scriptparallax %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/marketing-digital.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/appsfb/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha %}
+
+{% block content %}
+  <div class="cabecera">
+    <svg width="600" height="100" viewBox="-100 -27 600 100"
+         xmlns="http://www.w3.org/2000/svg" class="figura-top-right">
+      <defs>
+        <linearGradient id="b" x1="2454" x2="5472" y1="7787" y2="13013"
+                        gradientUnits="userSpaceOnUse">
+          <stop stop-color="#babdb6" offset="0"/>
+          <stop stop-color="#999" offset="1"/>
+        </linearGradient>
+      </defs>
+      <g transform="matrix(1.7242 0 0 1.7242 -79.473 128.62)"
+         fill-rule="evenodd" stroke-linejoin="round"
+         stroke-width="28.222">
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path
+              d="m1978 8166-17 1-17 3-16 5-16 6-15 8-15 10-14 11-13 12-12 13-11 14-10 15-8 15-6 16-5 16-3 17-1 17v4110l1 17 3 16 5 17 6 16 8 15 10 15 11 14 12 13 13 12 14 11 30 18 16 6 16 5 17 3 17 1h3969l17-1 17-3 16-5 16-6 16-9 15-9 14-11 13-12 12-13 11-14 18-30 6-16 5-17 3-16 1-17v-4110l-1-17-3-17-5-16-6-16-18-30-11-14-12-13-13-12-14-11-15-10-16-8-16-6-16-5-17-3-17-1z"
+              fill="url(#b)"/>
+          <path
+              d="m1978 8166c-90 0-179 89-179 179v4110c0 89 89 179 179 179h3969c90 0 180-90 180-179v-4110c0-90-90-179-180-179z"
+              fill="none" stroke="#808080" stroke-linejoin="round"
+              stroke-width="100"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path
+              d="m3775 8676c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194zm-194 0zm893 1022z"
+              fill="#fff"/>
+          <path
+              d="m3775 8676c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194z"
+              fill="none" stroke="#808080" stroke-linejoin="round"
+              stroke-width="100"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path
+              d="m3775 11101c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194zm-194 0zm893 1022z"
+              fill="#fff"/>
+          <path
+              d="m3775 11101c-97 0-194 97-194 194v633c0 97 97 195 194 195h504c97 0 195-98 195-195v-633c0-97-98-194-195-194z"
+              fill="none" stroke="#808080" stroke-linejoin="round"
+              stroke-width="100"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path d="m1800 10464h636v-383h764v255h2036v-255h764v255h127"
+                fill="none" stroke="#808080"
+                stroke-linejoin="round" stroke-width="100"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path d="m6e3 7400v6e3h5982l2036-1532h3182v-3064h-3436l-1909-1404z"
+                fill="#181818"/>
+          <path d="m6e3 7400v6e3h5982l2036-1532h3182v-3064h-3436l-1909-1404z"
+                fill="none"
+                stroke="url(#orange-to-purple)"/>
+        </g>
+        <g transform="matrix(.018751 0 0 .018751 13.297 -213.09)">
+          <path
+              d="m7486 8549c-298 0-595 297-595 595v2384c0 298 297 596 595 596h3646c298 0 596-298 596-596v-2384c0-298-298-595-596-595zm-595 0zm4837 3575z"
+              fill="url(#orange-to-purple)"/>
+          <path
+              d="m7486 8549c-298 0-595 297-595 595v2384c0 298 297 596 595 596h3646c298 0 596-298 596-596v-2384c0-298-298-595-596-595z"
+              fill="none" stroke="#29d0be" stroke-linejoin="round"
+              stroke-width="100"/>
+        </g>
+      </g>
+    </svg>
+
+    <header class="page-header">
+      <h1>Email Marketing</h1>
+
+      <p class="page-intro">
+      <span class="text-gradient-3 f-bold">¿Tienes una base de datos de clientes?
+        Nosotros te decimos que
+        hacer con ella.</span>
+        La mayoría de las empresas aún desconocen que es el email marketing y
+        cuáles son
+        sus beneficios, por
+        tanto, están desaprovechando esta oportunidad tan poderosa. Las redes
+        sociales
+        son un excelente canal
+        para darnos a conocer y hacerles llegar nuestras propuestas, pero nunca
+        será tan
+        eficaz y rentable
+        como el email marketing ya que la tasa de conversión es 3 veces mayor.
+        ¿A
+        que
+        estas esperando?
+      </p>
+
+      <svg viewBox="0 0 100 20" class="header-line-only-purple">
+        <path d="M 0 20 L 90 20 Q 100 20 100 10 L 100 0">
+        </path>
+      </svg>
+    </header>
+  </div>
+
+  <!-- Llamada a la acción -->
+  <p class="center-align pt-2 mt-4">
+    <a data-target="modal1" class="button-mb modal-trigger">Solicita
+                                                            Presupuesto</a>
+  </p>
+
+  <!-- Contenido -->
+  <div class="separador-grupo">
+    <h2 class="titulo-separador"><span
+        class="long-1">¿Cómo funciona y que es?</span></h2>
+  </div>
+
+  <div id="prlx_lyr_1"></div>
+
+  <main>
+    <div class="grid-container page-header">
+      <!-- texto -->
+      <div class="grid-item one">
+        <h2 class="uppercase text-gradient-purple">¿ Qué es ?</h2>
+        <p>
+          El email marketing (emailing o e-mailing) es una palabra en inglés
+          que se
+          utiliza
+          para definir el
+          envío
+          masivo de correos electrónicos a un grupo de contactos. El envío de
+          una
+          campaña de email marketing
+          es a la
+          vez un acto de comunicación.
+        </p>
+      </div>
+
+      <div class="grid-item two">
+        <svg class="link-line">
+          <mask id="path-100">
+            <line x2="66.667%" transform="translate(-35,0)"></line>
+            <svg x="66.667%">
+              <path d="M-1,0 Q35,0 35,35" transform="translate(-35,0)"></path>
+            </svg>
+            <line x1="66.667%" x2="66.667%" y1="35" y2="400"></line>
+          </mask>
+          <rect width="100%" height="105.2%" y="-5%"
+                fill="url(#orange-to-purple)" mask="url(#path-100)"></rect>
+        </svg>
+      </div>
+
+      <div class="grid-item four">
+        <svg class="link-line left-side">
+          <mask id="path-101">
+            <line x1="33.333%" transform="translate(-35,0)" x2="98%"></line>
+            <svg x="33.333%">
+              <path d="M-1,0 Q-35,0 -35,35"
+                    transform="translate(-35,0)"></path>
+            </svg>
+            <line y1="35" y2="400" transform="translate(-35,0)" x1="21.567%"
+                  x2="21.567%">
+            </line>
+          </mask>
+          <rect width="100%" height="105.2%" y="-5%"
+                fill="url(#orange-to-purple)" mask="url(#path-101)"></rect>
+        </svg>
+      </div>
+
+      <!-- texto -->
+      <div class="grid-item three">
+        <h2 class="uppercase text-gradient-purple">Beneficios</h2>
+        <p>
+          Es económica en comparación con otros canales de comunicación.
+          Eficaz ya que es más efectivo que las redes sociales.
+          Accesible ya que los correos electrónicos se pueden leer en cualquier
+          dispositivo
+          (PC, portátil,
+          tablet,
+          móvil).
+          Totalmente personalizado.
+          Te permite enviar encuestas de satisfacción de tus clientes.
+        </p>
+      </div>
+
+      <!-- texto -->
+      <div class="grid-item five">
+        <h2 class="uppercase text-gradient-purple">Ventajas</h2>
+        <p>
+          Es la herramienta más eficaz de marketing directo. Para sacarle el
+          máximo
+          provecho debe estar
+          correctamente
+          enfocada y organizada. El envío de newsletters por email, es la mejor
+          manera de
+          mantener una relación
+          estable
+          a largo plazo con los contactos actuales y los clientes potenciales
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block svg %}
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+        <!-- <stop offset="20%" stop-color="#FF7200"></stop> -->
+        <!-- <stop offset="70%" stop-color="#B362FF"></stop> -->
+        <stop offset="20%" stop-color="#f06024"></stop>
+        <stop offset="70%" stop-color="#de235c"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+{% endblock %}
+
+{% block javascript %}$('.parallax').parallax();{% endblock javascript %}

@@ -1,0 +1,186 @@
+{% extends "core/base.html" %} {% load static %}
+
+{% block title %}Mantenimiento Web | mbSocialWeb{% endblock %}
+{% block description %}Con tu plan de mantenimiento, resolveremos cualquier tipo de incidencia que tengas con tu página web.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/disenoWeb/mantenimiento-web-mbsocialweb-desarrollo-web-a-medida.jpg{% endblock %}
+{% block facebooktitle %}Mantenimiento Web | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Con tu plan de mantenimiento, resolveremos cualquier tipo de incidencia que tengas con tu página web.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/disenoWeb/mantenimiento-web-mbsocialweb-desarrollo-web-a-medida.jpg{% endblock %}
+{% block twittertitle %}Mantenimiento Web| mbSocialWeb{% endblock %}
+{% block twitterdescription %}Con tu plan de mantenimiento, resolveremos cualquier tipo de incidencia que tengas con tu página web.{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/diseno-web.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/webmaintenance/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+<div class="cabecera box-with-bottom-radius web-maintenance">
+  <header class="page-header">
+    <h1>Mantenimiento Web</h1>
+
+    <p>
+      Te ofrecemos planes de mantenimiento para que tu website esté al día en materia de actualizaciones.
+    </p>
+    <p>
+      Con tu plan de mantenimiento, podrás contactar con nosotros en caso de que tengas cualquier tipo de incidencia
+      con tu página web. Lo resolveremos de manera rápida y eficaz.
+    </p>
+    <P>
+      Para tratar todo tipo de cuestiones, contáctanos. Nosotros te asesoraremos sobre las mejoras y medidas a seguir
+      para optimizar tu web.
+    </P>
+  </header>
+</div>
+
+<div class="box-with-gradient-purple">
+  <div class="box-gradient-content page-header">
+    <h2>Nos gusta crear páginas diferentes, Webs originales y únicas, que desarrollen ideas innovadoras.</h2>
+  </div>
+</div>
+
+<!-- Llamada a la acción -->
+<p class="center-align pt-2 mt-4">
+  <a data-target="modal1" class="button-mb modal-trigger">Solicita Presupuesto</a>
+</p>
+
+<div class="separador-grupo">
+  <h2 class="titulo-separador"><span class="text-yellow-dark long-2">Que te ofrecemos</span></h2>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+  <section class="section">
+    <div class="web-maintenance-grid">
+      <!-- Item-1 -->
+      <div class="item--web-maintenance">
+        <svg class="curve-text" viewBox="-10 10 200 200">
+          <g>
+            <path id="curve"
+              d="m151.19 112.93a66.146 66.146 0 0 1-66.146 66.146 66.146 66.146 0 0 1-66.146-66.146 66.146 66.146 0 0 1 66.146-66.146 66.146 66.146 0 0 1 66.146 66.146z">
+            </path>
+          </g>
+          <g fill="#da1b60">
+            <path
+              d="m151.19 112.93a66.146 66.146 0 0 1-66.146 66.146 66.146 66.146 0 0 1-66.146-66.146 66.146 66.146 0 0 1 66.146-66.146 66.146 66.146 0 0 1 66.146 66.146z"
+              fill="#da1b60" fill-opacity=".75" transform="matrix(.83051 0 0 .83051 14 19.644)"></path>
+          </g>
+          <text width="200">
+            <textPath xlink:href="#curve">
+              Mantenimiento de Contenidos
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <!-- Item-2 -->
+      <div class="item--web-maintenance">
+        <p>
+          Actualizamos, mejoramos y optimizamos el contenido web para una mayor velocidad de carga y visibilidad en
+          buscadores.
+        </p>
+        <p>
+          Tener siempre tu web actualizada, con novedades, noticias, contenidos nuevos, productos o servicios
+          nuevos…es
+          algo que aparte de que provocan que los usuarios vuelvan y sepan que vas sacando cosas nuevas, afecta de
+          forma
+          positiva al posicionamiento SEO y va a hacer a tu web mucho más susceptible de recibir tráfico.
+        </p>
+      </div>
+
+      <!-- Item-3 -->
+      <div class="item--web-maintenance">
+        <svg class="curve-text" viewBox="-10 10 200 200">
+          <g>
+            <path id="curve"
+              d="m151.19 112.93a66.146 66.146 0 0 1-66.146 66.146 66.146 66.146 0 0 1-66.146-66.146 66.146 66.146 0 0 1 66.146-66.146 66.146 66.146 0 0 1 66.146 66.146z">
+            </path>
+          </g>
+          <g fill="#da1b60">
+            <path
+              d="m151.19 112.93a66.146 66.146 0 0 1-66.146 66.146 66.146 66.146 0 0 1-66.146-66.146 66.146 66.146 0 0 1 66.146-66.146 66.146 66.146 0 0 1 66.146 66.146z"
+              fill="#da1b60" fill-opacity=".75" transform="matrix(.83051 0 0 .83051 14 19.644)"></path>
+          </g>
+          <text width="200">
+            <textPath xlink:href="#curve">
+              Software Actualizado
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <!-- Item-4 -->
+      <div class="item--web-maintenance">
+        <p>
+          Mantenimiento actualizado del software para un buen funcionamiento y seguridad del sitio web. Evita riesgos
+          innecesarios.
+        </p>
+        <p>
+          Garantizamos la seguridad del sitio web eliminando vulnerabilidades, realizamos ajustes en el servidor para
+          mejorar los tiempos de carga así como un análisis y revisión de las funcionalidades y en general de todo el
+          sitio web.
+        </p>
+      </div>
+
+      <!-- Item-5 -->
+      <div class="item--web-maintenance">
+        <svg class="curve-text" viewBox="-10 10 200 200">
+          <g>
+            <path id="curve"
+              d="m151.19 112.93a66.146 66.146 0 0 1-66.146 66.146 66.146 66.146 0 0 1-66.146-66.146 66.146 66.146 0 0 1 66.146-66.146 66.146 66.146 0 0 1 66.146 66.146z">
+            </path>
+          </g>
+          <g fill="#da1b60">
+            <path
+              d="m151.19 112.93a66.146 66.146 0 0 1-66.146 66.146 66.146 66.146 0 0 1-66.146-66.146 66.146 66.146 0 0 1 66.146-66.146 66.146 66.146 0 0 1 66.146 66.146z"
+              fill="#da1b60" fill-opacity=".75" transform="matrix(.83051 0 0 .83051 14 19.644)"></path>
+          </g>
+          <text width="200">
+            <textPath xlink:href="#curve">
+              Mantenimiento de Hosting
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <!-- Item-6 -->
+      <div class="item--web-maintenance">
+        <div class="arc"></div>
+      </div>
+
+      <!-- Item-7 -->
+      <div class="item--web-maintenance">
+        <p>
+          Nos encargamos de configurar y tener al día todo lo que te ofrece tu hosting, copias de seguridad, cuentas
+          de
+          correo, bases de datos, etc ...
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- FIN CONTENIDO PRINCIPAL -->
+{% endblock %}
+
+{% block svg %}
+<svg width="0" height="0">
+  <defs>
+    <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+      <stop offset="20%" stop-color="#FF7200"></stop>
+      <stop offset="70%" stop-color="#B362FF"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+{% endblock %}

@@ -1,0 +1,289 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Nosotros | mbSocialWeb{% endblock %}
+{% block description %}mbSocialWeb es un pequeño estudio de diseño y desarrollo web a medida, social media y marketing online.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/nosotros/mbsocialweb-redes-sociales.png{% endblock %}
+{% block facebooktitle %}Nosotros | mbSocialWeb{% endblock %}
+{% block facebookdescription %}mbSocialWeb es un pequeño estudio de diseño y desarrollo web a medida, social media y marketing online.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/nosotros/mbsocialweb-redes-sociales.png{% endblock %}
+{% block twittertitle %}Nosotros | mbSocialWeb{% endblock %}
+{% block twitterdescription %}mbSocialWeb es un pequeño estudio de diseño y desarrollo web a medida, social media y marketing online.{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/nosotros.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/us/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+  <div class="cabecera box-with-bottom-radius about-us">
+    <header class="page-header header-about-us">
+      <h1>Nosotros</h1>
+      <h2>Somos un equipo de personas que nos gustan las cosas bien hechas.</h2>
+      <div class="page-intro">
+      </div>
+    </header>
+  </div>
+  <div class="box-with-gradient-purple">
+    <div class="box-gradient-content page-header">
+      <h2>
+        Nos gusta crear páginas diferentes, Webs originales y únicas, que desarrollen ideas innovadoras.
+      </h2>
+    </div>
+  </div>
+
+  <!-- Llamada a la acción -->
+  <p class="center-align pt-2 mt-4">
+    <a data-target="modal1" class="button-mb modal-trigger">Solicita Presupuesto</a>
+  </p>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <section class="section pt-2 mt-4">
+      <div class="about-us-grid">
+        <!-- Item-1 -->
+        <div class="item--about-us">
+          <div class="item--about-us-content">
+            <p>
+              Somos una empresa <span class="text-mark">joven</span>, <span class="text-mark">dinámica</span>,
+              apasionados de las <span class="text-mark">redes sociales</span>, del<span class="text-mark">
+              marketing</span>, el <span class="text-mark">diseño gráfico y desarrollo web</span>.
+              Nuestro objetivo común es hacer <span class="f-bold">crecer tu negocio</span> y abrirte las
+              puertas al mercado del mundo digital.
+            </p>
+            <p>
+              Nuestra prioridad es convertir tus ideas en realidad y ayudarte a crear un espacio único para
+              tu empresa, a través de una atención profesional y personalizada.
+            </p>
+          </div>
+        </div>
+        <!-- Item-2 -->
+        <div class="item--about-us">
+          <div class="item--about-us-content">
+            <p>
+              Hazte visible al público y consigue aumentar el número de clientes. Cuando aceptamos acompañar
+              a un cliente, afrontamos el reto con pasión y entrega. Para nosotros, ningún tipo de cliente,
+              en ningún caso, es más valioso que otro sea cual sea su envergadura.
+            </p>
+            <p>
+              Creemos que cultivar y poner en práctica valores como la <span
+                    class="text-mark">honestidad</span>, la <span class="text-mark">autocrítica</span>, la
+              <span class="text-mark">disciplina</span>, la <span class="text-mark">integridad</span> y el
+              <span class="text-mark">intelecto</span> es
+            </p>
+          </div>
+        </div>
+        <!-- Item-3 -->
+        <div class="item--about-us">
+          <p>necesario para afrontar retos y concluirlos con excelencia.</p>
+          <p>
+            Ofrecemos un trato personalizado atendiento y dando una respuesta rápida y directa a tus
+            necesidades.
+          </p>
+        </div>
+      </div>
+
+      <!-- UN POCO DE HISTORIA -->
+      <div class="history">
+        <header>
+          <h2>historia</h2>
+        </header>
+      </div>
+      <div class="history-grid">
+        <!-- Item-1 -->
+        <div class="item--history-grid">
+          <p>
+            Hola, me llamo Manuel y soy el fundador de <span class="text-mark">MBSOCIALWEB</span>, desde
+            pequeño me ha apasionado el mundo de la programación. Comencé con un Commodore PC de 512
+            kilobytes y tarjeta Hercules,¡toda una máquina en aquellos tiempos!.
+          </p>
+          <p>
+            Desde siempre me intrigó mucho la programación, el poder crear algo que luego podía ver en la
+            pantalla de mi ordenador, era todo un logro para mí.
+          </p>
+        </div>
+        <!-- Item-2 -->
+        <div class="item--history-grid">
+          <p>
+            Por aquel entonces, tenía 14 años, aún no existía internet, y el mundo de la informática en
+            aquella época no tenía nada que ver con el actual.
+          </p>
+          <p>
+            Estos fueron mis inicios como autodidacta, aún lo sigo siendo, forma parte de esta profesión.
+            Años después, comencé a estudiar Informática en la Universidad de Málaga. Hace tiempo, rondaba
+            en mi cabeza este proyecto.
+          </p>
+        </div>
+        <!-- Item-3 -->
+        <div class="item--history-grid">
+          <p>
+            ya que mi sueño siempre fue dedicarme a lo que realmente me gusta y me apasiona, así que en
+            2018 finalmente he dado el salto y aquí estamos ¡ por fin !.
+          </p>
+          <p>
+            Tengo la suerte de haber formado un equipo con un sueño común, el de dedicarnos a lo que nos
+            hace felices, y eso es lo que queremos transmitir a través de nuestro trabajo.
+          </p>
+        </div>
+      </div>
+
+      <!-- EL EQUIPO -->
+      <div class="team-a">
+        <header><h2>equipo</h2></header>
+      </div>
+      <div class="team-grid">
+        <!-- Item-1 -->
+        <div class="half-circle-img">
+          <div class="wrapp-circle">
+            <img src="{% static 'core/img/nosotros/manuel-mbsocialweb-malaga.png' %}" alt="Manuel
+            MBsocialweb Málaga">
+            <svg class="half-circle" viewBox="0 0 106 57">
+              <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+            </svg>
+          </div>
+          <div class="wrapp-content-circle">
+            <ul class="presentation">
+              <li>
+                <h3><span class="text-gradient-2">Manuel</span></h3>
+                <h4>Diseño y Desarrollo Web</h4>
+              </li>
+              <li>
+                <p>
+                  <span class="text-gradient-yellow-green">Colores:</span>
+                  <span>Azul, Verde, Rojo</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="text-gradient-yellow-green">Comida:</span>
+                  <span>Cualquiera que lleve picante</span>
+                </p>
+              </li>
+              <li>
+                <hr class="thick">
+              </li>
+              <li>
+                <p>
+                  Friki del Universo Marvel, en su tiempo libre se dedica al diseño y desarollo de páginas
+                  webs.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item-2 -->
+        <div class="half-circle-img">
+          <div class="wrapp-circle">
+            <img src="{% static 'core/img/nosotros/currito-mbsocialweb-diseno-grafico-malaga.jpg' %}"
+                 alt="Currito mbsocialweb Diseño Gráfico Málaga">
+            <svg class="half-circle" viewBox="0 0 106 57">
+              <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+            </svg>
+          </div>
+          <div class="wrapp-content-circle">
+            <ul class="presentation">
+              <li>
+                <h3><span class="text-gradient-2">Currito</span></h3>
+                <h4>Mascota del equipo</h4>
+              </li>
+              <li>
+                <p>
+                  <span class="text-gradient-yellow-green">Comida:</span>
+                  <span>Paté para gatunos</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="text-gradient-yellow-green">Aficiones:</span>
+                  <span>Comer y dormir</span>
+                </p>
+              </li>
+              <li>
+                <hr class="thick">
+              </li>
+              <li>
+                <p>
+                  Siempre atento a los gatunos del barrio desde su puesto de control, la terraza. Devorador
+                  incansable de paté.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item-3 -->
+        <div class="half-circle-img">
+          <div class="wrapp-circle">
+            <img src="{% static 'core/img/nosotros/ana-mbsocialweb-diseno-grafico-malaga.png' %}"
+                 alt="Manuel MBsocialweb Málaga">
+            <svg class="half-circle" viewBox="0 0 106 57">
+              <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+            </svg>
+          </div>
+          <div class="wrapp-content-circle">
+            <ul class="presentation">
+              <li>
+                <h3><span class="text-gradient-2">Ana</span></h3>
+                <h4>Marketing digital y ventas</h4>
+              </li>
+              <li>
+                <p>
+                  <span class="text-gradient-yellow-green">Colores:</span>
+                  <span>Azul</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="text-gradient-yellow-green">Comida:</span>
+                  <span>Cualquiera que sea asiática</span>
+                </p>
+              </li>
+              <li>
+                <hr class="thick">
+              </li>
+              <li>
+                <p>
+                  Friki del mundo japo, su sueño es aprender a tocar el piano y hablar japonés - coreano.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- FIN CONTENIDO PRINCIPAL -->
+{% endblock %}
+
+{% block svg %}
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+        <stop offset="20%" stop-color="#FF7200"></stop>
+        <stop offset="70%" stop-color="#B362FF"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="multicolor" x1="1" x2="0" y1="1" y2="0">
+        <stop offset="20%" stop-color="#ff5959"></stop>
+        <stop offset="35%" stop-color="#29d0be"></stop>
+        <stop offset="50%" stop-color="#e1f549"></stop>
+        <stop offset="70%" stop-color="#6cb8ea"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+{% endblock %}

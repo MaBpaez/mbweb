@@ -1,0 +1,170 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Blog Personalizado | mbSocialWeb{% endblock %}
+{% block description %}Blog totalmente personalizado para que puedas diferenciarte del resto de la competencia.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/blog/blog-personalizado-mbSocialWeb.png{% endblock %}
+{% block facebooktitle %}Blog Personalizado | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Blog totalmente personalizado para que puedas diferenciarte del resto de la competencia.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/blog/blog-personalizado-mbSocialWeb.png{% endblock %}
+{% block twittertitle %}Blog Personalizado| mbSocialWeb{% endblock %}
+{% block twitterdescription %}Blog totalmente personalizado para que puedas diferenciarte del resto de la competencia.{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/diseno-web.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/customblog/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+<div class="cabecera">
+  <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" version="1.1" viewBox="0 0 100 100"
+    class="figura-top-right-pencil">
+    <g>
+      <path fill="#fff" d="M81.27 58.22H41.54l19.98-34.99.74-.7 14.95 14.52 4.06 21.17z"></path>
+      <path
+        d="M130.64 23.79a7 7 0 0 0-9.55-2.74l-43.24 24a7 7 0 0 0-2.74 9.55 7 7 0 0 0 9.55 2.74l43.24-24a7 7 0 0 0 2.74-9.55z"
+        fill="#6cb8ea"></path>
+      <path
+        d="M123.84 11.52a7 7 0 0 0-9.55-2.74L71 32.78a7 7 0 0 0-2.74 9.55 7 7 0 0 0 9.55 2.74l43.24-24a7 7 0 0 0 2.79-9.55z"
+        fill="#e1f549"></path>
+      <path
+        d="M117-.75c-1.88-3.39-.86-7.58-4.25-5.7l-48.54 27a7 7 0 0 0-2.74 9.55 7 7 0 0 0 9.55 2.74l43.24-24A7 7 0 0 0 117-.75z"
+        fill="#ff5959"></path>
+      <path fill="#808184" d="M63.28 58.22H41.54l10.87-19.05 10.87 19.05z"></path>
+    </g>
+  </svg>
+
+  <header class="page-header">
+    <h1>Blog Personal</h1>
+    <div class="page-intro">
+      <p>
+        Los blogs son ante todo un medio de comunicación que te permite tanto a empresas como a usuarios ofrecer tus
+        novedades, productos y/o servicios a tus seguidores.
+      </p>
+      <p>
+        <span class="text-gradient-2 f-bold">Nosotros diseñamos tu blog de manera totalmente personalizada</span> para
+        que puedas diferenciarte del resto de blogs de la competencia.
+      </p>
+      <p>
+        La mayoría de las consultas a los blogs se realizan desde dispositivos móviles por lo que hoy en día es
+        fundamental que tengan un buen diseño responsive.
+      </p>
+    </div>
+    <svg viewBox="0 0 100 20" class="header-line-only-purple">
+      <path d="M 0 20 L 90 20 Q 100 20 100 10 L 100 0">
+      </path>
+    </svg>
+  </header>
+
+</div>
+
+<!-- Llamada a la acción -->
+<p class="center-align pt-2 mt-4">
+  <a data-target="modal1" class="button-mb modal-trigger">Solicita Presupuesto</a>
+</p>
+
+<main>
+  <!-- Introducción -->
+  <div class="intro-blog section">
+    <header>
+      <h1 class="fs-32-b">La importancia de tener un blog</h1>
+      <div class="content-intro-blog">
+        <p>
+          Todavía hay muchas empresas hoy en día que pretenden vender y promocionar sus productos o servicios en
+          Internet y no contemplan la posibilidad de tener un blog. Muchos de estos empresarios, dicen que no les hace
+          falta un blog para poder promocionar su negocio en Internet.
+        </p>
+        <p>
+          En marketing existe una regla que muchos la llamamos la regla 80/20. El nombre es debido a que, de todo el
+          mundo que navega por internet o hace una consulta en Google, tan solo el 20% está preparado para comprar un
+          producto o contratar un servicio.
+        </p>
+        <p>
+          El 80% restante, no sabe aún lo que quiere o lo que necesita o ni siquiera si lo necesita. Tan solo está
+          buscando información. Eso significa, que si en tu blog resuelves las principales dudas o das una solución a
+          los problemas típicos de tus potenciales clientes, vas a poder atraer a ese 80% de usuarios restante.
+        </p>
+      </div>
+    </header>
+  </div>
+  <!-- fin introduccion -->
+
+  <section class="section pt-2 mt-4 shape-morph">
+    <div class="blog-personal-grid">
+      <!-- Item--1 -->
+      <div class="item--blog-personal">
+        <h2 class="item--blog-personal-title nm text-gradient"><span class="text-gradient-yellow-green"># </span>Imagen
+          de Marca</h2>
+        <p class="ptr-2">
+          Gracias al blog se refuerza la imagen de marcar, presentar nuevos productos y sobre todo conocer la opinión
+          de los consumidores puesto que podemos habilitar comentarios.
+        </p>
+      </div>
+
+      <!-- Item--2 -->
+      <div class="item--blog-personal">
+        <h2 class="item--blog-personal-title nm text-gradient"><span class="text-gradient-yellow-green"># </span>Visitas
+          a tu web</h2>
+        <p class="ptr-2">
+          Con un contenido original y actualizado conseguirás nuevas visitas a tu página web.
+        </p>
+      </div>
+
+      <!-- Item--3 -->
+      <div class="item--blog-personal">
+        <h2 class="item--blog-personal-title nm text-gradient"><span class="text-gradient-yellow-green">#</span>Ventajas
+        </h2>
+        <ul class="blog-personal-ventajas ptr-2">
+          <li>
+            <p>La empresa gana confianza de los usuarios.</p>
+          </li>
+          <li>
+            <p>Se consigue llegar a un número de seguidores fieles.</p>
+          </li>
+          <li>
+            <p>Con el blog se consigue tener la página web con contenido actualizado.</p>
+          </li>
+          <li>
+            <p>Es un medio de atención a los clientes.</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Item--4 -->
+      <div class="item--blog-personal">
+        <h2 class="item--blog-personal-title nm text-gradient"><span class="text-gradient-yellow-green">#
+          </span>Comunicación</h2>
+        <p class="ptr-2">
+          Los blogs son un medio perfecto de comunicación de las últimas
+          novedades de la empresa con los clientes. Mantén a tus clientes
+          informados de todas tus novedades, ofertas, promociones y darás un valor añadido.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- FIN CONTENIDO PRINCIPAL -->
+</main>
+{% endblock %}
+
+{% block svg %}
+<svg width="0" height="0">
+  <defs>
+    <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+      <stop offset="20%" stop-color="#FF7200"></stop>
+      <stop offset="70%" stop-color="#B362FF"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Dominios y Alojamiento Web | mbSocialWeb{% endblock %}
+{% block description %}Un web hosting ofrece ese espacio para alojar tus páginas web y que puedan estar disponibles las 24h del día.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/disenoWeb/web-hosting-diseno-web-a-medida-en-malaga-mbsocialweb.jpg{% endblock %}
+{% block facebooktitle %}Dominios y Alojamiento Web | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Un web hosting ofrece ese espacio para alojar tus páginas web y que puedan estar disponibles las 24h del día.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/disenoWeb/web-hosting-diseno-web-a-medida-en-malaga-mbsocialweb.jpg{% endblock %}
+{% block twittertitle %}Dominios y Alojamiento Web | mbSocialWeb{% endblock %}
+{% block twitterdescription %}Un web hosting ofrece ese espacio para alojar tus páginas web y que puedan estar disponibles las 24h del día.{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/diseno-web.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/hosting/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+<div class="cabecera box-with-bottom-radius hosting-web">
+  <header class="page-header">
+    <h1>Dominios y Alojamiento Web</h1>
+
+    <p>
+      <span class="text-gradient-3 f-bold">Un buen nombre de dominio marca la diferencia.</span>
+    </p>
+    <p>
+      <span class="text-gradient-3 f-bold">¿Qué es el web hosting?</span> Piensa en las carpetas y los archivos que
+      almacenas en tu ordenador y cómo éstos se almacenan en el disco duro de tu equipo para que siempre estén
+      accesibles.
+    </p>
+    <p>
+      Un web hosting ofrece ese espacio para alojar tus páginas web y que puedan estar disponibles las 24h del día y
+      desde cualquier parte del mundo.
+    </p>
+    <p>
+      Nosotros gestionaremos toda la contratación pero siempre en tu nombre además de toda la configuración.
+    </p>
+  </header>
+</div>
+
+<div class="box-with-gradient-purple">
+  <div class="box-gradient-content page-header">
+    <h2>Nos gusta crear páginas diferentes, Webs originales y únicas, que desarrollen ideas innovadoras.</h2>
+  </div>
+</div>
+
+<!-- Llamada a la acción -->
+<p class="center-align pt-2 mt-4">
+  <a data-target="modal1" class="button-mb modal-trigger">Solicita Presupuesto</a>
+</p>
+
+<main>
+  <!-- CONTENIDO PRINCIPAL -->
+  <section class="web-hosting section">
+    <div class="web-hosting-grid">
+      <div class="item--web-hosting">
+        <header class="item--web-hosting-content">
+          <h2 class="text-gradient-purple">Certificados SSL</h2>
+          <p>
+            SSL (Secure Socket Layer) brinda seguridad al visitante de tu página web al garantizarles que el sitio es
+            auténtico, real y confiable para ingresar datos personales.
+          </p>
+        </header>
+      </div>
+
+      <div class="item--web-hosting">
+        <header class="item--web-hosting-content">
+          <h2 class="text-gradient-purple">Servidores Fiables</h2>
+          <p>
+            Nuestros proveedores de hospedaje son los mejores del mercado y del más alto rendimiento para ayudarte a
+            tener éxito.
+          </p>
+        </header>
+      </div>
+
+      <div class="item--web-hosting">
+        <header class="item--web-hosting-content">
+          <h2 class="text-gradient-purple">Registro de Dominio</h2>
+          <p>
+            El primer paso para introducir tu negocio en el mundo de Internet es el registro de nombre de dominio. Al
+            hacerlo no solo estás protegiendo tu marca, también otorgas una imagen profesional a tu empresa.
+          </p>
+        </header>
+      </div>
+    </div>
+  </section>
+  <!-- FIN CONTENIDO PRINCIPAL -->
+</main>
+{% endblock %}
+
+{% block svg %}
+<svg width="0" height="0">
+  <defs>
+    <linearGradient id="yellow-to-purple" x1="1" x2="0" y1="1" y2="0">
+      <stop offset="20%" stop-color="#FF7200" />
+      <stop offset="70%" stop-color="#B362FF" />
+    </linearGradient>
+  </defs>
+</svg>
+{% endblock %}

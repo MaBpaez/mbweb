@@ -1,0 +1,826 @@
+/* MÓDULO DISEÑO WEB
+========================================================================== */
+
+/**
+ *********************** DISEÑO WEB A MEDIDA ***********************
+ */
+
+.box-with-bottom-radius {
+  background-color: #181818;
+  border-bottom-right-radius: 200px;
+  padding: 2rem 0 6rem;
+  /* Importante para las imágenes de fondo */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.box-with-gradient-purple {
+  position: relative;
+  background-image: -webkit-linear-gradient(to right, #fc8701, #dd215d);
+  background-image: linear-gradient(to right, #fc8701, #dd215d);
+  padding: calc(200px + 1rem) 2rem 0 2rem;
+  margin-top: -200px;
+}
+
+.web-a-medida::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 75%;
+  height: 90%;
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #181818),
+    url('../img/disenoWeb/web-personalizada.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 0.75;
+}
+
+.box-with-bottom-radius .page-header p {
+  color: #c2c2c2;
+  max-width: 600px;
+  text-shadow: 1px 1px 3px #201c29;
+}
+
+.box-with-bottom-radius .page-header p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.box-gradient-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-gradient-content.page-header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.box-gradient-content p {
+  margin-bottom: 1rem;
+}
+
+.box-gradient-content h2,
+.box-gradient-content h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  /* Con este text-shadow la calidad del texto gana un 100% */
+  text-shadow: 1px 1px 3px #201c29;
+}
+
+.intro-custom-web-development {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.custom-web-header {
+  display: grid;
+  grid-template-columns: auto;
+  max-width: 1284px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.custom-web-header > div {
+  padding: 0 2rem 2rem 0;
+  color: #c2c2c2;
+}
+
+.custom-web-header > div > h2 {
+  color: #fff;
+}
+
+.separador-grupo {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 1248px;
+  margin: 0 1rem;
+}
+
+.titulo-separador {
+  position: relative;
+  font-size: 35px;
+  font-family: "Poppins", sans-serif;
+  line-height: 40px;
+  padding: 0 0 20px;
+  text-align: center;
+}
+
+.titulo-separador span {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+}
+
+.titulo-separador > span::after,
+.titulo-separador > span::before {
+  display: block;
+  position: absolute;
+  top: 18px;
+  content: "";
+}
+
+.titulo-separador > span::before {
+  right: 100%;
+  background-image: -webkit-linear-gradient(340deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  background-image: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  height: 4px;
+}
+
+.titulo-separador > span::after {
+  left: 100%;
+  background-image: -webkit-linear-gradient(340deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  background-image: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  height: 4px;
+}
+
+.wrapp-poligon {
+  position: relative;
+  width: 100%;
+  height: 70px;
+}
+
+.poligon {
+  position: absolute;
+  /* bottom: 0; */
+  bottom: -0.5px;
+  width: 100%;
+  height: 5vw;
+}
+
+.list-of-advantages {
+  display: inline-block;
+  border-radius: 8px;
+  border-left: 2px solid #303030;
+  counter-reset: a;
+  padding: 0 1em !important;
+}
+
+.list-of-advantages > li {
+  position: relative;
+  padding-left: 1.588em;
+}
+
+.list-of-advantages > li p {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  margin: 1.46rem 0 1.168rem 0;
+  line-height: 112%;
+}
+
+.list-of-advantages > li:first-child p {
+  margin-top: 0;
+}
+
+.list-of-advantages > li:last-child p {
+  margin-bottom: 0;
+}
+
+.list-of-advantages > li::before {
+  position: absolute;
+  left: 0;
+  background-color: #ffb600;
+  color: #141414;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  counter-increment: a;
+  content: counter(a);
+}
+
+.custom-web-advantages,
+.custom-web-development {
+  position: relative;
+}
+
+.custom-web-advantages > h2,
+.important-design-content > h2 {
+  position: relative;
+}
+
+.web-features {
+  background-color: #fff;
+  padding-bottom: 8rem;
+}
+
+.wrapp-poligon.bottom {
+  height: 0;
+}
+
+.web-features-grid {
+  display: grid;
+  background-color: #fff;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+  max-width: 1248px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.item--web-features {
+  padding: 10px;
+}
+
+.item--web-features:nth-child(5) {
+  display: none;
+}
+
+.item--web-features:nth-child(6) {
+  display: none;
+}
+
+.num-feature {
+  color: #141414;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  content: "01";
+  letter-spacing: 10px;
+}
+
+.item--web-feature-content {
+  display: flex;
+  color: #141414;
+}
+
+.item--web-features:first-child .item--web-feature-content h2,
+.item--web-features:nth-child(4) .item--web-feature-content h2 {
+  border-right: 2px solid #141414;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-right: 20px;
+  padding-right: 20px;
+  text-transform: uppercase;
+}
+
+.item--web-features:nth-child(2) .num-feature,
+.item--web-features:nth-child(3) .num-feature {
+  text-align: center;
+}
+
+.item--web-features:nth-child(2) .item--web-feature-content,
+.item--web-features:nth-child(3) .item--web-feature-content {
+  flex-direction: column;
+}
+
+.item--web-features:nth-child(2) .item--web-feature-content h2,
+.item--web-features:nth-child(3) .item--web-feature-content h2 {
+  align-self: center;
+  border-bottom: 2px solid #141414;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  width: 62%;
+}
+
+/* GOTA */
+
+.shape-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#contenedor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: url(#goo);
+}
+
+.contenedor-1,
+.contenedor-2 {
+  position: absolute;
+  bottom: 0;
+  height: 28px;
+  width: 28px;
+  background-color: #6bb7ea;
+}
+
+.contenedor-2 {
+  bottom: 18px;
+  left: 29%;
+  width: 46px;
+  height: 20px;
+}
+
+@keyframes anim_bottom {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: -300px;
+  }
+}
+
+.contenedor-1 {
+  left: 29%;
+  border-radius: 100%;
+  animation: anim_bottom 1.3s cubic-bezier(1, 0.19, 0.66, 0.12) 0.5s infinite;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ *********************** DOMINIOS Y ALOJAMIENTO WEB ***********************
+ */
+
+.hosting-web {
+  position: relative;
+}
+
+.hosting-web::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 75%;
+  height: 90%;
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.17), #181818),
+    url('../img/disenoWeb/hosting_mbsocialweb.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  /* opacity: 0.75; */
+  z-index: -1;
+}
+
+.web-hosting-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+  margin: auto;
+  max-width: 1248px;
+  padding: 2rem;
+  width: 100%;
+}
+
+.item--web-hosting {
+  background-color: #0f0f0f;
+  border: 2px solid hsla(0,0%,100%,.2);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.item--web-hosting-content > h2 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.56rem;
+  font-weight: 700;
+  margin-top: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/**
+ *********************** LANDING PAGES  ***********************
+ */
+
+.landing-page {
+  position: relative;
+}
+
+.landing-page::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 75%;
+  height: 90%;
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #181818),
+    url('../img/disenoWeb/space-travel.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+.landing-page-grid {
+  display: grid;
+  grid-template-columns: auto;
+  max-width: 1248px;
+  margin: 6% auto 0 0;
+  width: 100%;
+  color: #c2c2c2;
+}
+
+.item--landing-page-grid {
+  padding: 20px;
+}
+
+.item--landing-page-grid img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.item--landing-page-grid > h2 {
+  font-size: 1.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.item--landing-page-grid ul h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.item--landing-page-grid:first-child {
+  display: none;
+  position: relative;
+  background-image: url('../img/disenoWeb/Landing-page-mbsocialweb-diseno-web.png');
+  background-position: 316px top;
+  background-size: cover;
+  padding: 0;
+}
+
+.item--landing-page-grid:first-child::before {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  background-color: #e1f549;
+  content: "";
+  width: 60px;
+  height: 20px;
+}
+
+.item--landing-page-grid:nth-child(2) {
+  margin-top: 2.78rem;
+}
+
+.item--landing-page-grid:nth-child(2) > h2 {
+  margin: 0 0 2.5rem 0;
+}
+
+.item--landing-page-grid:nth-child(2) ul {
+  counter-reset: a;
+}
+
+.item--landing-page-grid:nth-child(2) ul > li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.item--landing-page-grid:nth-child(2) ul > li::before {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#e1f549), to(#29d0be));
+  background: linear-gradient(to right, #e1f549, #29d0be);
+  color: #000;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  counter-increment: a;
+  content: counter(a);
+}
+
+.item--landing-page-grid:nth-child(3) {
+  position: relative;
+  align-self: flex-start;
+}
+
+.item--landing-page-grid:nth-child(3)::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 12px;
+  content: "";
+  width: 10px;
+  height: 100%;
+  background-color: #6cb8ea;
+}
+
+.item--landing-page-grid:nth-child(3) p:first-child {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 29px;
+  margin-top: 33px;
+  padding-left: 62px;
+}
+
+.item--landing-page-grid:nth-child(3) p:first-child::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 29px;
+  background-image: url('../img/quote-left.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: 40px;
+  width: 51px;
+}
+
+.item--landing-page-grid:nth-child(3) p:first-child::after {
+  display: block;
+  position: absolute;
+  right: 36px;
+  bottom: -33px;
+  background-image: url(../img/quote-right.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: 40px;
+  width: 51px;
+}
+
+/**
+ *********************** BLOG PERSONALIZADO ***********************
+ */
+
+.intro-blog {
+  width: 95%;
+  max-width: 1248px;
+  margin: auto;
+}
+
+.content-intro-blog {
+  column-count: 1;
+  column-gap: 40px;
+  column-rule: 4px double lightblue;
+  color: #c2c2c2;
+  text-shadow: 1px 1px 3px #201c29;
+}
+
+.intro-blog .content-intro-blog p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.blog-personal-grid {
+  display: grid;
+  background-image: -webkit-linear-gradient(340deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  background-image: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  border-radius: 16px;
+  grid-template-columns: auto;
+  width: 95%;
+  max-width: 1248px;
+  margin: auto;
+  padding: 1px;
+  grid-gap: 1px;
+}
+
+.item--blog-personal {
+  /* background-color: #2d2b55; */
+  background-color: #0f0f0f;
+  color: #c2c2c2;
+  padding: 2rem;
+}
+
+.item--blog-personal:first-child {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.item--blog-personal:last-child {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.item--blog-personal-title {
+  display: inline-block;
+  position: relative;
+}
+
+.item--blog-personal-title::after {
+  position: absolute;
+  bottom: -7px;
+  left: calc(19px + 0.25rem);
+  content: "";
+  background: -webkit-gradient(linear, left top, right top, from(#e1f549), to(#29d0be));
+  background: linear-gradient(to right, #e1f549, #29d0be);
+  width: 50%;
+  height: 1px;
+}
+
+h2.item--blog-personal-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.blog-personal-ventajas {
+  counter-reset: a;
+}
+
+.blog-personal-ventajas > li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 12px;
+}
+
+.blog-personal-ventajas > li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#e1f549), to(#29d0be));
+  background: linear-gradient(to right, #e1f549, #29d0be);
+  color: #000;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  counter-increment: a;
+  content: counter(a);
+}
+
+/**
+ ************************ DISEÑO PORTFOLIOS ************************
+ */
+
+.portfolio-design {
+  position: relative;
+}
+
+.portfolio-design::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 75%;
+  height: 90%;
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #181818),
+    url('../img/disenoWeb/mbsocialweb-diseno-portfolio-malaga.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: auto;
+  width: 100%;
+  max-width: 1248px;
+  margin: auto;
+  grid-gap: 10px;
+}
+
+.item--portfolio {
+  border-radius: 16px;
+  padding: 0 20px 20px;
+}
+
+.item--portfolio .slides li {
+  border-radius: 8px;
+}
+
+.item--portfolio .slider .slides {
+  background-color: transparent;
+}
+
+.item--portfolio div > p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.item--portfolio:nth-child(5) #wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -72px;
+  margin: auto;
+}
+
+/**
+ ************************ MANTENIMIENTO WEB ************************
+ */
+
+.web-maintenance::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 52%;
+  height: 90%;
+  background-image: radial-gradient(50% 100% at center,rgba(0,0,0,.05),#181818),
+    url('../img/disenoWeb/matenimiento-web-mbsocialweb.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.curve-text {
+  width: 200px;
+  height: 200px;
+  -webkit-transform: rotate(208deg);
+  transform: rotate(208deg);
+  font-size: 29px;
+}
+
+#curve {
+  fill: transparent;
+}
+
+text {
+  fill: url(#orange-to-purple);
+}
+
+.web-maintenance-grid {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  width: 100%;
+  max-width: 1248px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.web-maintenance-grid::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 75%;
+  height: 90%;
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #181818),
+    url('../img/disenoWeb/web-hosting-diseno-web-a-medida-en-malaga-mbsocialweb.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+.item--web-maintenance p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.item--web-maintenance:nth-child(4) {
+  align-self: flex-start;
+}
+
+.item--web-maintenance:first-child .curve-text,
+.item--web-maintenance:nth-child(5) .curve-text {
+  top: 28px;
+  -webkit-transform: rotate(100deg);
+  transform: rotate(100deg);
+}
+
+.item--web-maintenance:nth-child(3) .curve-text {
+  top: 15px;
+}
+
+.item--web-maintenance:first-child,
+.item--web-maintenance:nth-child(3),
+.item--web-maintenance:nth-child(5) {
+  text-align: center;
+}
+
+.item--web-maintenance:nth-child(2),
+.item--web-maintenance:nth-child(4),
+.item--web-maintenance:last-child {
+  background: #000 radial-gradient(50% 2527.16% at 48.27% 50%,hsla(0,0%,100%,.09) 0,hsla(0,0%,100%,.09) 100%);
+  border: 2px solid #da1b60;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.arc {
+  display: none;
+  background-color: rgba(15, 15, 15, 0.52);
+  border-radius: 184px 0 0 184px;
+  width: 50%;
+  height: 100%;
+}

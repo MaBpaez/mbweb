@@ -1,0 +1,594 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+{% load pwa %}
+
+<head>
+  <!-- Metadatos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content='{% block description %}{% endblock %}'>
+  {% block metarobots %}{% endblock metarobots %}
+  <!-- {% if not tag and not category and not page %}<link rel="canonical" href="{{ CANONICAL_PATH }}"/>{% endif %} -->
+  {% if CANONICAL %}
+  <link rel="canonical" href="{{ CANONICAL_PATH }}">{% endif %}
+
+  <!-- geolocalización-->
+  <meta name="geo.region" content="ES-MA" />
+  <meta name="geo.placename" content="Alora, Málaga, España" />
+  <meta name="geo.position" content="36.8235141;-4.7059586999999965" />
+
+  <title>{% block title %}{% endblock title %}</title>
+
+  <!-- Metadatos para Facebook -->
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:type" content="{% if request.path == '/' %}website{% else %}article{% endif %}" />
+  <meta property="og:title" content="{% block facebooktitle %}{% endblock %}" />
+  <meta property="og:description" content="{% block facebookdescription %}{% endblock %}">
+  <meta property="og:image" content="https://www.mbsocialweb.net{% block facebookimage %}{% endblock %}">
+  <meta property="og:url" content="https://www.mbsocialweb.net{{ request.path }}" />
+  <meta property="og:site_name" content="mbSocialWeb" />
+
+  <!-- Metadatos para Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content='https://www.mbsocialweb.net{% block twitterimage %}{% endblock %}'>
+  <meta name="twitter:site" content="@mbsocialweb">
+  <meta name="twitter:title" content='{% block twittertitle %}{% endblock %}'>
+  <meta name="twitter:description" content='{% block twitterdescription %}{% endblock %}'>
+
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Pwa -->
+  {% progressive_web_app_meta %}
+
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'core/img/favicon.svg' %}">
+
+  <!-- Preload para mejorar LCP (Large Contentful Paint) -->
+  {% block lcp %}{% endblock lcp %}
+
+  <!-- Iconos -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css"
+    integrity="sha512-f2MWjotY+JCWDlE0+QAshlykvZUtIm35A6RHwfYZPdxKgLJpL8B+VVxjpHJwZDsZaWdyHVhlIHoblFYGkmrbhg=="
+    as="style" crossorigin="anonymous" referrerpolicy="no-referrer" onload="this.onload=null;this.rel='stylesheet'"/>
+
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.min.css"
+    integrity="sha512-f2MWjotY+JCWDlE0+QAshlykvZUtIm35A6RHwfYZPdxKgLJpL8B+VVxjpHJwZDsZaWdyHVhlIHoblFYGkmrbhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" /></noscript>
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS -->
+  <link rel="preload" href="{% static 'core/css/materialize.min.css' %}" as="style">
+  <link rel="preload" href="{% static 'core/css/main.css' %}" as="style">
+  <link rel="preload" href="{% static 'core/css/mb-query.css' %}" as="style">
+  {% block css %}{% endblock css %}
+  <link rel="stylesheet" href="{% static 'core/css/materialize.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+  {% block csspage %}{% endblock csspage %}
+  <link rel="stylesheet" href="{% static 'core/css/mb-query.css' %}">
+
+  <!-- Google recaptcha -->
+  {% block recaptcha %}{% endblock recaptcha %}
+
+  {% block scriptparallax %}{% endblock scriptparallax %}
+</head>
+
+<body>
+  {% block grecaptcha %}{% endblock grecaptcha %}
+  <header>
+
+    <div class="navbar-fixed">
+      <ul id="social-media" class="dropdown-content">
+        <li><a href="{% url 'social-media:fbshop' %}">Tiendas en Facebook e Instagram</a></li>
+        <li><a href="{% url 'social-media:creation-network' %}">Gestión Redes Sociales</a></li>
+        <li class="divider"></li>
+        <li><a href="{% url 'social-media:appsfb' %}">Aplicaciones en Facebook</a></li>
+        <li><a href="{% url 'social-media:smcontent' %}">Contenido en Redes Sociales</a></li>
+      </ul>
+
+      <ul id="marketing-digital" class="dropdown-content">
+        <li><a href="{% url 'marketing-online:ads' %}">Campañas de Google Ads</a></li>
+        <li><a href="{% url 'marketing-online:email-marketing' %}">Campañas e-mail Marketing</a></li>
+        <li><a href="{% url 'marketing-online:social-ads' %}">Publicidad Redes Sociales</a></li>
+        <li class="divider"></li>
+        <li><a href="{% url 'marketing-online:seo' %}">Posicionamiento SEO</a></li>
+        <li><a href="{% url 'marketing-online:google-business' %}">Google my Business</a></li>
+        <li><a href="{% url 'marketing-online:analitic-web' %}">Analítica Web</a></li>
+      </ul>
+
+      <ul id="diseno-web" class="dropdown-content">
+        <li><a href="{% url 'web-design:custom-web' %}">Diseño web a medida</a></li>
+        <li><a href="{% url 'web-design:hosting' %}">Dominio y alojamiento web</a></li>
+        <li><a href="{% url 'web-design:landing' %}">Creación de landing pages</a></li>
+        <li class="divider"></li>
+        <li><a href="{% url 'web-design:custom-blog' %}">Tu blog personalizado</a></li>
+        <li><a href="{% url 'web-design:portfolio' %}">Diseño de portfolio</a></li>
+        <li><a href="{% url 'web-design:web-maintenance' %}">Mantenimiento web</a></li>
+      </ul>
+
+      <ul id="diseno-grafico" class="dropdown-content">
+        <li><a href="{% url 'graphic-design:corporate-image' %}">Diseño imagen corporativa</a></li>
+        <li><a href="{% url 'graphic-design:logotipo' %}">Creación de logotipos</a></li>
+      </ul>
+
+      <nav>
+        <div class="nav-wrapper container">
+          <!-- Logotipo -->
+          <a href="{% url 'home' %}" aria-label='Página de inicio'>
+            <div class="brand-logo"></div>
+          </a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+          <!-- Desktop -->
+          <ul class="right hide-on-med-and-down desk">
+            <li {% if request.path|slice:":14" == '/social-media/' %}class="tab-active"{% endif %}>
+              <a href="#"><i class="material-icons left">chat</i>Social Media</a>
+
+              <div class="submenu">
+                <ul>
+                  <li><a href="{% url 'social-media:fbshop' %}">Tiendas en Facebook e Instagram</a></li>
+                  <li>
+                    <a href="{% url 'social-media:creation-network' %}">Gestión Redes Sociales</a>
+                  </li>
+                  <li><a href="{% url 'social-media:appsfb' %}">Aplicaciones en Facebook</a></li>
+                  <li><a href="{% url 'social-media:smcontent' %}">Contenido en Redes Sociales</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li {% if request.path|slice:":18" == '/marketing-online/' %}class="tab-active"{% endif %}>
+              <a href="#"><i class="material-icons left">share</i>Marketing Digital</a>
+
+              <div class="submenu">
+                <ul>
+                  <li><a href="{% url 'marketing-online:ads' %}">Campañas de Google Ads</a></li>
+                  <li><a href="{% url 'marketing-online:email-marketing' %}">Campañas e-mail Marketing</a></li>
+                  <li><a href="{% url 'marketing-online:social-ads' %}">Publicidad Redes Sociales</a></li>
+                  <li><a href="{% url 'marketing-online:seo' %}">Posicionamiento SEO</a></li>
+                  <li><a href="{% url 'marketing-online:google-business' %}">Google my Business</a></li>
+                  <li><a href="{% url 'marketing-online:analitic-web' %}">Analítica Web</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li {% if request.path|slice:":12" == '/diseno-web/' %}class="tab-active"{% endif %}>
+              <a href="#"><i class="material-icons left">web</i>Diseño Web</a>
+
+              <div class="submenu">
+                <ul>
+                  <li><a href="{% url 'web-design:custom-web' %}">Diseño web a medida</a></li>
+                  <li><a href="{% url 'web-design:hosting' %}">Dominio y alojamiento web</a></li>
+                  <li><a href="{% url 'web-design:landing' %}">Creación de landing pages</a></li>
+                  <li><a href="{% url 'web-design:custom-blog' %}">tu blog personalizado</a></li>
+                  <li><a href="{% url 'web-design:portfolio' %}">Diseño de portfolio</a></li>
+                  <li><a href="{% url 'web-design:web-maintenance' %}">mantenimiento web</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li {% if request.path|slice:":16" == '/diseno-grafico/' %}class="tab-active"{% endif %}>
+              <a href="#"><i class="material-icons left">web_asset</i>Diseño Gráfico</a>
+
+              <div class="submenu">
+                <ul>
+                  <li><a href="{% url 'graphic-design:corporate-image' %}">Diseño imagen corporativa</a></li>
+                  <li><a href="{% url 'graphic-design:logotipo' %}">Creación de logotipos</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li {% if request.path|slice:":6" == '/blog/' %}class="tab-active"{% endif %}>
+              <a href="{% url 'blog:post-list' %}"><i class="material-icons left">assignment</i>Blog</a>
+            </li>
+
+            <li {% if request.path|slice:":12" == '/portafolio/' %}class="tab-active"{% endif %}>
+              <a href="{% url 'portfolio:portafolio' %}"><i class="material-icons left">work_outline</i>Trabajos</a>
+            </li>
+
+            <li {% if request.path|slice:":10" == '/nosotros/' %}class="tab-active"{% endif %}>
+              <a href="{% url 'about:us' %}"><i class="material-icons left">people</i>Nosotros</a>
+            </li>
+
+            <li {% if request.path|slice:":10" == '/contacto/' %}class="tab-active"{% endif %}>
+              <a href="{% url 'contact:contacto' %}"><i class="material-icons left">contact_mail</i>Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <!-- Movil -->
+    <ul class="side-nav" id="mobile-demo">
+      <li>
+        <a class="dropdown-button" href="#" data-activates="social-media">Social Media
+          <i class="material-icons right">arrow_drop_down</i></a>
+      </li>
+      <li>
+        <a class="dropdown-button" href="#" data-activates="marketing-digital">Marketing Digital
+          <i class="material-icons right">arrow_drop_down</i></a>
+      </li>
+      <li>
+        <a class="dropdown-button" href="#" data-activates="diseno-web">Diseño Web
+          <i class="material-icons right">arrow_drop_down</i></a>
+      </li>
+      <li>
+        <a class="dropdown-button" href="#" data-activates="diseno-grafico">Diseño Gráfico
+          <i class="material-icons right">arrow_drop_down</i></a>
+      </li>
+      <li><a href="{% url 'blog:post-list' %}">Blog</a></li>
+      <li><a href="{% url 'portfolio:portafolio' %}">Trabajos</a></li>
+      <li><a href="{% url 'about:us' %}">Nosotros</a></li>
+      <li><a href="{% url 'contact:contacto' %}">Contacto</a></li>
+    </ul>
+  </header>
+
+  {% block content %}{% endblock content %}
+
+  <!-- Linea Separatoria -->
+
+  <div class="row mb-line">
+    <hr class="thick">
+  </div>
+
+  <!-- Modal Structure -->
+
+  <div id="modal1" class="modal modal-fixed-footer">
+
+    <div class="modal-content">
+      <h4 class="center-align"><span class="text-gradient-2">Presupuesto sin compromiso</span></h4>
+
+      {% if form_modal.errors %}
+      <p class="pl4 text-red-form">Por favor corrija lo siguiente</p>
+      {% endif %}
+
+      <div class="row">
+        <form class="col s12" action="" method="POST">{% csrf_token %}
+
+          <div class="row">
+            <div class="input-field col s12 m6 l6">
+              {{ form_modal.nombre }}
+              <label for="id_nombre" data-error="¿Seguro que ese es su nombre?">Nombre</label>
+              {{ form_modal.nombre.errors }}
+            </div>
+
+            <div class="input-field col s12 m6 l6">
+              {{ form_modal.telefono }}
+              <label for="id_telefono" data-error="Teléfono no válido">Teléfono</label>
+              {{ form_modal.telefono.errors }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12 m6 l6">
+              {{ form_modal.email }}
+              <label for="id_email" data-error="E-mail no válido">Email</label>
+              {{ form_modal.email.errors }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              {{ form_modal.asunto }}
+              <label for="id_asunto" data-error="Asunto no válido">Asunto</label>
+              {{ form_modal.asunto.errors }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              {{ form_modal.mensaje }}
+              <label for="id_mensaje">Mensaje</label>
+              {{ form_modal.mensaje.errors }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 m6 l6">
+              {% load pages_extras %}
+              {% get_page_privacy as page %}
+
+              <p class="title-checkbox">
+                {{ form_modal.politica }}
+                <span class="custom-checkbox"></span>
+                <label for id="id_politica"><a href="{% url 'pagina:page' page.id page.title|slugify %}"
+                    aria-label="Aceptar la política de privacidad">Aceptar política de privacidad</a></label>
+              </p>
+            </div>
+
+            <div class="col s12 m6 l6">
+              <!-- reCAPTCHA input -->
+              <input type="hidden" id="g-recaptcha-response2" name="g-recaptcha-response">
+              <input type="hidden" name="modal" value="1">
+              <p class="right">
+                <button class="button-mb little" type="submit" name="action">
+                  Enviar <i class="material-icons right">send</i>
+                </button>
+              </p>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-footer valign-wrapper">
+      <a class="modal-action modal-close button-mb little">Salir</a>
+    </div>
+  </div>
+
+  <!-- Botón de las Apps -->
+
+  <div class="fixed-action-btn click-to-toggle">
+    <a class="btn-floating tooltipped" data-position="left" data-delay="50" data-tooltip="Demos">
+      <i class="large material-icons">apps</i></a>
+    <ul class="menu-btn">
+      <li>
+        <a href="https://www.facebook.com/pg/mbsocialweb.net/shop/?ref=page_internal" class="btn-floating tooltipped"
+          data-position="left" data-delay="50" data-tooltip="Demo tienda
+           Facebook"><i class="material-icons">shopping_cart</i></a>
+      </li>
+      <li>
+        <a href="https://demosmbsocialweb.pythonanywhere.com/" class="btn-floating tooltipped" data-position="left"
+          data-delay="50" data-tooltip="Demos webs corporativas">
+          <i class="material-icons">web</i></a>
+      </li>
+    </ul>
+  </div>
+
+  {% block svg %}{% endblock svg %}
+
+  <!-- Footer -->
+  <footer class="page-footer z-depth-4 mt-4">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col l5 s12 isotipo">
+          <h2 class="uppercase">datos de contacto</h2>
+          <ul class="footer-contact">
+            <li>
+              <p><i class="material-icons">store</i>C/ Escribanos, 15</p>
+            </li>
+            <li>
+              <p><i class="material-icons">smartphone</i>673 793 247</p>
+            </li>
+            <li>
+              <p>29500 Alora (Málaga)</p>
+            </li>
+            <li>
+              <p><i class="material-icons">mail</i>info@mbsocialweb.net</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col l4 s12">
+          <h2 class="uppercase">Links</h2>
+          <ul>
+
+            {% load pages_extras %}
+            {% get_page_list as page_list %}
+
+            <li class="arrow">
+              <a class="grey-text text-lighten-3" href="#">Proceso Creativo</a>
+            </li>
+
+            {% for page in page_list %}
+            <li class="arrow">
+              <a class="grey-text text-lighten-3" href="{% url 'pagina:page' page.id page.title|slugify %}"
+                rel="nofollow">
+                {{ page.title }}</a>
+            </li>
+            {% endfor %}
+
+          </ul>
+        </div>
+
+        <div class="col l3 s12">
+          <h2 class="uppercase">Redes Sociales</h2>
+
+          <div class="row">
+
+            <!-- Facebook -->
+            {% if LINK_FACEBOOK %}
+            <div class="col pl-0">
+              <a href="{{ LINK_FACEBOOK }}" aria-label="Página de Facebook"><i
+                  class="fab fa-facebook fs-30 network text-gradient"></i></a>
+            </div>
+            {% endif %}
+
+            <!-- Twitter -->
+            {% if LINK_TWITTER %}
+            <div class="col pl-0">
+              <a href="{{ LINK_TWITTER }}" aria-label="Página de Twitter"><i
+                  class="fab fa-twitter-square fs-30 network text-gradient"></i></a>
+            </div>
+            {% endif %}
+
+            <!-- Instagram -->
+            {% if LINK_INSTAGRAM %}
+            <div class="col pl-0">
+              <a href="{{ LINK_INSTAGRAM }}" aria-label="Página de Instagram"><i
+                  class="fab fa-instagram fs-30 network text-gradient"></i></a>
+            </div>
+            {% endif %}
+
+            <!-- linkedin -->
+            {% if LINK_LINKEDIN %}
+            <div class="col pl-0">
+              <a href="{{ LINK_LINKEDIN }}" arial-label="Página de Linkedin"><i
+                  class="fab fa-linkedin fs-30 network text-gradient"></i></a>
+            </div>
+            {% endif %}
+
+            <!-- Flipboard -->
+            {% if LINK_FLIPBOARD%}
+            <div class="col pl-0">
+              <a href="{{ LINK_FLIPBOARD }}" arial-label="Página de Flipboard"><i
+                  class="fab fa-flipboard fs-30 network text-gradient"></i></a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+
+      <div class="container center-align">
+        <span class="text-gradient-2">mbSocialWeb © 2019-2023 Copyright</span>
+      </div>
+    </div>
+  </footer>
+
+  <!--Import jQuery before materialize.js-->
+  <!--<script type="text/javascript" src="{% static 'core/js/jquery-3.3.1.min.js' %}"></script>-->
+  <script type="text/javascript" src="{% static 'core/js/jquery-3.6.1.min.js' %}"></script>
+  <script defer type="text/javascript" src="{% static 'core/js/materialize.min.js' %}"></script>
+  {% block script %}{% endblock script %}
+
+  <script>
+    $(document).ready(function () {
+      $(".button-collapse").sideNav();
+      $(".dropdown-button").dropdown({
+        hover: false
+      });
+      $(".modal").modal();
+      $('.tooltipped').tooltip({
+        delay: 50
+      });
+      {% if form_modal.errors %} $('#modal1').modal('open'); {% endif %}
+      {% block javascript %} {% endblock javascript %}
+    })
+  </script>
+
+  {% block map %}{% endblock map %}
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '885782698284912');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+    fbq('track', 'CompleteRegistration');
+    fbq('track', 'Search');
+    fbq('track', 'ViewContent');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=885782698284912&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115918087-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115918087-2');
+  </script>
+
+  <script>fbq('track', 'Lead');</script>
+  <script>fbq('track', 'CompleteRegistration');</script>
+  <script>fbq('track', 'Search');</script>
+  <script>fbq('track', 'ViewContent');</script>
+
+  <!-- Notificaciones push -->
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC6qUSKTAHGeFupX7j3JA8ZVwP_Ym-91us",
+      authDomain: "noti-mbsocialweb.firebaseapp.com",
+      projectId: "noti-mbsocialweb",
+      storageBucket: "noti-mbsocialweb.appspot.com",
+      messagingSenderId: "571081267257",
+      appId: "1:571081267257:web:f6d41af001fa6a8b0495e8"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Initialize Firebase Cloud Messaging and get a reference to the service
+    let messaging = firebase.messaging();
+
+    // Primero tenemos que enlazar el serviceworker
+    navigator.serviceWorker
+      .register('/serviceworker.js')
+      .then(function (register) {
+        messaging.useServiceWorker(register);
+        // solicitamos permiso para recibir notificaciones al usuario
+        messaging.requestPermission()
+          .then(function () {
+            console.log('Acepta recibir notificaicones')
+            return messaging.getToken();
+          })
+          .then(function (token) {
+            console.log(token);
+            // enviamos el token a django para guardarlo en la base de datos
+            fetch("{% url 'save_token' %}", {
+              method: 'post',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify({
+                'toke': token
+              })
+            })
+              .then(function (result) {
+                console.log('se ha guardado el token')
+              })
+              .catch(function (e) {
+                console.log(e);
+                console.log('no se ha podido guardar el token');
+              })
+          })
+          .catch(function (e) {
+            console.log('No acepta las notificaciones')
+          })
+      })
+
+    // Programamos la recepción de las notificaciones push
+    messaging.onMessage(function (payload) {
+      let data = payload;
+      console.log(data);
+
+      let title = payload.notification.title;
+      let options = {
+        body: payload.notification.body,
+        icon: payload.notification.image,
+        click_action: payload.data.contents
+      };
+      let mensaje = new Notification(title, options);
+    })
+  </script>
+</body>
+
+</html>

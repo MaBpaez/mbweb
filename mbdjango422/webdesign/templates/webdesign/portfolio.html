@@ -1,0 +1,262 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Diseño de Portfolios | mbSocialWeb{% endblock %}
+{% block description %}Cada vez es más común que se realicen portfolios o dossiers mostrando el trabajo de cada uno.{% endblock %}
+
+<!-- Metadatos para Facebook -->
+{% block facebookimage %}/static/core/img/disenoWeb/mbsocialweb-diseno-portfolio-malaga.jpg{% endblock %}
+{% block facebooktitle %}Diseño de Portfolio | mbSocialWeb{% endblock %}
+{% block facebookdescription %}Cada vez es más común que se realicen portfolios o dossiers mostrando el trabajo de cada uno.{% endblock %}
+
+<!-- Metadatos para Twitter -->
+{% block twitterimage %}/static/core/img/disenoWeb/mbsocialweb-diseno-portfolio-malaga.jpg{% endblock %}
+{% block twittertitle %}Diseño de Portfolios| mbSocialWeb{% endblock %}
+{% block twitterdescription %}Cada vez es más común que se realicen portfolios o dossiers mostrando el trabajo de cada uno.{% endblock %}
+
+{% block csspage %}<link rel="stylesheet" href="{% static 'core/css/diseno-web.css' %}">{% endblock %}
+{% block recaptcha %}<script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
+
+{% block grecaptcha %}
+  <script>
+    //global grecaptcha
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/portfolio/"}).then(function(token) {
+        document.getElementById('g-recaptcha-response2').value = token;
+      });
+    });
+  </script>{% endblock grecaptcha%}
+
+{% block content %}
+<div class="cabecera box-with-bottom-radius portfolio-design">
+  <header class="page-header">
+    <h1>Diseño de Portfolios</h1>
+
+    <p>
+      <span class="text-gradient-3 f-bold">
+        Cada vez es más común que se realicen portfolios o dossiers mostrando el trabajo de cada uno.</span>
+    </p>
+    <p>
+      Existen muchas formas de crear un portfolio, bien sea para mostrar tus trabajos como profesional o como carta de
+      presentación de tu CV. Hay distintos usos.La principal idea es mostrar de forma original y creativa tus trabajos,
+      diseños,proyectos,etc.
+    </p>
+    <p>
+      Para cada trabajo existe un portfolio adecuado, al igual que existen multitud de profesiones. Es muy habitual que
+      los portfolios varíen según el sector al que te dediques o te quieras dirigir.
+    </p>
+  </header>
+</div>
+
+<div class="box-with-gradient-purple">
+
+  <div class="box-gradient-content page-header">
+    <h2>
+      Nos gusta crear páginas diferentes, Webs originales y únicas, que desarrollen ideas innovadoras.
+    </h2>
+  </div>
+</div>
+
+<!-- Llamada a la acción -->
+<p class="center-align pt-2 mt-4">
+  <a data-target="modal1" class="button-mb modal-trigger">Solicita
+    Presupuesto</a>
+</p>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+  <section class="section">
+
+    <div class="portfolio-grid">
+      <!-- Item--1 -->
+
+      <div class="item--portfolio">
+        <header>
+          <h2 class="fs-32-b"><span class="text-gradient-2">Importancia de un Portfolio</span></h2>
+          <div>
+            <p>
+              El portfolio es una parte fundamental de tu “tarjeta de presentación”: sería como tu “carpeta online” de
+              trabajos anteriores que hayas realizado para otros clientes y que son una muestra fiel de tu experiencia
+              en el área.
+            </p>
+            <p>
+              Mejorarás tu valoración con respecto al resto de las demás personas que no posean uno, tendrás una carta
+              de presentación llamativa y de alta calidad.
+            </p>
+          </div>
+        </header>
+      </div>
+
+      <!-- Item--2 -->
+
+      <div class="item--portfolio">
+        <header>
+          <h2 class="fs-32-b"><span class="text-gradient-2">Respalda tu Experiencia</span></h2>
+          <div>
+            <p>
+              Agregar ejemplos de trabajos anteriores es una forma concreta de avalar tu experiencia en el área. Para
+              el cliente que está llevando adelante un proceso de selección, el portfolio será una referencia clave
+              antes de tomar su decisión final.
+            </p>
+          </div>
+        </header>
+      </div>
+
+      <!-- Item--3 -->
+
+      <div class="item--portfolio">
+        <header>
+          <h2 class="fs-32-b"><span class="text-gradient-2">Marketing Personal</span></h2>
+          <div>
+            <p>
+              El portfolio da al cliente una idea mucho más clara de tu forma de trabajar. A través del portfolio te
+              promocionas y vendes tu trabajo y tus habilidades, por eso es muy importante analizar el contenido.
+            </p>
+          </div>
+        </header>
+      </div>
+
+      <!-- Item--4 -->
+
+      <div class="item--portfolio">
+        <header>
+          <h2 class="fs-32-b"><span class="text-gradient-2">Calidad</span></h2>
+          <div>
+            <p>
+              Elegimos con criterio las muestras de tu trabajo a incluir. Seguramente tendrás muchos trabajos que
+              consideres relevantes, pero tampoco la idea es recargar tu perfil con ejemplos y más ejemplos 😉
+            </p>
+          </div>
+        </header>
+      </div>
+
+      <!-- Item--5 -->
+
+      <div class="item--portfolio">
+        <svg id="wrap" width="100%" height="300" viewBox="0 0 250 300">
+          <!-- imagen -->
+          <svg>
+            <path id="hourglass"
+              d="M150,150 C60,85 240,85 150,150 C60,215 240,215 150,150 Z"
+              style="stroke: white; stroke-width:5; fill:white;" />
+
+            <path id="frame"
+              d="M100,97 L200, 97 M100,203 L200,203 M110,97 L110,142 M110,158 L110,200 M190,97 L190,142 M190,158 L190,200 M110,150 L110,150 M190,150 L190,150"
+              style="stroke:lightblue; stroke-width:6; stroke-linecap:round" />
+
+            <animateTransform xlink:href="#frame" attributeName="transform"
+              type="rotate" begin="0s" dur="3s"
+              values="0 150 150; 0 150 150; 180 150 150" keyTimes="0; 0.8; 1"
+              repeatCount="indefinite" />
+            <animateTransform xlink:href="#hourglass" attributeName="transform"
+              type="rotate" begin="0s" dur="3s"
+              values="0 150 150; 0 150 150; 180 150 150" keyTimes="0; 0.8; 1"
+              repeatCount="indefinite" />
+          </svg>
+
+          <!-- arena -->
+          <svg>
+            <!-- parte superior -->
+            <polygon id="upper" points="120,125 180,125 150,147"
+              style="fill:#1E1E3F;">
+              <animate attributeName="points" dur="3s" keyTimes="0; 0.8; 1"
+                values="120,125 180,125 150,147; 150,150 150,150 150,150; 150,150 150,150 150,150"
+                repeatCount="indefinite" />
+            </polygon>
+
+            <!-- arena cayendo -->
+            <path id="line" stroke-linecap="round" stroke-dasharray="1,4"
+              stroke-dashoffset="200.00" stroke="#1E1E3F" stroke-width="2"
+              d="M150,150 L150,198">
+              <!-- arena corriendo -->
+              <animate attributeName="stroke-dashoffset" dur="3s" to="1.00"
+                repeatCount="indefinite" />
+              <!-- parte superior vacía -->
+              <animate attributeName="d" dur="3s" to="M150,195 L150,195"
+                values="M150,150 L150,198; M150,150 L150,198; M150,198 L150,198; M150,195 L150,195"
+                keyTimes="0; 0.65; 0.9; 1" repeatCount="indefinite" />
+              <!-- última gota de arena -->
+              <animate attributeName="stroke" dur="3s"
+                keyTimes="0; 0.65; 0.8; 1"
+                values="#1E1E3F;#1E1E3F;transparent;transparent"
+                to="transparent" repeatCount="indefinite" />
+            </path>
+
+            <!-- Parte inferior -->
+            <g id="lower">
+              <path d="M150,180 L180,190 A28,10 0 1,1 120,190 L150,180 Z"
+                style="stroke: transparent; stroke-width:5; fill:#1E1E3F;">
+                <animateTransform attributeName="transform" type="translate"
+                  keyTimes="0; 0.65; 1" values="0 15; 0 0; 0 0" dur="3s"
+                  repeatCount="indefinite" />
+              </path>
+              <animateTransform xlink:href="#lower" attributeName="transform"
+                type="rotate" begin="0s" dur="3s"
+                values="0 150 150; 0 150 150; 180 150 150" keyTimes="0; 0.8; 1"
+                repeatCount="indefinite" />
+            </g>
+
+            <!-- superposición inferior - reloj de arena -->
+            <path d="M150,150 C60,85 240,85 150,150 C60,215 240,215 150,150 Z"
+              style="stroke: white; stroke-width:5; fill:transparent;">
+              <animateTransform attributeName="transform" type="rotate"
+                begin="0s" dur="3s" values="0 150 150; 0 150 150; 180 150 150"
+                keyTimes="0; 0.8; 1" repeatCount="indefinite" />
+            </path>
+
+            <!-- superposición inferior - marco -->
+            <path id="frame" d="M100,97 L200, 97 M100,203 L200,203"
+              style="stroke:lightblue; stroke-width:6; stroke-linecap:round">
+              <animateTransform attributeName="transform" type="rotate"
+                begin="0s" dur="3s" values="0 150 150; 0 150 150; 180 150 150"
+                keyTimes="0; 0.8; 1" repeatCount="indefinite" />
+            </path>
+          </svg>
+
+        </svg>
+      </div>
+
+      <!-- Item--6 -->
+
+      <div class="item--portfolio">
+
+        <div class="slider">
+          <ul class="slides">
+            <li>
+              <img src="{% static 'core/img/disenoWeb/slide-one-portfolio-mbsocialweb-diseno-web.jpg' %}" alt="">
+            </li>
+            <li>
+              <img src="{% static 'core/img/disenoWeb/slide-two-portfolio-mbsocialweb.jpg' %}" alt="">
+            </li>
+            <li>
+              <img src="{% static 'core/img/disenoWeb/slide-three-mbsocialweb-diseno-portfolio.jpg' %}" alt="">
+            </li>
+            <li>
+              <img src="{% static 'core/img/disenoWeb/slide-four-diseno-portfolio-mbsocialweb.png' %}" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- FIN CONTENIDO PRINCIPAL -->
+{% endblock %}
+
+{% block svg %}
+<svg width="0" height="0">
+  <defs>
+    <linearGradient id="orange-to-purple" x1="1" x2="0" y1="1" y2="0">
+      <stop offset="20%" stop-color="#FF7200"></stop>
+      <stop offset="70%" stop-color="#B362FF"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+{% endblock %}
+
+{% block javascript %}
+ $('.carousel.carousel-slider').carousel({
+      fullWidth: true,
+      indicators: true
+    });
+    $('.slider').slider();{% endblock %}
