@@ -86,9 +86,9 @@
   height: 100%;
 }
 
-.welcome-content-message {
-  /* margin-top: 40px; */
-}
+/* .welcome-content-message { */
+/*   margin-top: 40px; */
+/* } */
 
 .welcome-content-message h2 {
   font-family: 'Calibre', sans-serif;
@@ -103,6 +103,16 @@
   margin: 80px auto 60px;
   text-align: center;
   width: 90%;
+}
+
+@media only screen and (max-width: 845px) {
+  .welcome-content {
+    grid-template-columns: 1fr;
+  }
+  .welcome-content-image,
+  .welcome-content::after {
+    display: none;
+  }
 }
 
 /**

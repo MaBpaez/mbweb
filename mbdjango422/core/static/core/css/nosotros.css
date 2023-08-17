@@ -4,7 +4,8 @@
 
 .header-about-us h2 {
   font-family: "Rubik", sans-serif;
-  font-size: 2.56rem;
+  /* font-size: clamp(1.2rem,1rem + 3.5vw,4rem); */
+  font-size: clamp(1rem,1rem + 3.5vw,2rem);
   color: #c2c2c2;
   max-width: 600px;
   text-shadow: 1px 1px 3px #201c29;
@@ -15,14 +16,26 @@
   top: 0;
   right: 0;
   content: "";
-  width: 51%;
-  height: 90%;
-  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #1e1e3f),
-    url('../img/nosotros/bg-nosotros-mbsocialweb-diseno-grafico-malaga.svg');
-  background-size: 74%;
+  width: 55%;
+  height: 100%;
+  background-image: url('../img/nosotros/equipo_trabajo.png');
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.75;
+}
+
+.about-us::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 31%;
+  bottom: 0;
+  width: 100%;
+  background-image: url('../img/cloud_gradient.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
 
 .about-us-grid,
@@ -68,7 +81,7 @@
   content: "";
   width: 10px;
   height: 60%;
-  background-color: #6cb8ea;
+  background-color: #eb5032;
   border-radius: 5px;
 }
 
@@ -116,7 +129,7 @@
 }
 
 .wrapp-circle img {
-  background-color: #1a1836;
+  background-color: #222;
   border-radius: 50%;
   height: 100%;
   -webkit-filter: grayscale(100%);
@@ -144,7 +157,7 @@
 
 .presentation {
   color: #c2c2c2;
-  border: 2px solid #4472b9;
+  border: 2px solid #df2758;
   border-radius: 8px;
   -webkit-box-shadow: -1rem 0 2rem #000;
   box-shadow: -1rem 0 2rem #000;
@@ -177,4 +190,11 @@
   font-family: "Poppins", sans-serif;
   font-style: italic;
   text-align: center;
+}
+
+@media only screen and (max-width: 790px) {
+  .about-us::before,
+  .about-us::after {
+    display: none;
+  }
 }

@@ -27,7 +27,7 @@
 
 .sidebar {
   align-self: flex-start;
-  background-color: #14142b;
+  background-color: #0f0f0f;
   background-image: url('../img/img-noise.png');
   border-radius: 8px;
   border: 2px solid #da1b60;
@@ -48,8 +48,8 @@ ul.collapsible{
 }
 
 .collapsible-header {
-  background-color: #1e1e3f;
-  border-bottom: 1px solid #2d2b55;
+  background-color: #181818;
+  border-bottom: 1px solid #0f0f0f;
   background-image: url('../img/img-noise.png');
   color: #00f4d9;
   border-top-left-radius: 5px;
@@ -424,7 +424,7 @@ ul.collapsible{
 
 /* single content item */
 .content__item {
-  background-color: #1e1e3f;
+  background-color: #181818;
   position: absolute;
   top: 0;
   width: 100%;

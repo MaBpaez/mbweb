@@ -8,7 +8,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  content: "";
+  content: '';
   width: 51%;
   height: 90%;
   background-image: url('../img/nosotros/blog-mbsocialweb.png');
@@ -18,9 +18,16 @@
   /* opacity: 0.75; */
 }
 
+@media only screen and (max-width: 790px) {
+  .blog-list::before {
+    display: none;
+  }
+}
+
 .header-blog h2 {
-  font-family: "Rubik", sans-serif;
-  font-size: 2.56rem;
+  font-family: 'Rubik', sans-serif;
+  /* font-size: 2.56rem; */
+  font-size: clamp(1rem, 1rem + 3.5vw, 2rem);
   color: #c2c2c2;
   max-width: 679px;
   text-shadow: 1px 1px 3px #201c29;
@@ -168,7 +175,7 @@
 }
 
 .pagination li.active {
-  background-color: #6bb7ea;
+  background-color: #fb8304;
 }
 
 /**
@@ -208,7 +215,7 @@
 }
 
 .item-detail:nth-child(4) > .content-detail h2 {
-  font-size: clamp(1.8rem,1.8rem + .2vw,3rem);
+  font-size: clamp(1.8rem, 1.8rem + 0.2vw, 3rem);
   margin: 0;
 }
 
@@ -272,7 +279,7 @@ article .content-detail h1::after,
 article > .content-detail h3::after,
 article > .content-detail h4::after,
 article > .content-detail p::after {
-  content: "";
+  content: '';
   display: block;
   margin-bottom: 20px;
 }
@@ -320,7 +327,7 @@ nav.bread-crumb {
   background-size: contain;
   opacity: 0.75;
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   width: 100%;
   height: 100%;

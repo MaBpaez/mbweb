@@ -4,23 +4,22 @@
 .contact::before {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 60px;
   content: "";
   width: 75%;
   height: 90%;
-  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #1e1e3f),
-    url('../img/contacto/contacto-mbsocialweb-web-corporativa.jpg');
-  background-size: cover;
+  background-image: url('../img/contacto/bg_contacto.png');
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.75;
+  background-position: right;
+  /* opacity: 0.75; */
   z-index: -1;
 }
 
 .header-contact h2,
 .header-about-us h2 {
   font-family: "Rubik", sans-serif;
-  font-size: 2.56rem;
+  font-size: clamp(1rem,1rem + 3.5vw,2rem);
   color: #c2c2c2;
   max-width: 600px;
   text-shadow: 1px 1px 3px #201c29;

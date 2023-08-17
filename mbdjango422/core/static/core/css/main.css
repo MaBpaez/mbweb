@@ -56,6 +56,10 @@ body > svg {
   height: 0;
 }
 
+.pagination li a {
+  color: #45b4ff;
+}
+
 a:active,
 :focus,
 button {
@@ -544,7 +548,7 @@ textarea.materialize-textarea:focus.invalid + label:after,
 }
 
 .text-mark {
-  color: #4472b9;
+  color: #00f4d9;
 }
 
 .text-highlight {
@@ -1432,7 +1436,8 @@ footer ul a:hover {
 }
 
 .page-header h1 {
-  font-size: clamp(1.2rem, 1rem + 3.5vw, 4rem);
+  /* font-size: clamp(1.2rem, 1rem + 3.5vw, 4rem); */
+  font-size: clamp(2rem, 2rem + 3.5vw, 4rem);
   font-weight: 700;
 }
 
@@ -1462,8 +1467,8 @@ footer ul a:hover {
 
 .box-with-gradient-purple {
   position: relative;
-  background-image: -webkit-linear-gradient(340deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
-  background-image: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  background-image: -webkit-linear-gradient(to right, #fc8701, #dd215d);
+  background-image: linear-gradient(to right, #fc8701, #dd215d);
   padding: calc(200px + 1rem) 2rem 0 2rem;
   margin-top: -200px;
 }
