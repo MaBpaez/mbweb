@@ -6,7 +6,8 @@
   top: 0;
   right: 60px;
   content: "";
-  width: 75%;
+  /*width: 75%;*/
+  width: 31%;
   height: 90%;
   background-image: url('../img/contacto/bg_contacto.png');
   background-size: contain;
@@ -19,7 +20,7 @@
 .header-contact h2,
 .header-about-us h2 {
   font-family: "Rubik", sans-serif;
-  font-size: clamp(1rem,1rem + 3.5vw,2rem);
+  font-size: clamp(1rem, 1rem + 3.5vw, 2rem);
   color: #c2c2c2;
   max-width: 600px;
   text-shadow: 1px 1px 3px #201c29;
@@ -62,7 +63,7 @@
   margin-left: 10%;
 }
 
-.contact-address > li {
+.contact-address>li {
   line-height: 1.6;
 }
 
@@ -79,4 +80,10 @@ table {
   text-shadow: 1px 1px 3px #201c29;
   text-transform: uppercase;
   width: 90%;
+}
+
+@media only screen and (max-width: 790px) {
+  .contact::before {
+    display: none;
+  }
 }
