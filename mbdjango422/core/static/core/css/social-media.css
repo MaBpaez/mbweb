@@ -76,7 +76,6 @@
   position: relative;
   padding-left: 2.3em;
   margin-bottom: 12px;
-  /* line-height: 1.75em; */
 }
 
 .things-to-do .material-icons {
@@ -93,8 +92,7 @@
   position: absolute;
   top: 0.45em;
   left: 0;
-  content: "";
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#ff8a00), to(#da1b60));
+  content: '';
   background-image: linear-gradient(to top, #ff8a00, #da1b60);
   font-size: 0.44444em;
   border-radius: 50%;
@@ -104,10 +102,9 @@
 
 .things-to-do li::after {
   position: absolute;
-  /* top: 0; */
   top: 2px;
   left: 0.27em;
-  content: "\2714";
+  content: '\2714';
   color: #fff;
   font-size: 1em;
 }
@@ -118,7 +115,7 @@
 
 .fb-ads {
   background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.75), #181818),
-    url("../img/socialMedia/Facebook-Ads-mbsocialweb-redes-sociales-diseno-we-a-medida-logotipos.png");
+    url('../img/socialMedia/Facebook-Ads-mbsocialweb-redes-sociales-diseno-we-a-medida-logotipos.png');
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -132,9 +129,7 @@
  */
 
 .facebook-shop-image {
-  /* background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.75), #1e1e3f), */
-  /*   url("../img/socialMedia/tiendas-en-facebook-e-instagram.webp"); */
-  background-image: url("../img/socialMedia/tienda-en-facebook-e-instagram.webp");
+  background-image: url('../img/socialMedia/tienda-en-facebook-e-instagram.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -147,8 +142,16 @@
   margin: 0 auto;
   max-width: 1284px;
   width: 90%;
-  /* background-image: linear-gradient(45deg,#2d2d56 8.33%,#1a0530 0,#1a0530 50%,#2d2d56 0,#2d2d56 58.33%,#1a0530 0,#1a052f); */
-  background-image: linear-gradient(45deg,#2f302f 8.33%,#0f0f0f 0,#0f0f0f 50%,#2f302f 0,#2f302f 58.33%,#0f0f0f 0,#0f0f0f);
+  background-image: linear-gradient(
+    45deg,
+    #2f302f 8.33%,
+    #0f0f0f 0,
+    #0f0f0f 50%,
+    #2f302f 0,
+    #2f302f 58.33%,
+    #0f0f0f 0,
+    #0f0f0f
+  );
   background-size: 8.49px 8.49px;
   border-radius: 8px;
   padding: 2rem;
@@ -159,4 +162,57 @@
   color: #c2c2c2;
   padding: 1.5rem;
   border-radius: 8px;
+}
+
+/**
+ ****************** CONTENIDO REDES SOCIALES **********************
+ */
+
+.contenido-calidad-redes {
+  max-width: 1248px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  padding: 0 0.75rem;
+}
+
+.contenido-calidad-redes li {
+  position: relative;
+  padding-left: 2.3rem;
+  margin-bottom: 12px;
+}
+
+.contenido-calidad-redes li::before {
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  background-image: linear-gradient(to top, #ff8a00, #da1b60);
+  font-size: 0.44444em;
+  font-weight: 700;
+  letter-spacing: 0.013em;
+  line-height: 2.1em;
+  text-align: center;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  content: '';
+}
+
+.contenido-calidad-redes li::after {
+  position: absolute;
+  top: 0.9em;
+  left: 0.7em;
+  content: '';
+  width: 0.6em;
+  height: 1px;
+  background: #fff;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}
+
+@media (max-width: 500px) {
+  .contenido-calidad-redes {
+    grid-template-columns: auto;
+  }
 }

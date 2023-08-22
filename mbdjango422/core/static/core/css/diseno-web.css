@@ -370,7 +370,6 @@ canvas {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  /* opacity: 0.75; */
   z-index: -1;
 }
 
