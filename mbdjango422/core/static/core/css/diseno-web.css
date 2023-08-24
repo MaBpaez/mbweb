@@ -373,10 +373,50 @@ canvas {
   z-index: -1;
 }
 
+.characteristics-of-our-suppliers {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  max-width: 1248px;
+  margin: auto;
+  width: 100%;
+}
+
+.item--characteristics {
+  background-color: #0f0f0f;
+  border: 2px solid hsla(0,0%,100%,.2);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.item--characteristics figure {
+  margin: auto;
+  width: 100%;
+}
+
+.item--characteristics figure img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.item--characteristics-content > p:not(p:last-child) {
+  margin-bottom: 10px;
+}
+
+.item--characteristics-content > h2 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.56rem;
+  font-weight: 700;
+  margin-top: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .web-hosting-grid {
   display: grid;
   grid-template-columns: auto;
-  grid-gap: 10px;
+  gap: 10px;
   margin: auto;
   max-width: 1248px;
   padding: 2rem;
