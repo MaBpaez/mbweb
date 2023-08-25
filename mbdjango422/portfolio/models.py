@@ -3,8 +3,6 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
 
-# from django.urls import reverse
-
 
 # MODELOS DEL PORTAFOLIOS
 # =======================
@@ -67,12 +65,6 @@ class Work(models.Model):
         ordering = ["-publish"]
         verbose_name = "trabajo"
         verbose_name_plural = "trabajos"
-
-    # def get_absolute_url(self):
-    #     return reverse(
-    #         "portfolio:work-detail",
-    #         args=[self.publish.year, self.publish.month, self.publish.day, self.slug],
-    #     )
 
     def __str__(self):
         return self.title

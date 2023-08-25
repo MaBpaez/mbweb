@@ -80,17 +80,12 @@ h2.item-adwords-content span {
 }
 
 .item-adwords-image {
-  /* background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0), #181818), */
-    /* url('../img/marketingDigital/Google-Ads-mbsocialweb-marketing-digital.png'); */
   background-image: url('../img/marketingDigital/Online_Ads.webp');
   background-size: contain;
-  /* background-size: 100%; */
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  /* height: 200px; */
   height: 480px;
-  /* opacity: 0.75; */
   margin-top: 40px;
 }
 
@@ -102,7 +97,6 @@ h2.item-adwords-content span {
   display: none;
   position: fixed;
   top: 0;
-  /* background: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.25), #1a0530), url('../img/bg-bubbles.png'); */
   background: url('../img/bg-bubbles.png');
   background-size: cover;
   height: 1350px;

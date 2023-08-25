@@ -53,7 +53,6 @@
 .welcome-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* background-color: #0f0f0f; */
   background-color: #181818;
   grid-gap: 40px;
   padding: 40px;
@@ -85,10 +84,6 @@
   object-fit: contain;
   height: 100%;
 }
-
-/* .welcome-content-message { */
-/*   margin-top: 40px; */
-/* } */
 
 .welcome-content-message h2 {
   font-family: 'Calibre', sans-serif;

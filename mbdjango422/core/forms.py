@@ -58,4 +58,5 @@ class FormularioModal(forms.Form):
 
         if num_palabras < 4:
             raise forms.ValidationError('¡ Se requieren mínimo 4 palabras. !')
+
         return mensaje

@@ -6,10 +6,8 @@ from core.views import check_form_modal
 
 def fbshop(request):
     if request.method == 'POST' and 'modal' in request.POST:
-        # print(request.POST)
         form_modal = check_form_modal(request)
         if 'success' in form_modal:
-            # form_modal = FormularioModal()
             return redirect('form_success')
     else:
         form_modal = FormularioModal()

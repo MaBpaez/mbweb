@@ -6,14 +6,12 @@
   top: 0;
   right: 60px;
   content: "";
-  /*width: 75%;*/
   width: 31%;
   height: 90%;
   background-image: url('../img/contacto/bg_contacto.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
-  /* opacity: 0.75; */
   z-index: -1;
 }
 

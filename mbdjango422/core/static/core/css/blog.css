@@ -26,7 +26,6 @@
 
 .header-blog h2 {
   font-family: 'Rubik', sans-serif;
-  /* font-size: 2.56rem; */
   font-size: clamp(1rem, 1rem + 3.5vw, 2rem);
   color: #c2c2c2;
   max-width: 679px;
@@ -66,8 +65,6 @@
 .item--blog-content.categorias {
   grid-column-start: 1;
   grid-column-end: 2;
-  /*grid-row-start: 1;
-  grid-row-end: 6;*/
   grid-row-start: 12;
   align-self: flex-start;
 }
@@ -146,10 +143,6 @@
   text-transform: uppercase;
   margin: 0 0 20px;
 }
-
-/*.sub-category {
-  font-style: italic;
-}*/
 
 .sub-category span {
   color: #00d647;

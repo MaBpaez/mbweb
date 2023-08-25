@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-# from django.urls.base import reverse
 from core.forms import FormularioModal
 from django.conf import settings
 from core.views import check_form_modal

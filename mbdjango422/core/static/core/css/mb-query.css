@@ -126,7 +126,6 @@
   .parallax-text h2,
   .advertising blockquote h2,
   .row.social-media h2 {
-    /* font-size: 2rem; */
     font-size: 1.8rem;
   }
 }
@@ -239,8 +238,8 @@
   }
 
   /**
-      * Email Marketing
-      */
+    * Email Marketing
+    */
   .grid-container {
     grid-template-columns: auto 300px auto;
     grid-template-rows: auto 150px auto 150px auto;
@@ -269,8 +268,8 @@
   }
 
   /**
-      * LANDING PAGE
-      */
+    * LANDING PAGE
+    */
   .landing-page-grid {
     grid-template-columns: 1fr 2fr 1fr;
   }
@@ -469,7 +468,6 @@
   */
   .blob-shape {
     right: -312px;
-    /* width: 50%; */
   }
 }
 
@@ -696,10 +694,6 @@
   .welcome-content h1 {
     font-size: 4.2rem;
   }
-
-  /* .welcome-content h2 {
-    font-size: 2rem;
-  } */
 
   .advertising.container {
     width: 90%;
