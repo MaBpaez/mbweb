@@ -146,7 +146,7 @@
   fill: none;
   stroke-width: 6px;
   stroke-linecap: round;
-  stroke: #00f4d9;
+  stroke: #61ffca;
   pointer-events: none;
 }
 
@@ -183,7 +183,7 @@
 }
 
 .presentation h4 {
-  color: #e1f549;
+  color: #ffca85;
   font-size: 1rem;
   letter-spacing: 2px;
   font-family: "Poppins", sans-serif;

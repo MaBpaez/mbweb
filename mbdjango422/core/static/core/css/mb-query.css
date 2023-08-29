@@ -530,21 +530,21 @@
   }
 
   /* Posicionamiento de los item grids */
-  .services-grid .service-item:first-child,
-  .services-grid .service-item:nth-child(5) {
-    border-right: 1px solid #201c29;
-  }
+  /* .services-grid .service-item:first-child, */
+  /* .services-grid .service-item:nth-child(5) { */
+  /*   border-right: 1px solid #201c29; */
+  /* } */
 
   .services-grid .service-item:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    border-right: 1px solid #201c29;
+    /* border-right: 1px solid #201c29; */
   }
 
   .services-grid .service-item:nth-child(8) {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
-    border-right: 1px solid #201c29;
+    /* border-right: 1px solid #201c29; */
   }
 
   .contact-home {
@@ -696,7 +696,7 @@
   }
 
   .advertising.container {
-    width: 90%;
+    width: 95%;
   }
 
   .facebook-shop-image {
@@ -718,7 +718,8 @@
   /* Estilos creación redes sociales */
   .row.social-media,
   .row.mb-line {
-    width: 90%;
+    /* width: 90%; */
+    width: 96%;
   }
 
   .phone {

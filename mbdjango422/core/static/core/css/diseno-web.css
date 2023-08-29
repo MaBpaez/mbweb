@@ -62,14 +62,14 @@
   margin-bottom: 1rem;
 }
 
-.box-gradient-content h2,
-.box-gradient-content h3 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin: 0 0 1rem;
-  /* Con este text-shadow la calidad del texto gana un 100% */
-  text-shadow: 1px 1px 3px #201c29;
-}
+/* .box-gradient-content h2, */
+/* .box-gradient-content h3 { */
+/*   font-size: 1.75rem; */
+/*   font-weight: 700; */
+/*   margin: 0 0 1rem; */
+/*   /1* Con este text-shadow la calidad del texto gana un 100% *1/ */
+/*   text-shadow: 1px 1px 3px #201c29; */
+/* } */
 
 .intro-custom-web-development {
   display: flex;
