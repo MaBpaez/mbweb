@@ -446,9 +446,9 @@
   </footer>
 
   <!--Import jQuery before materialize.js-->
-  <!--<script type="text/javascript" src="{% static 'core/js/jquery-3.3.1.min.js' %}"></script>-->
   <script type="text/javascript" src="{% static 'core/js/jquery-3.6.1.min.js' %}"></script>
   <script defer type="text/javascript" src="{% static 'core/js/materialize.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
   {% block script %}{% endblock script %}
 
   <script>
@@ -588,6 +588,28 @@
       };
       let mensaje = new Notification(title, options);
     })
+  </script>
+
+  <script>
+    const lenis = new Lenis({
+      lerp: 0.12,
+      wheelMultiplier: 1,
+      infinite: false,
+      gestureOrientation: "vertical",
+      normalizeWheel: false,
+      smoothTouch: false,
+      smoothWheel: true
+    });
+
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    })
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   </script>
 </body>
 
