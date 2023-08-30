@@ -24,9 +24,16 @@
   }
 }
 
+@media (min-width: 926px) {
+  .portafolio-home .item-portafolio-home .item-portafolio-home-image {
+	  visibility:hidden;
+  }
+}
+
 
 /* PAGINA HOME
 ========================================================================== */
+
 .slick-prev {
   left: 10px;
 }
@@ -58,6 +65,7 @@
   padding: 40px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .welcome-content::after {
@@ -317,6 +325,7 @@
 }
 
 #blogSlider .card .card-image img {
+  object-fit: cover;
   height: 100%;
 }
 

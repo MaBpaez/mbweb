@@ -16,7 +16,7 @@
 
 {% block lcp %}
 <!-- <link rel="preload" href="{% static 'core/img/mbSocialWeb.webp' %}" as="image"> -->
-<link rel="preload" href="{% static 'core/img/services.webp' %}" as="image">
+<!-- <link rel="preload" href="{% static 'core/img/services.webp' %}" as="image"> -->
 {% endblock lcp %}
 
 {% block csspage %}
@@ -53,12 +53,14 @@
 
 <div class="welcome-content">
 	<div class="welcome-content-message">
-		<h1 class="text-gradient-purple">Bienvenidos a mbSocialWeb</h1>
-		<h2>
+		<h1 class="text-gradient-purple anim1">
+        Bienvenidos a mbSocialWeb
+      </h1>
+		<h2 class="anim1">
 			Somos un equipo dedicado a ayudar a nuestros clientes a alcanzar sus objetivos en línea a través de soluciones de
 			marketing y desarrollo web efectivas.
 		</h2>
-		<h2 class="mt-0">
+		<h2 class="mt-0 anim1">
 			Ofrecemos estrategias de redes sociales para aumentar su alcance y engagement con tu público objetivo.
 			Nuestro equipo de diseño y desarrollo web crea sitios web personalizados y atractivos, optimizados para
 			una experiencia de usuario excelente.
@@ -74,7 +76,7 @@
 <section class="section pt-0">
 	<!-- ESLOGAN MB -->
 	<header class="eslogan-mb">
-		<h3>Transformamos tu presencia online en una ventaja competitiva</h3>
+		<h3 id="eslogan-text">Transformamos tu presencia online en una ventaja competitiva</h3>
 	</header>
 
 	<!-- Llamada acción -->
@@ -119,22 +121,22 @@
 <!-- Portafolio Home -->
 <div class="portafolio-home">
 	<div class="item-portafolio-home">
-		<img src="{% static 'core/img/portfolio/2.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
+		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/2.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
 	</div>
 	<div class="item-portafolio-home">
-		<img src="{% static 'core/img/portfolio/3.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
+		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/3.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
 	</div>
 	<div class="item-portafolio-home">
-		<img src="{% static 'core/img/portfolio/4.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
+		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/4.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
 	</div>
 	<div class="item-portafolio-home">
-		<img src="{% static 'core/img/portfolio/5.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
+		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/5.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
 	</div>
 	<div class="item-portafolio-home">
-		<img src="{% static 'core/img/portfolio/6.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
+		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/6.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
 	</div>
 	<div class="item-portafolio-home">
-		<img src="{% static 'core/img/portfolio/7.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
+		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/7.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
 	</div>
 </div>
 
@@ -621,10 +623,14 @@
 {% endblock %}
 
 {% block script %}
+<script defer src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 <script defer src="{% static 'core/js/anime.min.js' %}"></script>
 <script defer src="{% static 'core/js/base.js' %}"></script>
-<script defer src="{% static 'core/js/shape.js' %}"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>{% endblock script %}
+<script src="{% static 'core/js/shape.js' %}"></script>
+{% endblock script %}
 
 {% block javascript %}$(".parallax").parallax();
     $(".MS-content.customers-brands").slick({
