@@ -16,21 +16,6 @@ $(document).ready(function () {
     },
   });
 
-  // t2.from('#eslogan-text', {
-  //   duration: 1,
-  //   text: {
-  //     value: '',
-  //   },
-  // });
-
-  // if (window.matchMedia('(min-width: 846px)').matches) {
-  //   t1.from('.welcome-content-image', { x: 600, duration: 1 }).from(
-  //     '.anim1',
-  //     { y: -50, opacity: 0, duration: 1, stagger: 0.2 },
-  //     '-=1',
-  //   );
-  // }
-
   // Shape Morph
   {
     class MorphingBG {
@@ -65,27 +50,28 @@ $(document).ready(function () {
   // Portafolio Gallería
   const imgzoom2 = document.querySelectorAll('.portafolio-home .item-portafolio-home');
 
-  // imgzoom2.forEach((element) => {
-  //   const contents = element.querySelectorAll('.item-portafolio-home-image');
+  imgzoom2.forEach((element) => {
+    const contents = element.querySelectorAll('.item-portafolio-home-image');
 
-  //   gsap.set(contents, { scale: 0 });
-  //   gsap.to(contents, {
-  //     duration: 1.2,
-  //     autoAlpha: 1,
-  //     scale: 1,
-  //     ease: 'power2.out',
-  //     scrollTrigger: {
-  //       trigger: element,
-  //       start: 'top bottom-=100',
-  //       end: 'bottom top+=100',
-  //       toggleActions: 'play reverse play reverse',
-  //     },
-  //   });
-  // });
+    gsap.set(contents, { y: 400 });
+    gsap.to(contents, {
+      duration: 1.2,
+      autoAlpha: 1,
+      y: 0,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom-=100',
+        end: 'bottom top+=100',
+        toggleActions: 'play',
+        // toggleActions: 'play reverse play reverse',
+      },
+    });
+  });
 
   // Media Queries
   if (window.matchMedia('(min-width: 846px)').matches) {
-    t1.from('.welcome-content-image', { x: 600, duration: 1 }).from(
+    t1.from('.welcome-content-image', { x: 600, duration: 1.5 }).from(
       '.anim1',
       { y: -50, opacity: 0, duration: 1, stagger: 0.2 },
       '-=1',
@@ -100,23 +86,15 @@ $(document).ready(function () {
       },
     });
 
-    imgzoom2.forEach((element) => {
-      const contents = element.querySelectorAll('.item-portafolio-home-image');
-
-      gsap.set(contents, { scale: 0 });
-      gsap.to(contents, {
-        duration: 1.2,
-        autoAlpha: 1,
-        scale: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: element,
-          start: 'top bottom-=100',
-          end: 'bottom top+=100',
-          // toggleActions: 'play reverse play reverse',
-          toggleActions: 'play',
-        },
-      });
-    });
+    // gsap.set('.item-portafolio-home-image', { y: 300 });
+    // ScrollTrigger.batch(
+    //   '.item-portafolio-home-image',
+    //   {
+    //     start: 'top bottom-=100',
+    //     end: 'bottom top+=100',
+    //     toggleActions: 'play',
+    //     onEnter: batch => gsap.to(batch, {autoAlpha: 1, stagger: 0.1, y: 0, duration: 1.2, ease: 'power1.out'})
+    //   }
+    // )
   }
 });

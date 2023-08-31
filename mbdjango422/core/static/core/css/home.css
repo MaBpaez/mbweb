@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.item-portafolio-home {
+  overflow: hidden;
+}
+
 .item-portafolio-home img {
   border-radius: 10px;
   height: 100%;
