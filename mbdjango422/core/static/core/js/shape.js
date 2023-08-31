@@ -48,26 +48,31 @@ $(document).ready(function () {
   }
 
   // Portafolio Gallería
-  const imgzoom2 = document.querySelectorAll('.portafolio-home .item-portafolio-home');
+  let proxy = { skew: 0 },
+    skewSetter = gsap.quickSetter('.item-portafolio-home-image', 'skewY', 'deg'), // fast
+    clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
 
-  imgzoom2.forEach((element) => {
-    const contents = element.querySelectorAll('.item-portafolio-home-image');
-
-    gsap.set(contents, { y: 400 });
-    gsap.to(contents, {
-      duration: 1.2,
-      autoAlpha: 1,
-      y: 0,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: element,
-        start: 'top bottom-=100',
-        end: 'bottom top+=100',
-        toggleActions: 'play',
-        // toggleActions: 'play reverse play reverse',
-      },
-    });
+  ScrollTrigger.create({
+    onUpdate: (self) => {
+      let skew = clamp(self.getVelocity() / -300);
+      // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows
+      // their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to
+      // the smaller skew.
+      if (Math.abs(skew) > Math.abs(proxy.skew)) {
+        proxy.skew = skew;
+        gsap.to(proxy, {
+          skew: 0,
+          duration: 0.8,
+          ease: 'power3',
+          overwrite: true,
+          onUpdate: () => skewSetter(proxy.skew),
+        });
+      }
+    },
   });
+
+  // make the right edge "stick" to the scroll bar. force3D: true improves performance
+  gsap.set('.item-portafolio-home-image', { transformOrigin: 'right center', force3D: true });
 
   // Media Queries
   if (window.matchMedia('(min-width: 846px)').matches) {
@@ -85,16 +90,5 @@ $(document).ready(function () {
         value: '',
       },
     });
-
-    // gsap.set('.item-portafolio-home-image', { y: 300 });
-    // ScrollTrigger.batch(
-    //   '.item-portafolio-home-image',
-    //   {
-    //     start: 'top bottom-=100',
-    //     end: 'bottom top+=100',
-    //     toggleActions: 'play',
-    //     onEnter: batch => gsap.to(batch, {autoAlpha: 1, stagger: 0.1, y: 0, duration: 1.2, ease: 'power1.out'})
-    //   }
-    // )
   }
 });
