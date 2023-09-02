@@ -58,6 +58,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform-origin: left;
 }
 
 .social-media div:last-child {
@@ -127,14 +128,31 @@
  ************************ FACEBOOK SHOPPING *************************
  */
 
+.reveal {
+  visibility: hidden;
+  position: relative;
+  /* opcional */
+  /* width: 80%; */
+  /* height: 80%; */
+  /* max-width: 500px; */
+  overflow: hidden;
+}
+
 .facebook-shop-image {
-  background-image: url('../img/socialMedia/tienda-en-facebook-e-instagram.webp');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  /* background-image: url('../img/socialMedia/tienda-en-facebook-e-instagram.webp'); */
+  /* background-size: contain; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
   width: 100%;
   height: 294px;
   margin-top: 40px;
+}
+
+.facebook-shop-image img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
 }
 
 .facabook-instagram-shop {
@@ -215,3 +233,9 @@
     grid-template-columns: auto;
   }
 }
+
+@media (min-width: 1242px) {
+  .facebook-shop-image img {
+    object-fit: cover;
+  }
+  }

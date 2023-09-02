@@ -79,7 +79,7 @@ $(document).ready(function () {
     t1.from('.welcome-content-image', { x: 600, duration: 1.5 }).from(
       '.anim1',
       { y: -50, opacity: 0, duration: 1, stagger: 0.2 },
-      '-=1',
+      '-=0.6',
     );
   }
 
