@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // Home animation
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(TextPlugin);
+  gsap.registerPlugin(ScrollTrigger, TextPlugin);
+  // gsap.registerPlugin(TextPlugin);
 
   // Animación Intro
   let t1 = gsap.timeline({
