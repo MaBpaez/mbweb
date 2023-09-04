@@ -76,10 +76,19 @@ $(document).ready(function () {
 
   // Media Queries
   if (window.matchMedia('(min-width: 846px)').matches) {
-    t1.from('.welcome-content-image', { x: 600, duration: 1.5 }).from(
-      '.anim1',
-      { y: -50, opacity: 0, duration: 1, stagger: 0.2 },
-      '-=0.6',
+    t1.from('.welcome-content-image', { x: 600, duration: 1.5, ease: "power1.out" });
+    t1.from(
+      '.anim1', {
+      y: -100,
+      opacity: 0,
+      // delay: 0.5,
+      duration: 1.5,
+      ease: 'power4.out',
+      stagger: {
+        amount: 0.4
+      }
+    },
+      '-=0.1'
     );
   }
 
