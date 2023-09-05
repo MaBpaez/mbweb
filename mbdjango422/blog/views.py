@@ -111,7 +111,7 @@ def post_detail(request, year, month, day, post):
                 new_comment.save()
 
                 # Redireccionamos a comentario enviado con éxito
-                return redirect("blog:comment_sent", commented_post=postdetail.slug)
+                return redirect("blog:comment_sent", commented_post=post.slug)
 
     else:
         comment_form = CommentForm()

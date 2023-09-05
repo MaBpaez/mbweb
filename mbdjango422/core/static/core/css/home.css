@@ -90,6 +90,10 @@
   height: 100%;
 }
 
+.welcome-content-message {
+  overflow: hidden;
+}
+
 .welcome-content-message h2 {
   font-family: 'Calibre', sans-serif;
   font-size: clamp(22px, 22px + 0.2vw, 3rem);
@@ -427,6 +431,7 @@
   margin: 40px auto;
   text-align: center;
   width: 95%;
+  overflow: hidden;
 }
 
 .title_button {
@@ -555,6 +560,10 @@
 /**
  ************************ SERVICIOS GRID *****************************
  */
+
+.our-services {
+  overflow: hidden;
+}
 
 .services-grid {
   display: grid;
