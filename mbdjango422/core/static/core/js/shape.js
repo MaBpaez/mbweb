@@ -1,14 +1,6 @@
 $(document).ready(function () {
   // Home animation
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
-  // gsap.registerPlugin(TextPlugin);
-
-  // Animación Intro
-  let t1 = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.welcome-content',
-    },
-  });
 
   let t2 = gsap.timeline({
     scrollTrigger: {
@@ -16,7 +8,8 @@ $(document).ready(function () {
     },
   });
 
-  // Shape Morph
+
+  // Shape Morph Anime.js
   {
     class MorphingBG {
       constructor(el) {
@@ -47,6 +40,7 @@ $(document).ready(function () {
     new MorphingBG(document.querySelector('svg.scene'));
   }
 
+
   // Portafolio Gallería
   let proxy = { skew: 0 },
     skewSetter = gsap.quickSetter('.item-portafolio-home-image', 'skewY', 'deg'), // fast
@@ -74,24 +68,8 @@ $(document).ready(function () {
   // make the right edge "stick" to the scroll bar. force3D: true improves performance
   gsap.set('.item-portafolio-home-image', { transformOrigin: 'right center', force3D: true });
 
-  // Media Queries
-  if (window.matchMedia('(min-width: 846px)').matches) {
-    t1.from('.welcome-content-image', { x: 600, duration: 1.5, ease: "power1.out" });
-    t1.from(
-      '.anim1', {
-      y: -100,
-      opacity: 0,
-      // delay: 0.5,
-      duration: 1.5,
-      ease: 'power4.out',
-      stagger: {
-        amount: 0.4
-      }
-    },
-      '-=0.1'
-    );
-  }
 
+  // Media Queries
   if (window.matchMedia('(min-width: 926px)').matches) {
     t2.from('#eslogan-text', {
       duration: 1,
@@ -100,4 +78,47 @@ $(document).ready(function () {
       },
     });
   }
+
+
+  // Text Reveal
+  gsap.utils.toArray('.revealUp').forEach(function (elem) {
+    ScrollTrigger.create({
+      trigger: elem,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      markers: false,
+      onEnter: function () {
+        gsap.fromTo(
+          elem,
+          { y: 100, autoAlpha: 0 },
+          {
+            duration: 1.25,
+            y: 0,
+            autoAlpha: 1,
+            ease: 'back',
+            overwrite: 'auto',
+          },
+        );
+      },
+      onLeave: function () {
+        gsap.fromTo(elem, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: 'auto' });
+      },
+      onEnterBack: function () {
+        gsap.fromTo(
+          elem,
+          { y: -100, autoAlpha: 0 },
+          {
+            duration: 1.25,
+            y: 0,
+            autoAlpha: 1,
+            ease: 'back',
+            overwrite: 'auto',
+          },
+        );
+      },
+      onLeaveBack: function () {
+        gsap.fromTo(elem, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: 'auto' });
+      },
+    });
+  });
 });
