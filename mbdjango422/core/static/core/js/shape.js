@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  console.log(window.location.pathname)
+  console.log(window.location.pathname);
   // Home animation
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -41,7 +41,6 @@ $(document).ready(function () {
     new MorphingBG(document.querySelector('svg.scene'));
   }
 
-
   // Portafolio Gallería
   if (window.location.pathname == '/') {
     let proxy = { skew: 0 },
@@ -71,7 +70,6 @@ $(document).ready(function () {
     gsap.set('.item-portafolio-home-image', { transformOrigin: 'right center', force3D: true });
   }
 
-
   // Media Queries
   if (window.matchMedia('(min-width: 926px)').matches) {
     t2.from('#eslogan-text', {
@@ -81,7 +79,6 @@ $(document).ready(function () {
       },
     });
   }
-
 
   // Text Reveal
   gsap.utils.toArray('.revealUp').forEach(function (elem) {

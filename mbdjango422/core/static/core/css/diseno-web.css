@@ -115,7 +115,7 @@
 
 .titulo-separador span {
   font-family: 'Rubik', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .titulo-separador > span::after,
@@ -157,7 +157,7 @@
 .list-of-advantages {
   display: inline-block;
   border-radius: 8px;
-  border-left: 2px solid #303030;
+  border-left: 2px solid #ffca85;
   counter-reset: a;
   padding: 0 1em !important;
 }

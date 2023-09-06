@@ -24,7 +24,7 @@
 
 .titulo-separador span {
   font-family: "Rubik", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .titulo-separador > span::after,
