@@ -42,7 +42,7 @@ DEBUG = env('DEBUG')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['mbweb.railway.internal', '127.0.0.1', 'localhost']
 
 
 # Application definition
