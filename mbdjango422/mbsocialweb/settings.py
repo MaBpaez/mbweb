@@ -92,7 +92,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'mbsocialweb.urls'
@@ -224,10 +224,10 @@ CKEDITOR_CONFIGS = {
 
 # Pwa
 # PWA_SERVICE_WORKER_PATH = BASE_DIR / 'core/static/core/js' / 'pwaworker.js'
-# Para produccion
-# PWA_SERVICE_WORKER_PATH = BASE_DIR / 'static/core/js' / 'pwaworker.js'
+# Para produccion (con whitenoise)
+PWA_SERVICE_WORKER_PATH = BASE_DIR / 'staticfiles/core/js' / 'pwaworker.js'
 # Para desarrollo
-PWA_SERVICE_WORKER_PATH = BASE_DIR / 'core/static/core/js' / 'pwaworker.js'
+# PWA_SERVICE_WORKER_PATH = BASE_DIR / 'core/static/core/js' / 'pwaworker.js'
 PWA_APP_NAME = 'mbSocialWeb'
 PWA_APP_DESCRIPTION = "mbSocialWeb PWA"
 PWA_APP_THEME_COLOR = '#000000'
