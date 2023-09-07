@@ -1,0 +1,559 @@
+/* MÓDULO MARKETING DIGITAL
+========================================================================== */
+
+/**
+ *************************** GOOGLE ADWORDS ***************************
+ */
+
+.separador-grupo {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 1248px;
+  margin: 0 1rem;
+}
+
+.titulo-separador {
+  position: relative;
+  font-size: 35px;
+  font-family: "Poppins", sans-serif;
+  line-height: 40px;
+  padding: 0 0 20px;
+  text-align: center;
+}
+
+.titulo-separador span {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+.titulo-separador > span::after,
+.titulo-separador > span::before {
+  display: block;
+  position: absolute;
+  top: 18px;
+  content: "";
+}
+
+.titulo-separador > span::before {
+  right: 100%;
+  background-image: -webkit-linear-gradient(340deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  background-image: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  height: 4px;
+}
+
+.titulo-separador > span::after {
+  left: 100%;
+  background-image: -webkit-linear-gradient(340deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  background-image: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  height: 4px;
+}
+
+.page-header.adwords {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.use-adwords,
+.work-adwords {
+  box-shadow: 0 0 2rem #000;
+  padding: 1.5rem;
+  color: #c2c2c2;
+  width: 100%;
+}
+
+.adwords-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+h2.item-adwords-content,
+h2.item--blog-personal-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h2.item-adwords-content span {
+  margin-right: 0.25rem;
+}
+
+.item-adwords-image {
+  background-image: url("../img/marketingDigital/Online_Ads.927447f06184.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 480px;
+  margin-top: 40px;
+}
+
+/**
+ *************************** EMAIL MARKETING ***************************
+ */
+
+#prlx_lyr_1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  background: url("../img/bg-bubbles.9dc6c8b2746a.png");
+  background-size: cover;
+  height: 1350px;
+  width: 100%;
+  z-index: -10;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  padding-top: 3rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.grid-container h2 {
+  font-size: 3rem;
+}
+
+.two,
+.four {
+  display: none;
+}
+
+.one,
+.three,
+.five {
+  /* Este position es necesario para que no se vea la sombra en las cajas de arriba y en las cajas laterales */
+  position: relative;
+  background: #111111;
+  -webkit-box-shadow: 1rem 0 3rem #000;
+  box-shadow: 1rem 0 3rem #000;
+  border-radius: 17px;
+  z-index: 1;
+}
+
+.two {
+  position: relative;
+  top: 40%;
+  height: calc(100% - 40%);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-top-right-radius: 17px;
+}
+
+.four {
+  position: relative;
+  top: 40%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  height: calc(100% - 40%);
+  justify-self: end;
+  width: 300px;
+  border-top-left-radius: 17px;
+}
+
+.three {
+  margin: 4rem 0;
+}
+
+/**
+ ********************* PUBLICIDAD REDES SOCIALES ***************************
+ */
+
+.social-ads .collapsible {
+  border: none;
+  background-image: linear-gradient(110deg, #ff628c, #4472b9, #e1f549, #29d0be);
+  padding: 6px !important;
+}
+
+.social-ads .collapsible-header {
+  position: relative;
+  background-color: #111111;
+}
+
+.social-ads .collapsible-header i.material-icons {
+  position: absolute;
+  right: 0;
+}
+
+.social-ads .collapsible-body {
+  background-color: #fff;
+}
+
+.social-ads .collapsible-body,
+.social-ads .collapsible-header {
+  border-bottom: 1px solid #c2c2c2;
+}
+
+.social-ads .collapsible li:last-child .collapsible-header,
+.social-ads .collapsible li:last-child .collapsible-body {
+  border-bottom: none;
+}
+
+.social-ads .collapsible li:last-child .collapsible-body {
+  border-top: 1px solid #c2c2c2;
+}
+
+.ads-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 2rem;
+  max-width: 1248px;
+}
+
+.item--ads {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.item--ads::before {
+  position: absolute;
+  top: -3px;
+  left: -4px;
+  content: "";
+  width: calc(100% + 7px);
+  height: calc(100% + 6px);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff8a00), to(#b12dff));
+  background-image: linear-gradient(to right, #ff8a00, #b12dff);
+  border-radius: 17px;
+}
+
+.item-header-ads {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.item-header-ads > div {
+  height: 204px;
+  padding-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.item-header-ads > div img {
+  width: 83%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-content-ads {
+  position: relative;
+  padding: 2rem;
+  background: #fff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  height: 100%;
+}
+
+i.tiny {
+  background: -webkit-gradient(linear, left top, right top, from(#e1f549), to(#29d0be));
+  background: linear-gradient(to right, #e1f549, #29d0be);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-shadow: none;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  font-weight: 700;
+}
+
+/**
+ *************************** POSICIONAMIENTO SEO ***************************
+ */
+
+.seo-header,
+.custom-web-header {
+  display: grid;
+  grid-template-columns: auto;
+  max-width: 1284px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.seo-header > div,
+.custom-web-header > div {
+  padding: 0 2rem 2rem 0;
+  color: #c2c2c2;
+}
+
+.seo-header > div > h2,
+.custom-web-header > div > h2 {
+  color: #fff;
+}
+
+.grid-container-seo {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 30px;
+  max-width: 1284px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.item--seo {
+  background-image: linear-gradient(110deg, #ff628c, #4472b9, #e1f549, #29d0be);
+  padding: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: -1rem 0 2rem #000;
+  box-shadow: -1rem 0 2rem #000;
+}
+
+.item--seo:nth-child(2) {
+  align-self: center;
+  height: 379px;
+  background-image: none;
+}
+
+.item--seo:nth-child(3) {
+  height: 379px;
+  align-self: center;
+  grid-column: 1 / 2;
+  background-image: none;
+}
+
+.item--seo:nth-child(3) > div {
+  background-color: #ecf3fa;
+}
+
+.item--seo > div {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  background-color: #181818;
+}
+
+.item--seo .material-icons {
+  background: -webkit-gradient(linear, left top, right top, from(#e1f549), to(#29d0be));
+  background: linear-gradient(to right, #e1f549, #29d0be);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-shadow: none;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  font-weight: 700;
+}
+
+.menu-btn li:first-child i {
+  color: #fff;
+}
+
+.menu-btn li:nth-child(2) i {
+  color: #fff;
+}
+
+.on-page ul li,
+.off-page ul li,
+.estudio-seo ul li {
+  margin-bottom: 1rem;
+}
+
+.on-page ul span,
+.off-page ul span,
+.estudio-seo ul span {
+  font-weight: 700;
+}
+
+.image-on-page {
+  background-image: url("../img/seo/seo-on-page-mbsocialweb-marketing-digital-malaga.77ffbbdbc6cf.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 379px;
+}
+
+.image-off-page {
+  background-image: url("../img/seo/onpagevsoffpage-mbsocialweb-posicionamiento-seo.fd7541a41c0e.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#seo {
+  position: relative;
+  overflow: hidden;
+}
+
+#seo::before {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  bottom: -206px;
+  content: "";
+  width: calc(50vw + 72px);
+  background: #4d21fc;
+  z-index: -1;
+}
+
+/* Background de los tooltips */
+
+.backdrop {
+  background: -webkit-gradient(linear, left top, right top, from(#6cb8ea), to(#ff5959));
+  background: linear-gradient(to right, #6cb8ea, #ff5959);
+  text-shadow: 1px 1px 3px #201c29;
+}
+
+/**
+ *************************** GOOGLE BUSINESS ***************************
+ */
+
+.wrapp-poligon {
+  position: relative;
+  width: 100%;
+  height: 70px;
+}
+
+.poligon {
+  position: absolute;
+  bottom: -0.5px;
+  width: 100%;
+  height: 5vw;
+}
+
+.business,
+.imagen-corporativa {
+  background-color: #fff;
+  color: #1a1a1a;
+  padding: 35px 0;
+  width: 100%;
+}
+
+.business div.max-8.pr-2,
+.imagen-corporativa div.max-8.pr-2 {
+  margin-left: 20px;
+}
+
+.business h2.text-black {
+  box-decoration-break: clone;
+}
+
+.list-business {
+  margin-left: 14px;
+}
+
+.list-business li,
+.things-to-do li {
+  position: relative;
+  padding-left: 2.3em;
+  margin-bottom: 12px;
+  line-height: 1.75em;
+}
+
+.list-business li::before {
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ff8a00), to(#da1b60));
+  background-image: linear-gradient(to top, #ff8a00, #da1b60);
+  font-size: 0.44444em;
+  font-weight: 700;
+  letter-spacing: 0.013em;
+  line-height: 2.1em;
+  text-align: center;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  content: "";
+}
+
+/* Esta técnica es super */
+
+.list-business li::after {
+  position: absolute;
+  top: 0.9em;
+  left: 0.7em;
+  content: "";
+  width: 0.6em;
+  height: 1px;
+  background: #fff;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}
+
+/**
+ *************************** ANALITICA WEB ***************************
+ */
+
+.wrapp-anality-web {
+  max-width: 1248px;
+  margin: auto;
+}
+
+/* Pedazo de Grid template */
+
+.anality-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+  padding: 0.5rem;
+}
+
+.anality--item {
+  border: 2px solid #da1b60;
+  border-radius: 8px;
+  padding: 2rem;
+  color: #c2c2c2;
+}
+
+.anality--item p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.anality--item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.anality--item h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  margin-top: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.anality--item:nth-child(2),
+.anality--item:nth-child(5),
+.anality--item:nth-child(8) {
+  display: none;
+}
+
+.anality--item:nth-child(4) {
+  display: none;
+}
+
+.anality--item:nth-child(5) {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row: 3;
+}
+
+.anality--item:nth-child(6) {
+  display: none;
+}
+
+.anality--item:nth-child(7) {
+  display: none;
+}

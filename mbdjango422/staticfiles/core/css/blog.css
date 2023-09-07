@@ -1,0 +1,415 @@
+/* MÓDULO BLOG
+========================================================================== */
+
+/**
+ ************************ LISTADO DE TODOS LOS POSTS ************************
+ */
+.blog-list::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '';
+  width: 51%;
+  height: 90%;
+  background-image: url('../img/nosotros/blog-mbsocialweb.png');
+  background-size: 74%;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* opacity: 0.75; */
+}
+
+@media only screen and (max-width: 790px) {
+  .blog-list::before {
+    display: none;
+  }
+}
+
+.header-blog h2 {
+  font-family: 'Rubik', sans-serif;
+  font-size: clamp(1rem, 1rem + 3.5vw, 2rem);
+  color: #c2c2c2;
+  max-width: 679px;
+  text-shadow: 1px 1px 3px #201c29;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 0 auto 50px;
+  max-width: 1333px;
+}
+
+.item--blog-content {
+  background-color: #0f0f0f;
+  border-radius: 8px;
+  border: 2px solid #da1b60;
+}
+
+.item--blog-content article > img {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  width: 100%;
+  height: 290px;
+  /* si debajo de la imagen no va contenido o el contenido va sobre la imagen entonces lo activamos */
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+.item--blog-content .short-content > h3 {
+  font-size: 1.68rem;
+  text-align: left !important;
+}
+
+.item--blog-content.categorias {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 12;
+  align-self: flex-start;
+}
+
+.blog-grid .categories > h3 {
+  font-size: 1.92rem;
+  line-height: 110%;
+  margin: 1.46rem 0 1.168rem 0;
+}
+
+.blog-grid .categories .collapsible {
+  border: 0;
+  box-shadow: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blog-grid .categories .collapsible-header {
+  background-color: #181818;
+  border-bottom: 1px solid #0f0f0f;
+  background-image: url('../img/img-noise.png');
+  color: #00f4d9;
+  justify-content: center;
+}
+
+.blog-grid .categories .collapsible > li:first-child .collapsible-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.blog-grid .categories .collapsible > li:last-child .collapsible-header {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.blog-grid .categories .collapsible-header i {
+  margin-right: 0.2rem;
+}
+
+.blog-grid .categories .collapsible-body {
+  border-bottom: 0;
+}
+
+.post-categories > li,
+.last-posts > li,
+.all-tags > li {
+  padding: 2%;
+}
+
+.content {
+  padding: 4%;
+}
+
+.title {
+  cursor: pointer;
+}
+
+.title:hover h1 a,
+.post-categories > li > a:hover,
+.last-posts > li > a:hover,
+.all-tags > li > a:hover,
+.sub-category strong,
+.collapsible-header i {
+  background: -webkit-gradient(linear, left top, right top, from(#ff8a00), to(#da1b60));
+  background: linear-gradient(to right, #ff8a00, #da1b60);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.title h1 {
+  letter-spacing: 2px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.sub-category span {
+  color: #00d647;
+  font-weight: 600;
+}
+
+.short-content {
+  padding-top: 3%;
+}
+
+.collapsible-body {
+  padding: 10px;
+}
+
+/* Paginación */
+
+.pagination {
+  margin-bottom: 50px;
+}
+
+.pagination li i {
+  color: #e1f549;
+}
+
+.pagination li.active {
+  background-color: #fb8304;
+}
+
+/**
+ ************************ DETALLES DE UN POST ************************
+ */
+
+.video-container {
+  margin-bottom: 20px;
+}
+
+.blog-detail {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 1248px;
+  grid-gap: 3rem;
+  margin: 0 auto;
+  padding: 4rem 10px 0;
+  width: 98%;
+}
+
+.item-detail {
+  grid-column: 1/2;
+}
+
+.item-detail:not(:first-child) > .content-detail h2 {
+  font-size: 2.56rem;
+}
+
+.item-detail:nth-child(3) a {
+  color: #fff;
+}
+
+.item-detail:nth-child(4) > .content-detail h2 {
+  font-size: clamp(1.8rem, 1.8rem + 0.2vw, 3rem);
+  margin: 0;
+}
+
+.item-detail:nth-child(3) > .content-detail,
+.item-detail:nth-child(4) > .content-detail {
+  padding: 1.2rem;
+}
+
+.content-detail {
+  margin: auto;
+  padding: 4rem;
+  text-align: left;
+  line-height: 1.7em;
+}
+
+article .content-detail ul li {
+  list-style-type: disc;
+  margin-left: 30px;
+}
+
+article .content-detail ul li:last-child {
+  margin-bottom: 20px;
+}
+
+.content-detail-comment {
+  width: 90%;
+  padding: 1.2rem 0 0 1.2rem;
+}
+
+.content-detail-comment > h2 {
+  font-size: 2.56rem;
+}
+
+article > .content-detail {
+  background-color: #fff;
+  border-radius: 9px;
+  color: #141414;
+}
+
+article > .content-detail a {
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+article > .content-detail img {
+  max-width: 100%;
+  height: auto;
+}
+
+article > .content-detail h3 {
+  font-size: 1.17em;
+  line-height: 1.7em;
+}
+
+article > .content-detail strong {
+  font-weight: 700;
+}
+
+article > .content-detail h2::after,
+article .content-detail h1::after,
+article > .content-detail h3::after,
+article > .content-detail h4::after,
+article > .content-detail p::after {
+  content: '';
+  display: block;
+  margin-bottom: 20px;
+}
+
+article > .content-detail .clear-after p::after {
+  margin-bottom: 0 !important;
+}
+
+/*
+ * ─── COMENTARIOS EN EL POST ─────────────────────────────────────────────────────
+ */
+
+.comment {
+  background-color: #28274f;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+}
+
+/**
+ ************************ COMPARTIR POSTS ************************
+ */
+
+nav.bread-crumb {
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#ff8a00), to(#b12dff));
+  background-image: linear-gradient(to top left, #ff8a00, #b12dff);
+  border-radius: 9px;
+  text-shadow: 1px 1px 3px #201c29;
+  padding-left: 20px;
+  height: auto;
+  line-height: 33px;
+  display: inline-block;
+  width: auto;
+  padding-right: 20px;
+}
+
+.share {
+  position: relative;
+}
+
+.share::before {
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #1e1e3f), url(../img/bg-footer.jpg);
+  background-position: right bottom;
+  background-size: contain;
+  opacity: 0.75;
+  position: absolute;
+  content: '';
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.share h1 {
+  font-size: 3.2rem;
+}
+
+/**
+ ************************ COMENTARIO ENVIADO CON EXITO ************************
+ */
+
+.comment-success-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  width: 100%;
+  margin: 2.5rem auto 0;
+}
+
+.robot {
+  display: none;
+  position: relative;
+  grid-column: 1 / span 1;
+}
+
+.message {
+  grid-column: 2 / span 1;
+}
+
+.comment-success-grid .message > h2 {
+  font-size: 2.56rem;
+  color: #c2c2c2;
+  text-shadow: 1px 1px 3px #201c29;
+}
+
+.figura-top-left {
+  display: block;
+  position: absolute;
+  width: 462px;
+  height: 332px;
+  z-index: -1;
+  -webkit-filter: saturate(125%);
+  filter: saturate(125%);
+  left: 0;
+}
+
+/**
+ ************************ NEWSLETTER MAILCHIMP ************************
+ */
+#mc_embed_signup {
+  background: transparent;
+  width: 100%;
+}
+
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+  background-color: rgb(26 24 54);
+}
+
+#mc_embed_signup .button {
+  background-image: linear-gradient(to top left, #ff8a00, #b12dff);
+  border-radius: 2rem;
+}
+
+#mc_embed_signup .brandingLogo {
+  display: none;
+}
+
+/**
+ ************************ SEARCH POSTS ************************ */
+.container-show-search-results {
+  margin: 0 auto;
+  max-width: 87%;
+}
+
+.container-show-search-results h1 {
+  font-size: 2.2rem;
+}
+
+.container-show-search-results h3 {
+  font-size: 1.68rem;
+}
+
+.container-show-search-results .collection {
+  border-radius: 10px;
+}
+
+.container-show-search-results .collection .collection-item {
+  background-color: transparent;
+}

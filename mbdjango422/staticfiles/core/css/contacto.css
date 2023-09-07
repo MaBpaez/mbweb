@@ -1,0 +1,87 @@
+/* MÓDULO CONTACTO
+========================================================================== */
+
+.contact::before {
+  position: absolute;
+  top: 0;
+  right: 60px;
+  content: "";
+  width: 31%;
+  height: 90%;
+  background-image: url('../img/contacto/bg_contacto.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  z-index: -1;
+}
+
+.header-contact h2,
+.header-about-us h2 {
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(1rem, 1rem + 3.5vw, 2rem);
+  color: #c2c2c2;
+  max-width: 600px;
+  text-shadow: 1px 1px 3px #201c29;
+}
+
+.form-contact-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 10px;
+  width: 88%;
+  max-width: 1248px;
+  margin: auto;
+}
+
+.item--form-contact {
+  padding: 10px;
+}
+
+.item--form-contact:first-child {
+  -webkit-box-shadow: -1rem 0 2rem #000;
+  box-shadow: -1rem 0 2rem #000;
+  border-radius: 8px;
+}
+
+.item--form-contact:nth-child(2) h2 {
+  font-size: 2.3rem;
+  font-family: "Gudea", sans-serif;
+  margin: 2.3rem 0 1.424rem 0;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.item--form-contact:last-child {
+  padding: 10px 0;
+}
+
+.contact-address,
+.working-hours {
+  margin-left: 10%;
+}
+
+.contact-address>li {
+  line-height: 1.6;
+}
+
+.contact-address p {
+  font-family: "Gudea", sans-serif;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px #201c29;
+  text-transform: uppercase;
+}
+
+table {
+  font-family: "Gudea", sans-serif;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px #201c29;
+  text-transform: uppercase;
+  width: 90%;
+}
+
+@media only screen and (max-width: 790px) {
+  .contact::before {
+    display: none;
+  }
+}

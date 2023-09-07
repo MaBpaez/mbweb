@@ -1,0 +1,242 @@
+/* MÓDULO SOCIAL MEDIA
+========================================================================== */
+
+.cabecera {
+  position: relative;
+}
+
+.figura-top-right,
+.figura-top-right-pencil {
+  display: none;
+}
+
+.page-header {
+  position: relative;
+  padding: 1rem;
+  max-width: 1284px;
+  margin: auto;
+}
+
+.page-header h1 {
+  color: #fff;
+  font-family: 'Archivo Narrow';
+  font-size: clamp(2rem, 2rem + 3.5vw, 4rem);
+  font-weight: 400;
+}
+
+.page-intro,
+.page-sub-intro {
+  color: #c2c2c2;
+  max-width: 600px;
+  text-shadow: 1px 1px 3px #201c29;
+}
+
+.page-intro p:not(:last-child),
+.facabook-instagram-shop p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.page-sub-intro {
+  max-width: 1048px;
+  margin-top: 10px;
+}
+
+.row.social-media {
+  margin-bottom: 0;
+}
+
+.phone {
+  padding: 2.5rem 1rem;
+  margin: 0 auto 50px;
+  background: sandybrown;
+  border: 1px solid #f1e4d9;
+  border-radius: 2rem;
+  /* height: 600px; */
+  width: 100%;
+}
+
+.phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: left;
+}
+
+.social-media div:last-child {
+  color: #c2c2c2;
+}
+
+.intro-things-to-do {
+  color: #c2c2c2;
+  max-width: 1284px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.things-to-do li {
+  position: relative;
+  padding-left: 2.3em;
+  margin-bottom: 12px;
+}
+
+.things-to-do .material-icons {
+  vertical-align: middle;
+  margin-right: 5px;
+  color: #12bc00;
+}
+
+.things-to-do p {
+  color: #c2c2c2;
+}
+
+.things-to-do li::before {
+  position: absolute;
+  top: 0.45em;
+  left: 0;
+  content: '';
+  background-image: linear-gradient(to top, #ff8a00, #da1b60);
+  font-size: 0.44444em;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+}
+
+.things-to-do li::after {
+  position: absolute;
+  top: 2px;
+  left: 0.27em;
+  content: '\2714';
+  color: #fff;
+  font-size: 1em;
+}
+
+/**
+ ****************** APLICACIONES FACEBOOK **********************
+ */
+
+.fb-ads {
+  background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.75), #181818),
+    url('../img/socialMedia/Facebook-Ads-mbsocialweb-redes-sociales-diseno-we-a-medida-logotipos.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 198px;
+  opacity: 0.75;
+  margin-top: 0;
+}
+
+/**
+ ************************ FACEBOOK SHOPPING *************************
+ */
+
+.reveal {
+  visibility: hidden;
+  position: relative;
+  /* opcional */
+  /* width: 80%; */
+  /* height: 80%; */
+  /* max-width: 500px; */
+  overflow: hidden;
+}
+
+.facebook-shop-image {
+  /* background-image: url('../img/socialMedia/tienda-en-facebook-e-instagram.webp'); */
+  /* background-size: contain; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  width: 100%;
+  height: 294px;
+  margin-top: 40px;
+}
+
+.facebook-shop-image img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+}
+
+.facabook-instagram-shop {
+  margin: 0 auto;
+  max-width: 1284px;
+  width: 90%;
+  background-image: linear-gradient(
+    45deg,
+    #2f302f 8.33%,
+    #0f0f0f 0,
+    #0f0f0f 50%,
+    #2f302f 0,
+    #2f302f 58.33%,
+    #0f0f0f 0,
+    #0f0f0f
+  );
+  background-size: 8.49px 8.49px;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.facabook-instagram-shop > div {
+  background-color: #181818;
+  color: #c2c2c2;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/**
+ ****************** CONTENIDO REDES SOCIALES **********************
+ */
+
+.contenido-calidad-redes {
+  max-width: 1248px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  padding: 0 0.75rem;
+}
+
+.contenido-calidad-redes li {
+  position: relative;
+  padding-left: 2.3rem;
+  margin-bottom: 12px;
+}
+
+.contenido-calidad-redes li::before {
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  background-image: linear-gradient(to top, #ff8a00, #da1b60);
+  font-size: 0.44444em;
+  font-weight: 700;
+  letter-spacing: 0.013em;
+  line-height: 2.1em;
+  text-align: center;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  content: '';
+}
+
+.contenido-calidad-redes li::after {
+  position: absolute;
+  top: 0.9em;
+  left: 0.7em;
+  content: '';
+  width: 0.6em;
+  height: 1px;
+  background: #fff;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}
+
+@media (max-width: 500px) {
+  .contenido-calidad-redes {
+    grid-template-columns: auto;
+  }
+}
+
+@media (min-width: 1242px) {
+  .facebook-shop-image img {
+    object-fit: cover;
+  }
+  }

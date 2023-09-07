@@ -1,0 +1,263 @@
+/* MÓDULO DISEÑO GRAFICO
+========================================================================== */
+
+/**
+ ************************ IMAGEN CORPORATIVA ************************
+ */
+
+.separador-grupo {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 1248px;
+  margin: 0 1rem;
+}
+
+.titulo-separador {
+  position: relative;
+  font-size: 35px;
+  font-family: "Poppins", sans-serif;
+  line-height: 40px;
+  padding: 0 0 20px;
+  text-align: center;
+}
+
+.titulo-separador span {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+.titulo-separador > span::after,
+.titulo-separador > span::before {
+  display: block;
+  position: absolute;
+  top: 18px;
+  content: "";
+}
+
+.titulo-separador > span::before {
+  right: 100%;
+  background-image: -webkit-linear-gradient(340deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  background-image: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  height: 4px;
+}
+
+.titulo-separador > span::after {
+  left: 100%;
+  background-image: -webkit-linear-gradient(340deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  background-image: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+  height: 4px;
+}
+
+.imagen-corporativa {
+  background-color: #fff;
+  color: #1a1a1a;
+  padding: 35px 0;
+  width: 100%;
+}
+
+.imagen-corporativa,
+.wrapper-container-branding {
+  background-color: #141414;
+  background-image: url("../img/img-noise.a93d75c86e54.png");
+  color: #fff;
+}
+
+.imagen-corporativa div.max-8.pr-2 {
+  margin-left: 20px;
+}
+
+.imagen-corporativa h2 {
+  box-decoration-break: clone;
+}
+
+.imagen-corporativa .max-8.pr-2 > p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.wrapper-container-branding .slider .slides {
+  background-color: transparent;
+}
+
+.wrapper-container-branding .slides li {
+  border-radius: 16px;
+}
+
+@media only screen and (max-width: 992px) {
+  .imagen-corporativa div.max-8.pr-2 {
+    margin-left: 0;
+    padding-right: 0;
+    max-width: none;
+  }
+
+  .brand-creation svg.link-line-big {
+    display: none;
+  }
+}
+
+/**
+ ************************ CREACION DE LOGOTIPOS ************************
+ */
+
+.ink-stan-up {
+  display: none;
+  width: 100%;
+  height: 200px;
+  justify-content: space-around;
+  max-width: 1248px;
+  padding: 10px;
+}
+
+.ink {
+  width: 25%;
+}
+
+.ink img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.container-logo-grid,
+.intro-logo-grid {
+  display: grid;
+  width: 95%;
+  max-width: 1248px;
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-rows: auto;
+  gap: 20px 40px;
+}
+
+.item--intro-logo-grid h2 {
+  color: #ffca85;
+  font-size: 24px;
+}
+
+.item--intro-logo-grid ul {
+  counter-reset: b;
+}
+
+.item--intro-logo-grid ul > li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.item--intro-logo-grid ul > li::before {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#e1f549), to(#29d0be));
+  background: linear-gradient(to right, #e1f549, #29d0be);
+  color: #000;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  counter-increment: b;
+  content: counter(b);
+}
+
+.item--container-logo {
+  background-color: #0f0f0f;
+  border: 1px solid #181818;
+  position: relative;
+  height: 600px;
+}
+
+.item--container-logo:first-child .content-logo > p {
+  margin: 10px 0 15px;
+}
+
+.logo-features {
+  counter-reset: a;
+}
+
+.logo-features li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.logo-features li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.logo-features li::before {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#e1f549), to(#29d0be));
+  background: linear-gradient(to right, #e1f549, #29d0be);
+  color: #000;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  counter-increment: a;
+  content: counter(a);
+}
+
+.container-logo-grid .item--container-logo::before {
+  content: "";
+  background-image: -webkit-linear-gradient(110deg, #f05f26, #f06024, #ed552d, #de245a);
+  background-image: linear-gradient(110deg, #f05f26, #f06024, #ed552d, #de245a);
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  top: -2px;
+  right: -2px;
+  transform: skew(2deg, 2deg);
+  z-index: -1;
+}
+
+.container-logo-grid .item--container-logo::after {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.content-logo {
+  position: relative;
+  padding: 20px;
+  top: 150px;
+}
+
+.item--container-logo:not(:first-child) .content-logo p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.item--container-logo .content-logo h2 {
+  position: absolute;
+  top: -60px;
+  right: 20px;
+  font-size: 10em;
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.25s;
+}
+
+.item--container-logo:hover .content-logo h2 {
+  top: -140px;
+}
+
+.item--container-logo .content-logo h3 {
+  color: #08d9c3;
+  margin-bottom: 30px;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+}
