@@ -20,7 +20,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 from django.conf import settings
 from core.views import robots_txt
-# from django.conf.urls import handler404
+from django.conf.urls import handler404
 
 from blog.sitemaps import PostSitemap, StaticViewSitemap
 
@@ -65,7 +65,7 @@ urlpatterns = [
     # path("__debug__/", include("debug_toolbar.urls")),
 ]
 
-# handler404 = "core.views.error_404_view"
+handler404 = "core.views.error_404_view"
 
 if settings.DEBUG:
     from django.conf.urls.static import static
