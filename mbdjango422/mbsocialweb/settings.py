@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import environ
+import dj_database_url
 # import redis
 
 from pathlib import Path
@@ -44,6 +45,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ALLOWED_HOSTS = ['mbweb-production.up.railway.app', '127.0.0.1', 'localhost']
 
+# Add this line of code to prevent error caused by Django 40 version about trusted origins
+CSRF_TRUSTED_ORIGINS=['https://mbweb-production.up.railway.app']
 
 # Application definition
 
@@ -128,17 +131,10 @@ WSGI_APPLICATION = 'mbsocialweb.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': env('NAME'),
-       'USER': env('USER'),
-       'PASSWORD': env('PASSWORD'),
-       'HOST': env('HOST'),
-       'PORT': env('PORT')
-    }
+DATABASE_URL=env('DATABASE_URL')
+DATABASES={
+    "default":dj_database_url.config(default=DATABASE_URL,conn_max_age=1800),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
