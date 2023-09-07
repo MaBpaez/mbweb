@@ -62,7 +62,7 @@ urlpatterns = [
     path("portafolio/", include("portfolio.urls", namespace="portfolio")),
     # Path PWA
     path('', include('pwa.urls')),
-    path("__debug__/", include("debug_toolbar.urls")),
+    # path("__debug__/", include("debug_toolbar.urls")),
 ]
 
 # handler404 = "core.views.error_404_view"

@@ -42,7 +42,7 @@ DEBUG = env('DEBUG')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -64,7 +64,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'ckeditor',
     'ckeditor_uploader',
-    'debug_toolbar',
+    # 'debug_toolbar',
     'graphicdesign.apps.GraphicdesignConfig',
     'marketing.apps.MarketingConfig',
     'social.apps.SocialConfig',
@@ -83,6 +83,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -120,10 +121,20 @@ WSGI_APPLICATION = 'mbsocialweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': env('NAME'),
+       'USER': env('USER'),
+       'PASSWORD': env('PASSWORD'),
+       'HOST': env('HOST'),
+       'PORT': env('PORT')
     }
 }
 
@@ -147,11 +158,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-INTERNAL_IPS = [
+# INTERNAL_IPS = [
     # ...
-    "127.0.0.1",
+    # "127.0.0.1",
     # ...
-]
+# ]
 
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
@@ -191,7 +202,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media config
 MEDIA_URL = '/media/'
