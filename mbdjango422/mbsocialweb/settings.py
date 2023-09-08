@@ -9,12 +9,11 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+
 import environ
 import dj_database_url
-# import redis
 
 from pathlib import Path
-from firebase_admin import credentials, initialize_app
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +26,6 @@ env = environ.Env(
 # Take environment variables from .env file
 environ.Env.read_env()
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -38,7 +36,6 @@ GOOGLE_RECAPTCHA_SITE_KEY = env('GOOGLE_RECAPTCHA_SITE_KEY')
 GOOGLE_RECAPTCHA_SECRET_KEY = env('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
 DEBUG = env('DEBUG')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -77,7 +74,6 @@ INSTALLED_APPS = [
     'taggit',
     'webdesign.apps.WebdesignConfig',
     'pwa',
-    'fcm_django',
 ]
 
 SITE_ID = 1
@@ -254,34 +250,6 @@ PWA_APP_SPLASH_SCREEN = [
 ]
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-ES'
-
-# FCM_DJANGO
-# GOOGLE_APPLICATION_CREDENTIALS = os.path.join(BASE_DIR, './credentials.json')
-GOOGLE_APPLICATION_CREDENTIALS = BASE_DIR / './credentials.json'
-
-cred = credentials.Certificate(GOOGLE_APPLICATION_CREDENTIALS)
-initialize_app(cred)
-
-FCM_DJANGO_SETTINGS = {
-    # an instance of firebase_admin.App to be used as default for all fcm-django requests
-    # default: None (the default Firebase app)
-    # "DEFAULT_FIREBASE_APP": None,
-    # default: _('FCM Django')
-    "APP_VERBOSE_NAME": "noti-mbSocialWeb",
-    # true if you want to have only one active device per registered user at a time
-    # default: False
-    "ONE_DEVICE_PER_USER": False,
-    # devices to which notifications cannot be sent,
-    # are deleted upon receiving error response from FCM
-    # default: False
-    "DELETE_INACTIVE_DEVICES": True,
-    # Transform create of an existing Device (based on registration id) into
-    # True solo funciona con django rest framework
-    # an update. See the section
-    # "Update of device with duplicate registration ID" for more details.
-    # default: False
-    "UPDATE_ON_DUPLICATE_REG_ID": False,
-}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

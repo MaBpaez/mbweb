@@ -1,47 +1,15 @@
-import json
+# import json
 import requests
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.cache import cache
-from django.http import HttpResponse, HttpResponseBadRequest
-from django.views.decorators.http import require_GET, require_http_methods
-from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+from django.views.decorators.http import require_GET
 # from django.views.decorators.cache import cache_page
-from django.template import RequestContext
 
-from fcm_django.models import FCMDevice
 from blog.models import Post
 from .forms import FormularioModal
-
-
-@csrf_exempt
-@require_http_methods(["POST"])
-def save_token(request):
-    body = request.body.decode("utf-8")
-    bodyDict = json.loads(body)
-    print(bodyDict)
-    token = bodyDict["toke"]
-    exist = FCMDevice.objects.filter(registration_id=token, active=True)
-
-    if exist:
-        return HttpResponseBadRequest(json.dumps({"mensaje": "El token ya existe"}))
-
-    dispositivo = FCMDevice()
-    dispositivo.registration_id = token
-    dispositivo.active = True
-
-    # solo si el usuario esta autenticado
-    if request.user.is_authenticated:
-        dispositivo.user = request.user
-
-    try:
-        dispositivo.save()
-        return HttpResponse(json.dumps({"mensaje": "Token guardado"}))
-    except:
-        return HttpResponseBadRequest(
-            json.dumps({"mensaje": "No se ha podido guardar"})
-        )
 
 
 # Vista para comprobar y validar FORMULARIO MODAL Y CONTACTO

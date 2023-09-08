@@ -4,12 +4,6 @@ from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
 from taggit.managers import TaggableManager
-from firebase_admin.messaging import Message, Notification
-from fcm_django.models import FCMDevice
-
-
-# MODELOS DEL BLOG
-# ==================
 
 
 # Modelo CATEGORIA
@@ -68,24 +62,6 @@ class Post(models.Model):
             "blog:post-detail",
             args=[self.publish.year, self.publish.month, self.publish.day, self.slug],
         )
-
-    def save(self, *args, **kwargs):
-        # enviar notificación si el post no es un borrador
-        if self.status == "published":
-            dispositivos = FCMDevice.objects.filter(active=True)
-            dispositivos.send_message(
-                Message(
-                    notification=Notification(
-                        title = "Artículo añadido al blog",
-                        body = "Se ha agreado un artículo nuevo",
-                        image = "/static/core/img/favi.png",
-                    ),
-                    data={
-                        "contents": self.get_absolute_url()
-                    }
-                )
-            )
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
