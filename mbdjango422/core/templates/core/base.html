@@ -523,7 +523,7 @@
   <script>fbq('track', 'CompleteRegistration');</script>
   <script>fbq('track', 'Search');</script>
   <script>fbq('track', 'ViewContent');</script>
-
+  {% if not request.path|slice:":12" == '/portafolio/' %}
   <script>
     $(document).ready(function () {
       const lenis = new Lenis({
@@ -547,6 +547,7 @@
       requestAnimationFrame(raf);
     })
   </script>
+  {% endif %}
 </body>
 
 </html>
