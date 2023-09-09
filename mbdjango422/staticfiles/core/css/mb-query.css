@@ -194,9 +194,9 @@
     grid-template-columns: 200px repeat(2, auto);
   }
 
-  .item--blog-content:nth-child(9) {
-    grid-column: 2 / span 1;
-  }
+  /* .item--blog-content:nth-child(9) { */
+  /*   grid-column: 2 / span 1; */
+  /* } */
 
   .item--blog-content.categorias {
     grid-row-start: 1;
