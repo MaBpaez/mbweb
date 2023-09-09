@@ -77,6 +77,18 @@
   {% block recaptcha %}{% endblock recaptcha %}
 
   {% block scriptparallax %}{% endblock scriptparallax %}
+
+  <!-- Notificaciones Push -->
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(function(OneSignal) {
+      OneSignal.init({
+        appId: "ad0f712d-fa32-4ff6-95d5-937f35459109",
+        allowLocalhostAsSecureOrigin: true,
+      });
+    });
+  </script>
 </head>
 
 <body>

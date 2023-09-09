@@ -94,6 +94,8 @@ MIDDLEWARE = [
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ROOT_URLCONF = 'mbsocialweb.urls'
 
 TEMPLATES = [
