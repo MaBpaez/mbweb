@@ -84,8 +84,10 @@
     window.OneSignalDeferred = window.OneSignalDeferred || [];
     OneSignalDeferred.push(function(OneSignal) {
       OneSignal.init({
-        appId: "ad0f712d-fa32-4ff6-95d5-937f35459109",
+        appId: 'ad0f712d-fa32-4ff6-95d5-937f35459109',
         allowLocalhostAsSecureOrigin: true,
+        serviceWorkerParam: { scope: '/static/core/js/onesignal/' },
+        serviceWorkerPath: ''/static/core/js/onesignal/OneSignalSDKWorker.js',
       });
     });
   </script>
