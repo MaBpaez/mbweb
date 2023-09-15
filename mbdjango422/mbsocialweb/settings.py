@@ -64,6 +64,8 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'cloudinary_storage',
+    'cloudinary',
     # 'debug_toolbar',
     'graphicdesign.apps.GraphicdesignConfig',
     'marketing.apps.MarketingConfig',
@@ -203,6 +205,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Media config
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUD_NAME'),
+    'API_KEY': env('API_KEY'),
+    'API_SECRET': env('API_SECRET')
+}
 
 CKEDITOR_CONFIGS = {
     'default': {
