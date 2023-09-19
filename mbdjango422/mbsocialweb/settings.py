@@ -42,13 +42,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ALLOWED_HOSTS = ['www.mbsocialweb.net', 'mbweb-production.up.railway.app', '127.0.0.1', 'localhost']
 
-if not DEBUG:
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Add this line of code to prevent error caused by Django 40 version about trusted origins
 CSRF_TRUSTED_ORIGINS=['https://www.mbsocialweb.net']
