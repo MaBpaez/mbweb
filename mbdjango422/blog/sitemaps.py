@@ -33,7 +33,7 @@ class StaticViewSitemap(Sitemap):
             'marketing:email-marketing',
             'marketing:social-ads',
             'marketing:seo',
-            'marketing:google-business',
+            'marketing:google-perfil-empresa',
             'marketing:analitic-web',
             'webdesign:custom-web',
             'webdesign:hosting',
