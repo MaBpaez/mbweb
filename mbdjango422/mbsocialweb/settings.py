@@ -40,7 +40,7 @@ DEBUG = env('DEBUG')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = ['mbweb-production.up.railway.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['www.mbsocialweb.net', 'mbweb-production.up.railway.app', '127.0.0.1', 'localhost']
 
 # Add this line of code to prevent error caused by Django 40 version about trusted origins
 CSRF_TRUSTED_ORIGINS=['https://mbweb-production.up.railway.app']
