@@ -5,12 +5,12 @@
 {% block description %}{{ post.body|truncatewords:12|striptags|safe }}{% endblock %}
 
 <!-- Metadatos para Facebook -->
-{% block facebookimage %}{{ post.image.url }}{% endblock %}
+{% block facebookimagepost %}{{ post.image.url }}{% endblock %}
 {% block facebooktitle %}{{ post.title }}{% endblock %}
 {% block facebookdescription %}{{ post.body|truncatewords:20|striptags|safe }}{% endblock %}
 
 <!-- Metadatos para Twitter -->
-{% block twitterimage %}{{ post.image.url }}{% endblock %}
+{% block twitterimagepost %}{{ post.image.url }}{% endblock %}
 {% block twittertitle %}{{ post.title }}{% endblock %}
 {% block twitterdescription %}{{ post.body|truncatewords:20|striptags|safe }}{% endblock %}
 
