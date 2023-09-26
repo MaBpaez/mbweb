@@ -1203,7 +1203,7 @@ nav,
 }
 
 .side-nav li > a {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .side-nav li > a:hover {
@@ -1346,7 +1346,7 @@ div.brand-logo {
  */
 
 .dropdown-content {
-  background-image: linear-gradient(to bottom, #312d3c, #17141d);
+  background-image: linear-gradient(to bottom, #f05e27, #de2559);
 }
 
 .dropdown-content li > a:hover {
