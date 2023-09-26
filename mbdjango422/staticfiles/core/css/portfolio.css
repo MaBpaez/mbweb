@@ -35,7 +35,7 @@
   /* Poner si no hay ninguna categoría */
   /* height: 500px; */
   margin-bottom: 40px;
-  position: sticky;
+  /* position: sticky; */
   top: 115px;
   z-index: 1;
 }
@@ -62,8 +62,8 @@ ul.collapsible{
 }
 
 .collapsible-body {
-  border:0;
-  padding: 1rem;
+  border: 0;
+  padding: 0.5rem;
 }
 
 .container-item-portfolio {
@@ -729,6 +729,7 @@ ul.collapsible{
     display: block;
     grid-column: 1 / 2;
     margin-bottom: 0;
+    position: sticky;
   }
 
   .collapsible-body a {
