@@ -254,6 +254,7 @@ article > .content-detail a {
 }
 
 article > .content-detail img {
+  border-radius: 16px;
   max-width: 100%;
   height: auto;
 }
