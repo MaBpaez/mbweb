@@ -2,40 +2,46 @@
 {% load static %}
 
 {% block title %}Inicio | mbSocialWeb{% endblock %}
-{% block description %}Empresa líder en marketing digital, diseño y desarrollo web. Ayudamos a nuestros clientes a alcanzar sus objetivos en línea mediante servicios personalizados y un enfoque en la estrategia y los resultados.{% endblock %}
+{% block description %}Empresa líder en marketing digital, diseño y desarrollo web. Ayudamos a nuestros clientes a
+alcanzar sus objetivos en línea mediante servicios personalizados y un enfoque en la estrategia y los resultados.{% endblock %}
 
 <!-- Metadatos para Facebook -->
 {% block facebookimage %}/static/core/img/inicio-mbsocialweb.jpg{% endblock %}
 {% block facebooktitle %}Inicio | mbSocialWeb{% endblock %}
-{% block facebookdescription %}Empresa líder en marketing digital, diseño y desarrollo web. Ayudamos a nuestros clientes a alcanzar sus objetivos en línea mediante servicios personalizados y un enfoque en la estrategia y los resultados.{% endblock %}
+{% block facebookdescription %}Empresa líder en marketing digital, diseño y desarrollo web. Ayudamos a nuestros clientes
+a alcanzar sus objetivos en línea mediante servicios personalizados y un enfoque en la estrategia y los resultados.{% endblock %}
 
 <!-- Metadatos para Twitter -->
 {% block twitterimage %}/static/core/img/inicio-mbsocialweb.jpg{% endblock %}
 {% block twittertitle %}Inicio | mbSocialWeb{% endblock %}
-{% block twitterdescription %}Empresa líder en marketing digital, diseño y desarrollo web. Ayudamos a nuestros clientes a alcanzar sus objetivos en línea mediante servicios personalizados y un enfoque en la estrategia y los resultados.{% endblock %}
+{% block twitterdescription %}Empresa líder en marketing digital, diseño y desarrollo web. Ayudamos a nuestros clientes
+a alcanzar sus objetivos en línea mediante servicios personalizados y un enfoque en la estrategia y los resultados.{% endblock %}
 
 {% block lcp %}
 <!-- <link rel="preload" href="{% static 'core/img/mbSocialWeb.webp' %}" as="image"> -->
 {% endblock lcp %}
 
 {% block csspage %}
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/></noscript>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" as="style"
+  onload="this.onload=null;this.rel='stylesheet'" />
+<noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+</noscript>
 <link rel="stylesheet" href="{% static 'core/css/home.css' %}" />{% endblock %}
 
 {% block recaptcha %}
 <script src="https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}"></script>{% endblock recaptcha %}
 
 {% block grecaptcha %}
-	<script>
-		//global grecaptcha
-		grecaptcha.ready(function () {
-			grecaptcha.execute('{{recaptcha_site_key}}', {action: "/home/"}).then(function (token) {
-				document.getElementById('g-recaptcha-response1').value = token;
-				document.getElementById('g-recaptcha-response2').value = token;
-			});
-		});
-	</script>{% endblock grecaptcha%}
+<script>
+  //global grecaptcha
+  grecaptcha.ready(function () {
+    grecaptcha.execute('{{recaptcha_site_key}}', { action: "/home/" }).then(function (token) {
+      document.getElementById('g-recaptcha-response1').value = token;
+      document.getElementById('g-recaptcha-response2').value = token;
+    });
+  });
+</script>{% endblock grecaptcha%}
 
 {% block content %}
 <!-- Bienvenida HOME -->
@@ -44,582 +50,592 @@
 <!-- Message django -->
 {% if messages %}
 <ul class="messages">
-	{% for message in messages %}
-	<li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-		{% endfor %}
+  {% for message in messages %}
+  <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+  {% endfor %}
 </ul>
 {% endif %}
 
 <div class="welcome-content">
-	<div class="welcome-content-message">
-		<h1 class="text-gradient-purple revealUp">
-        Bienvenidos a mbSocialWeb
-      </h1>
-		<h2 class="revealUp">
-			Somos un equipo dedicado a ayudar a nuestros clientes a alcanzar sus objetivos en línea a través de soluciones de
-			marketing y desarrollo web efectivas.
-		</h2>
-		<h2 class="mt-0 revealUp">
-			Ofrecemos estrategias de redes sociales para aumentar su alcance y engagement con tu público objetivo.
-			Nuestro equipo de diseño y desarrollo web crea sitios web personalizados y atractivos, optimizados para
-			una experiencia de usuario excelente.
-		</h2>
-	</div>
+  <div class="welcome-content-message">
+    <h1 class="text-gradient-purple revealUp">
+      Bienvenidos a mbSocialWeb
+    </h1>
+    <h2 class="revealUp">
+      Somos un equipo dedicado a ayudar a nuestros clientes a alcanzar sus objetivos en línea a través de soluciones de
+      marketing y desarrollo web efectivas.
+    </h2>
+    <h2 class="mt-0 revealUp">
+      Ofrecemos estrategias de redes sociales para aumentar su alcance y engagement con tu público objetivo.
+      Nuestro equipo de diseño y desarrollo web crea sitios web personalizados y atractivos, optimizados para
+      una experiencia de usuario excelente.
+    </h2>
+  </div>
 
   <div class="welcome-content-image">
-    <img src="{% static 'core/img/programing.png' %}" alt="mbSocialWeb Málaga">
+    <img src="{% static 'core/img/cabecera_home.jpg' %}" alt="mbSocialWeb Málaga">
   </div>
 </div>
 
 <!-- Publicidad de la marca -->
 <section class="section pt-0">
-	<!-- ESLOGAN MB -->
-	<header class="eslogan-mb">
-		<h3 id="eslogan-text">Transformamos tu presencia online en una ventaja competitiva</h3>
-	</header>
+  <!-- ESLOGAN MB -->
+  <header class="eslogan-mb">
+    <h3 id="eslogan-text">Transformamos tu presencia online en una ventaja competitiva</h3>
+  </header>
 
-	<!-- Llamada acción -->
-		<div class="call-action">
-			<a data-target="modal1" class="button-mb z-depth-5 modal-trigger">presupuesto sin compromiso</a>
-		</div>
+  <!-- Llamada acción -->
+  <div class="call-action">
+    <a data-target="modal1" class="button-mb z-depth-5 modal-trigger">presupuesto sin compromiso</a>
+  </div>
 
-	<div class="row advertising container">
-		<div class="col s12 m12 l12 container nm advertising-bg">
-			<header>
-				<blockquote>
-					<div id="quote">
-						<h2>
-							En <strong class="text-gradient">mbSocialWeb</strong>, nuestro trabajo va más allá de imaginar y crear
-							conceptos de diseño actuales.
-						</h2>
-					</div>
-				</blockquote>
-				<blockquote>
-					<div>
-						<h2>
-							Nuestro objetivo es hacer que tu negocio sea lo más eficiente posible. En un mundo tan competitivo como
-							el de hoy, diferenciarte del resto de competidores es fundamental. Nosotros te ayudamos a lograrlo.
-						</h2>
-					</div>
-				</blockquote>
+  <div class="row advertising container">
+    <div class="col s12 m12 l12 container nm advertising-bg">
+      <header>
         <blockquote>
-					<div>
-						<h2>
+          <div id="quote">
+            <h2>
+              En <strong class="text-gradient">mbSocialWeb</strong>, nuestro trabajo va más allá de imaginar y crear
+              conceptos de diseño actuales.
+            </h2>
+          </div>
+        </blockquote>
+        <blockquote>
+          <div>
+            <h2>
+              Nuestro objetivo es hacer que tu negocio sea lo más eficiente posible. En un mundo tan competitivo como
+              el de hoy, diferenciarte del resto de competidores es fundamental. Nosotros te ayudamos a lograrlo.
+            </h2>
+          </div>
+        </blockquote>
+        <blockquote>
+          <div>
+            <h2>
               Además, ofrecemos servicios de diseño gráfico para crear materiales visuales impactantes. Y con nuestros
               servicios de posicionamiento SEO, mejoramos la visibilidad de tu sitio web en los principales motores de
               búsqueda. Contáctanos hoy para obtener una propuesta personalizada y comenzar a mejorar tu presencia en
               línea.
-						</h2>
-					</div>
-				</blockquote>
-			</header>
-		</div>
-	</div>
+            </h2>
+          </div>
+        </blockquote>
+      </header>
+    </div>
+  </div>
 </section>
 
 <!-- Portafolio Home -->
 <div class="portafolio-home">
-	<div class="item-portafolio-home">
-		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/2.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
-	</div>
-	<div class="item-portafolio-home">
-		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/3.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
-	</div>
-	<div class="item-portafolio-home">
-		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/4.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
-	</div>
-	<div class="item-portafolio-home">
-		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/5.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
-	</div>
-	<div class="item-portafolio-home">
-		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/6.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
-	</div>
-	<div class="item-portafolio-home">
-		<img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/7.webp' %}" alt="Servicios que ofrece mbSocialWeb" />
-	</div>
+  <div class="item-portafolio-home">
+    <img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/2.webp' %}"
+      alt="Servicios que ofrece mbSocialWeb" />
+  </div>
+  <div class="item-portafolio-home">
+    <img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/3.webp' %}"
+      alt="Servicios que ofrece mbSocialWeb" />
+  </div>
+  <div class="item-portafolio-home">
+    <img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/4.webp' %}"
+      alt="Servicios que ofrece mbSocialWeb" />
+  </div>
+  <div class="item-portafolio-home">
+    <img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/5.webp' %}"
+      alt="Servicios que ofrece mbSocialWeb" />
+  </div>
+  <div class="item-portafolio-home">
+    <img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/6.webp' %}"
+      alt="Servicios que ofrece mbSocialWeb" />
+  </div>
+  <div class="item-portafolio-home">
+    <img class="item-portafolio-home-image" src="{% static 'core/img/portfolio/7.webp' %}"
+      alt="Servicios que ofrece mbSocialWeb" />
+  </div>
 </div>
 
 <!-- CONTENIDO PRINCIPAL -->
 <main>
-	<section class="section pb-0">
-		<!-- Valores de empresa y ventajas de trabajar con nosotros -->
-		<div class="bg-shape">
-			<svg class="scene blob-shape" version="1.1" viewBox="0 0 460 470" xmlns="http://www.w3.org/2000/svg">
-				<g transform="translate(154.9 214.9)">
-					<!--suppress CheckEmptyScriptTag -->
-					<path
-						d="M141.8,-191.2C182.2,-194.6,212.6,-152.7,199.8,-111.5C187,-70.3,131.1,-29.8,113.2,8.3C95.2,46.3,115.3,81.8,111,108.3C106.8,134.8,78.3,152.3,48,159.3C17.7,166.3,-14.6,162.8,-42.6,151.6C-70.7,140.5,-94.7,121.6,-110,98.4C-125.3,75.2,-131.9,47.6,-154.3,11.2C-176.7,-25.2,-214.8,-70.3,-216,-111.5C-217.2,-152.7,-181.6,-189.9,-139.5,-185.8C-97.3,-181.8,-48.7,-136.4,1,-137.9C50.6,-139.5,101.3,-187.9,141.8,-191.2Z"
-						fill="#eb7d01"
-						pathdata:id="M127.3,-200.6C149.8,-183.7,142.2,-122.6,144.2,-77.7C146.2,
+  <section class="section pb-0">
+    <!-- Valores de empresa y ventajas de trabajar con nosotros -->
+    <div class="bg-shape">
+      <svg class="scene blob-shape" version="1.1" viewBox="0 0 460 470" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(154.9 214.9)">
+          <!--suppress CheckEmptyScriptTag -->
+          <path
+            d="M141.8,-191.2C182.2,-194.6,212.6,-152.7,199.8,-111.5C187,-70.3,131.1,-29.8,113.2,8.3C95.2,46.3,115.3,81.8,111,108.3C106.8,134.8,78.3,152.3,48,159.3C17.7,166.3,-14.6,162.8,-42.6,151.6C-70.7,140.5,-94.7,121.6,-110,98.4C-125.3,75.2,-131.9,47.6,-154.3,11.2C-176.7,-25.2,-214.8,-70.3,-216,-111.5C-217.2,-152.7,-181.6,-189.9,-139.5,-185.8C-97.3,-181.8,-48.7,-136.4,1,-137.9C50.6,-139.5,101.3,-187.9,141.8,-191.2Z"
+            fill="#eb7d01"
+            pathdata:id="M127.3,-200.6C149.8,-183.7,142.2,-122.6,144.2,-77.7C146.2,
             -32.9,157.7,-4.3,156.9,24.7C156.2,53.8,143.1,83.2,127.2,121.2C111.4,159.2,92.7,205.8,58.3,230.5C23.9,255.2,-26.4,258.1,-62,236.2C-97.7,214.4,-118.8,167.8,-154.5,131.2C-190.2,94.7,-240.6,68.3,-246.9,34.6C-253.1,0.9,-215.3,-40.1,-192.1,-86.4C-168.9,-132.8,-160.4,-184.6,-130.8,-198.3C-101.3,-211.9,-50.6,-187.5,0.9,-188.9C52.4,-190.3,104.9,-217.5,127.3,-200.6Z" />
-				</g>
-			</svg>
-			<div class="wrapp-values-advantages pt-3">
-				<div class="advantages">
-					<img src="{% static 'core/img/speech-bubble.svg' %}" loading="lazy" alt="Ventajas de mbSocialWeb" />
-					<ul>
-						<li>
-							<p>SIN Permanencia</p>
-						</li>
-						<li>
-							<p>SIN Mensualidades</p>
-						</li>
-						<li>
-							<p>Atención Personalizada</p>
-						</li>
-						<li>
-							<p>Entrega del código de la web</p>
-						</li>
-						<li>
-							<p>Facilidades de Pago</p>
-						</li>
-					</ul>
-					<h2>Ventajas de crear tu web con nosotros</h2>
-				</div>
-				<div class="values">
-					<div>
-						<h2>Valores de mbSocialweb</h2>
-					</div>
-					<ul>
-						<li>
-							<p>Innovación</p>
-						</li>
-						<li>
-							<p>Flexibilidad</p>
-						</li>
-						<li>
-							<p>Transparencia</p>
-						</li>
-						<li>
-							<p>Excelencia</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+        </g>
+      </svg>
+      <div class="wrapp-values-advantages pt-3">
+        <div class="advantages">
+          <img src="{% static 'core/img/speech-bubble.svg' %}" loading="lazy" alt="Ventajas de mbSocialWeb" />
+          <ul>
+            <li>
+              <p>SIN Permanencia</p>
+            </li>
+            <li>
+              <p>SIN Mensualidades</p>
+            </li>
+            <li>
+              <p>Atención Personalizada</p>
+            </li>
+            <li>
+              <p>Entrega del código de la web</p>
+            </li>
+            <li>
+              <p>Facilidades de Pago</p>
+            </li>
+          </ul>
+          <h2>Ventajas de crear tu web con nosotros</h2>
+        </div>
+        <div class="values">
+          <div>
+            <h2>Valores de mbSocialweb</h2>
+          </div>
+          <ul>
+            <li>
+              <p>Innovación</p>
+            </li>
+            <li>
+              <p>Flexibilidad</p>
+            </li>
+            <li>
+              <p>Transparencia</p>
+            </li>
+            <li>
+              <p>Excelencia</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-		<!-- Carousel de los últimos POSTS -->
-		<div id="blogSlider">
-			<div class="MS-content slides">
-				{% for post in slider_posts %}
-				<div class="item">
-					<div class="row">
-						<div class="col s12">
-							<div class="card medium">
-								<div class="card-image">
-									<img loading="lazy" src="{{ post.image.url }}" alt="{{ post.title }}" />
-									<span class="card-title">{{ post.title | truncatewords_html:12 | safe }}</span>
-								</div>
-								<div class="card-content">{{ post.body | truncatewords_html:22 | safe }}</div>
-								<div class="card-action"><a class="blue-text text-darken-2" href="{{ post.get_absolute_url }}">Leer Artículo</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
+    <!-- Carousel de los últimos POSTS -->
+    <div id="blogSlider">
+      <div class="MS-content slides">
+        {% for post in slider_posts %}
+        <div class="item">
+          <div class="row">
+            <div class="col s12">
+              <div class="card medium">
+                <div class="card-image">
+                  <img loading="lazy" src="{{ post.image.url }}" alt="{{ post.title }}" />
+                  <span class="card-title">{{ post.title | truncatewords_html:12 | safe }}</span>
+                </div>
+                <div class="card-content">{{ post.body | truncatewords_html:22 | safe }}</div>
+                <div class="card-action">
+                  <a class="blue-text text-darken-2" href="{{ post.get_absolute_url }}">Leer Artículo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
 
-		<!-- Sección SERVICIOS -->
-		<div class="our-services">
-			<h1 class="center-align uppercase l-s-5 text-cyan revealUp titular-encabezado">servicios</h1>
-		</div>
-		<br />
-		<div class="services-grid">
-			<!-- item-1 -->
-			<div class="service-item">
-				<!-- imagen -->
-				<div class="service-img">
+    <!-- Sección SERVICIOS -->
+    <div class="our-services">
+      <h1 class="center-align uppercase l-s-5 text-cyan revealUp titular-encabezado">servicios</h1>
+    </div>
+    <br />
+    <div class="services-grid">
+      <!-- item-1 -->
+      <div class="service-item">
+        <!-- imagen -->
+        <div class="service-img">
           <picture>
             <source media="(min-width:870px)" loading="lazy"
-							srcset="/static/core/img/socialMedia/redes-sociales-mbsocialweb_870.webp">
-					  <img loading="lazy" src="{% static 'core/img/socialMedia/redes-sociales-mbsocialweb.webp' %}"
-						   alt="Social Media mbSocialWeb redes sociales" />
+              srcset="/static/core/img/socialMedia/redes-sociales-mbsocialweb_870.webp">
+            <img loading="lazy" src="{% static 'core/img/socialMedia/redes-sociales-mbsocialweb.webp' %}"
+              alt="Social Media mbSocialWeb redes sociales" />
           </picture>
-				</div>
-			</div>
-			<!-- item-2 -->
-			<div class="service-item">
-				<!-- contenido -->
-				<header class="service-content">
-					<h2 class="center-align uppercase"><span>Redes Sociales</span></h2>
-					<ul>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-red-light">Estrategias personalizadas:</span> selección de las redes sociales
-								adecuadas, creación de contenido relevante y optimización de las campañas publicitarias.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-red-light">Monitoreo y análisis:</span> monitoreamos y analizamos el
-								rendimiento de las campañas en las redes sociales, para usar esta información y mejorar las estrategias
-								y aumentar el ROI.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-red-light">Intereacción con el público:</span> interactuamos con el público
-								en las redes sociales, respondiendo preguntas y comentarios, y generando engagement con la marca.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-red-light">Creatividad y contenido de calidad:</span> ofrecemos contenido de
-								alta calidad para atraer y retener a los seguidores en las redes sociales, además de generar una
-								experiencia positiva para el usuario.
-							</p>
-						</li>
-					</ul>
-					<a href="{% url 'socialmedia:creation-network' %}" class="button-mb z-depth-5 info">más
-						información</a>
-				</header>
-			</div>
-			<!-- item-3 -->
-			<div class="service-item">
-				<!-- imagen -->
-				<div class="service-img">
-					<img loading="lazy" src="{% static 'core/img/seo/seo-posicionamiento-mbsocialweb-malaga-desarrollo-web.jpg' %}"
-						loading="lazy" alt="Posicionamiento SEO en Málaga mbsocialweb" />
-				</div>
-			</div>
-			<!-- item-4 -->
-			<div class="service-item">
-				<!-- contenido -->
-				<header class="service-content">
-					<h2 class="center-align uppercase"><span>seo</span></h2>
-					<ul>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-green">Investigación de palabras clave:</span> investigamos y seleccionamos las
-								palabras clave adecuadas para optimizar el contenido y mejorar el posicionamiento SEO en los motores de
-								búsquedas.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-green">Optimización técnica del sitio:</span> análisis técnico del sitio web y
-								corrección de cualquier problema que pueda afectar el posicionamiento SEO. Esto incluye la optimización
-								de la estructura del sitio, la velocidad de carga y la compatibilidad con dispositivos móviles.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-green">Generación de contenido de calidad:</span> creamos contenido de alta
-								calidad, optimizado para los motores de búsquedas, para atraer a los visitantes y mejorar el
-								posicionamiento SEO.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-green">Monitoreo y análisis de resultados:</span> monitorizamos y analizamos
-								los resultados del posicionamiento SEO y adaptamos las estrategias en consecuencia para maximizar el
-								rendimiento.
-							</p>
-						</li>
-					</ul>
-					<a href="{% url 'marketing-online:seo' %}" class="button-mb z-depth-5 info">más información</a>
-				</header>
-			</div>
-			<!-- item-5 -->
-			<div class="service-item">
-				<!-- imagen -->
-				<div class="service-img">
-					<img loading="lazy" src="{% static 'core/img/disenoWeb/desarrollo-web-a-medida-mbsocialweb.jpg' %}"
-						alt="Diseño y desarrollo web en Málaga, mbsocialweb páginas web a medida" />
-				</div>
-			</div>
-			<!-- item-6 -->
-			<div class="service-item">
-				<!-- contenido -->
-				<header class="service-content">
-					<h2 class="center-align uppercase"><span>desarrollo web</span></h2>
-					<ul>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-purple-light">Diseño personalizado:</span> creamos diseños personalizados para
-								cada cliente, adaptados a su imagen de marca y a las necesidades de su público objetivo. El diseño debe
-								ser atractivo, fácil de navegar y optimizado para dispositivos móviles.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-purple-light">Desarrollo web personalizado:</span> desarrollo web
-								personalizado, adaptado a las necesidades específicas de cada cliente. El desarrollo debe ser rápido,
-								seguro y escalable.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-purple-light">Optimización de la experiencia del usuario:</span> creamos una
-								experiencia de usuario excelente, optimizando la navegación, la velocidad de carga y la facilidad de
-								uso.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-purple-light">Integración de tecnologías:</span> integración de tecnologías
-								para mejorar la funcionalidad del sitio web, la optimización para motores de búsquedas y la integración
-								con redes sociales.
-							</p>
-						</li>
-					</ul>
-					<a href="{% url 'web-design:custom-web' %}" class="button-mb z-depth-5 info">más información</a>
-				</header>
-			</div>
-			<!-- item-7 -->
-			<div class="service-item">
-				<!-- imagen -->
-				<div class="service-img">
-					<img loading="lazy" src="{% static 'core/img/disenoGrafico/mbsocialweb_logotipo.webp' %}"
-						alt="Diseño de logotipos, creación de marca, mbsocialweb diseño gráfico." />
-				</div>
-			</div>
-			<!-- item-8 -->
-			<div class="service-item">
-				<!-- contenido -->
-				<header class="service-content">
-					<h2 class="center-align uppercase"><span>diseño gráfico</span></h2>
-					<ul>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-yellow">Diseño de alta calidad:</span> creamos diseños gráficos de alta calidad,
-								adaptados a las necesidades de cada cliente. El diseño debe ser atractivo, profesional y coherente con
-								la imagen de marca del cliente.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-yellow">Versatilidad:</span> diseños gráficos para una variedad de formatos,
-								como carteles publicitarios, volantes, tarjetas de visita, diseño de marca, entre otros.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-yellow">Innovación y creatividad:</span> diseños innovadores y creativos, que
-								se diferencien de los diseños convencionales y llamen la atención del público objetivo.
-							</p>
-						</li>
-						<li>
-							<span class="arrow"></span>
-							<p>
-								<span class="f-bold text-yellow">Atención al detalle:</span> atención a los detalles en el diseño
-								gráfico, garantizando que el diseño sea preciso y libre de errores, con una buena elección de colores,
-								tipografía y elementos visuales.
-							</p>
-						</li>
-					</ul>
-					<a href="{% url 'graphic-design:corporate-image' %}" class="button-mb z-depth-5 info">más
-						información</a>
-				</header>
-			</div>
-		</div>
-	</section>
+        </div>
+      </div>
+      <!-- item-2 -->
+      <div class="service-item">
+        <!-- contenido -->
+        <header class="service-content">
+          <h2 class="center-align uppercase"><span>Redes Sociales</span></h2>
+          <ul>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-red-light">Estrategias personalizadas:</span> selección de las redes sociales
+                adecuadas, creación de contenido relevante y optimización de las campañas publicitarias.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-red-light">Monitoreo y análisis:</span> monitoreamos y analizamos el
+                rendimiento de las campañas en las redes sociales, para usar esta información y mejorar las estrategias
+                y aumentar el ROI.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-red-light">Intereacción con el público:</span> interactuamos con el público
+                en las redes sociales, respondiendo preguntas y comentarios, y generando engagement con la marca.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-red-light">Creatividad y contenido de calidad:</span> ofrecemos contenido de
+                alta calidad para atraer y retener a los seguidores en las redes sociales, además de generar una
+                experiencia positiva para el usuario.
+              </p>
+            </li>
+          </ul>
+          <a href="{% url 'socialmedia:creation-network' %}" class="button-mb z-depth-5 info">más información</a>
+        </header>
+      </div>
+      <!-- item-3 -->
+      <div class="service-item">
+        <!-- imagen -->
+        <div class="service-img">
+          <img loading="lazy"
+            src="{% static 'core/img/seo/seo-posicionamiento-mbsocialweb-malaga-desarrollo-web.jpg' %}" loading="lazy"
+            alt="Posicionamiento SEO en Málaga mbsocialweb" />
+        </div>
+      </div>
+      <!-- item-4 -->
+      <div class="service-item">
+        <!-- contenido -->
+        <header class="service-content">
+          <h2 class="center-align uppercase"><span>seo</span></h2>
+          <ul>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-green">Investigación de palabras clave:</span> investigamos y seleccionamos las
+                palabras clave adecuadas para optimizar el contenido y mejorar el posicionamiento SEO en los motores de
+                búsquedas.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-green">Optimización técnica del sitio:</span> análisis técnico del sitio web y
+                corrección de cualquier problema que pueda afectar el posicionamiento SEO. Esto incluye la optimización
+                de la estructura del sitio, la velocidad de carga y la compatibilidad con dispositivos móviles.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-green">Generación de contenido de calidad:</span> creamos contenido de alta
+                calidad, optimizado para los motores de búsquedas, para atraer a los visitantes y mejorar el
+                posicionamiento SEO.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-green">Monitoreo y análisis de resultados:</span> monitorizamos y analizamos
+                los resultados del posicionamiento SEO y adaptamos las estrategias en consecuencia para maximizar el
+                rendimiento.
+              </p>
+            </li>
+          </ul>
+          <a href="{% url 'marketing-online:seo' %}" class="button-mb z-depth-5 info">más información</a>
+        </header>
+      </div>
+      <!-- item-5 -->
+      <div class="service-item">
+        <!-- imagen -->
+        <div class="service-img">
+          <img loading="lazy" src="{% static 'core/img/disenoWeb/desarrollo-web-a-medida-mbsocialweb.jpg' %}"
+            alt="Diseño y desarrollo web en Málaga, mbsocialweb páginas web a medida" />
+        </div>
+      </div>
+      <!-- item-6 -->
+      <div class="service-item">
+        <!-- contenido -->
+        <header class="service-content">
+          <h2 class="center-align uppercase"><span>desarrollo web</span></h2>
+          <ul>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-purple-light">Diseño personalizado:</span> creamos diseños personalizados para
+                cada cliente, adaptados a su imagen de marca y a las necesidades de su público objetivo. El diseño debe
+                ser atractivo, fácil de navegar y optimizado para dispositivos móviles.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-purple-light">Desarrollo web personalizado:</span> desarrollo web
+                personalizado, adaptado a las necesidades específicas de cada cliente. El desarrollo debe ser rápido,
+                seguro y escalable.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-purple-light">Optimización de la experiencia del usuario:</span> creamos una
+                experiencia de usuario excelente, optimizando la navegación, la velocidad de carga y la facilidad de
+                uso.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-purple-light">Integración de tecnologías:</span> integración de tecnologías
+                para mejorar la funcionalidad del sitio web, la optimización para motores de búsquedas y la integración
+                con redes sociales.
+              </p>
+            </li>
+          </ul>
+          <a href="{% url 'web-design:custom-web' %}" class="button-mb z-depth-5 info">más información</a>
+        </header>
+      </div>
+      <!-- item-7 -->
+      <div class="service-item">
+        <!-- imagen -->
+        <div class="service-img">
+          <img loading="lazy" src="{% static 'core/img/disenoGrafico/mbsocialweb_logotipo.webp' %}"
+            alt="Diseño de logotipos, creación de marca, mbsocialweb diseño gráfico." />
+        </div>
+      </div>
+      <!-- item-8 -->
+      <div class="service-item">
+        <!-- contenido -->
+        <header class="service-content">
+          <h2 class="center-align uppercase"><span>diseño gráfico</span></h2>
+          <ul>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-yellow">Diseño de alta calidad:</span> creamos diseños gráficos de alta
+                calidad,
+                adaptados a las necesidades de cada cliente. El diseño debe ser atractivo, profesional y coherente con
+                la imagen de marca del cliente.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-yellow">Versatilidad:</span> diseños gráficos para una variedad de formatos,
+                como carteles publicitarios, volantes, tarjetas de visita, diseño de marca, entre otros.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-yellow">Innovación y creatividad:</span> diseños innovadores y creativos, que
+                se diferencien de los diseños convencionales y llamen la atención del público objetivo.
+              </p>
+            </li>
+            <li>
+              <span class="arrow"></span>
+              <p>
+                <span class="f-bold text-yellow">Atención al detalle:</span> atención a los detalles en el diseño
+                gráfico, garantizando que el diseño sea preciso y libre de errores, con una buena elección de colores,
+                tipografía y elementos visuales.
+              </p>
+            </li>
+          </ul>
+          <a href="{% url 'graphic-design:corporate-image' %}" class="button-mb z-depth-5 info">más
+            información</a>
+        </header>
+      </div>
+    </div>
+  </section>
 </main>
 
 <div class="title_button_container">
-	<h3 class="title_button text-cyan revealUp titular-encabezado">clientes</h3>
+  <h3 class="title_button text-cyan revealUp titular-encabezado">clientes</h3>
 </div>
 
 <!-- Nuestros clientes -->
 <section class="our_customers mt-1r mb-1">
-	<div id="exampleSlider">
-		<div class="MS-content customers-brands">
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/sircan-logo.jpg' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/actiox.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/ajedrez.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/alandalus.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/annabpellicer.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/biotrap.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/fantasia-logo.jpg' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/luchador.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/multichannel.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/ok.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/picoandalus.png' %}">
-				</div>
-			</div>
-			<div class="b-list">
-				<div class="b-list-inner">
-					<img src="{% static 'core/img/quesada.png' %}">
-				</div>
-			</div>
+  <div id="exampleSlider">
+    <div class="MS-content customers-brands">
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/sircan-logo.jpg' %}" alt="Clínica veterinaria Sircan">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/actiox.png' %}" alt="Actiox">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/ajedrez.png' %}" alt="Delegación malagueña de ajedrez">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/alandalus.png' %}" alt="Clínica Al-Andalus">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/annabpellicer.png' %}" alt="Escritora Anna B Pellicer">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/biotrap.png' %}" alt="Helados Biotrap Velez Málaga">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/fantasia-logo.jpg' %}" alt="Telefonía Fantasia Coín">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/luchador.png' %}" alt="Farmacia Luchador">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/multichannel.png' %}" alt="Multichannel">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/ok.png' %}" alt="Colchones OK">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/picoandalus.png' %}" alt="Pico-Andalus">
+        </div>
+      </div>
+      <div class="b-list">
+        <div class="b-list-inner">
+          <img src="{% static 'core/img/quesada.png' %}" alt="Centro capilar Quedada">
+        </div>
+      </div>
 
-		</div>
-	</div>
+    </div>
+  </div>
 </section>
 
 <!-- Sección Contacto -->
 <section class="section">
-	<br />
-	<div class="contact-home container">
-		<div class="item-contact">
-			<img src="{% static 'core/img/contact-bg.webp' %}"
-				alt="Contacto mbsocialweb, diseño y desarrollo web a medida" />
-			<div class="contact-information">
-				<ul class="mtb-10">
-					<li>
-						<p>C/ Escribanos, 15</p>
-					</li>
-					<li>
-						<p>Teléfono: 673 793 247</p>
-					</li>
-					<li>
-						<p>Código postal: 29500</p>
-					</li>
-					<li>
-						<p>Alora</p>
-					</li>
-					<li>
-						<p>Málaga</p>
-					</li>
-					<li>
-						<div class="divider mtb-10"></div>
-					</li>
-					<li>
-						<p>
-							<span class="text-gradient-2"><strong>Lun - Vie</strong></span>
-						</p>
-					</li>
-					<li>
-						<p>09:00 - 14:00</p>
-					</li>
-					<li class="mb-1">
-						<p>17:00 - 20:00</p>
-					</li>
-					<li>
-						<p>
-							<span class="text-gradient-2"><strong>Sab - Dom</strong></span>
-						</p>
-					</li>
-					<li>
-						<p>Cerrado</p>
-					</li>
-				</ul>
-			</div>
-		</div>
+  <br />
+  <div class="contact-home container">
+    <div class="item-contact">
+      <img src="{% static 'core/img/contact-bg.webp' %}" alt="Contacto mbsocialweb, diseño y desarrollo web a medida" />
+      <div class="contact-information">
+        <ul class="mtb-10">
+          <li>
+            <p>C/ Escribanos, 15</p>
+          </li>
+          <li>
+            <p>Teléfono: 673 793 247</p>
+          </li>
+          <li>
+            <p>Código postal: 29500</p>
+          </li>
+          <li>
+            <p>Alora</p>
+          </li>
+          <li>
+            <p>Málaga</p>
+          </li>
+          <li>
+            <div class="divider mtb-10"></div>
+          </li>
+          <li>
+            <p>
+              <span class="text-gradient-2"><strong>Lun - Vie</strong></span>
+            </p>
+          </li>
+          <li>
+            <p>09:00 - 14:00</p>
+          </li>
+          <li class="mb-1">
+            <p>17:00 - 20:00</p>
+          </li>
+          <li>
+            <p>
+              <span class="text-gradient-2"><strong>Sab - Dom</strong></span>
+            </p>
+          </li>
+          <li>
+            <p>Cerrado</p>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-		<!-- Formulario de Contacto -->
-		<div class="item-contact">
-			<div class="row">
-				<h1 class="center-align">Contacta con mbSocialWeb</h1>
-				{% if form.errors %}
-				<p class="pl4 text-red-form">Por favor corrija lo siguiente</p>
-				{% endif %}
-				<form class="col s12" action="" method="POST">
-					{% csrf_token %}
-					<div class="row">
-						<div class="input-field col s12 m6">
-							{{ form.nombre }}
-							<label for="id_nombre" data-error="¿Seguro que ese es sunombre?">Nombre</label>
-							{{ form.nombre.errors }}
-						</div>
-						<div class="input-field col s12 m6">
-							{{ form.telefono }}
-							<label for="id_telefono" data-error="Teléfono no válido">Teléfono</label>
-							{{ form.telefono.errors }}
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12 m6 l6">
-							{{ form.email }}
-							<label for="id_email" data-error="E-mail no válido">Email</label>
-							{{ form.email.errors }}
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							{{ form.asunto }}
-							<label for="id_asunto" data-error="Asunto no válido">Asunto</label>
-							{{ form.asunto.errors }}
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							{{ form.mensaje }}
-							<label for="id_mensaje">Mensaje</label>
-							{{ form.mensaje.errors }}
-						</div>
-					</div>
-					<div class="row">
-						<div class="col s12 m8 l8">
-							{% load pages_extras %} {% get_page_privacy as page %}
+    <!-- Formulario de Contacto -->
+    <div class="item-contact">
+      <div class="row">
+        <h1 class="center-align">Contacta con mbSocialWeb</h1>
+        {% if form.errors %}
+        <p class="pl4 text-red-form">Por favor corrija lo siguiente</p>
+        {% endif %}
+        <form class="col s12" action="" method="POST">
+          {% csrf_token %}
+          <div class="row">
+            <div class="input-field col s12 m6">
+              {{ form.nombre }}
+              <label for="id_nombre" data-error="¿Seguro que ese es sunombre?">Nombre</label>
+              {{ form.nombre.errors }}
+            </div>
+            <div class="input-field col s12 m6">
+              {{ form.telefono }}
+              <label for="id_telefono" data-error="Teléfono no válido">Teléfono</label>
+              {{ form.telefono.errors }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m6 l6">
+              {{ form.email }}
+              <label for="id_email" data-error="E-mail no válido">Email</label>
+              {{ form.email.errors }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              {{ form.asunto }}
+              <label for="id_asunto" data-error="Asunto no válido">Asunto</label>
+              {{ form.asunto.errors }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              {{ form.mensaje }}
+              <label for="id_mensaje">Mensaje</label>
+              {{ form.mensaje.errors }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m8 l8">
+              {% load pages_extras %} {% get_page_privacy as page %}
 
-							<p class="title-checkbox">
-								{{ form.politica }}
-								<span class="custom-checkbox"></span>
-								<label for="id_politica"><a href="{% url 'pagina:page' page.id page.title|slugify %}" aria-label="Aceptar la política de privacidad">Aceptar política de privacidad </a></label>
-							</p>
-						</div>
-						<div class="col s12 m4 right">
-							<!-- reCAPTCHA input -->
-							<input type="hidden" id="g-recaptcha-response1" name="g-recaptcha-response">
-							<button class="button-mb little right" type="submit" name="action">
-								Enviar
-								<i class="material-icons right">send</i>
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+              <p class="title-checkbox">
+                {{ form.politica }}
+                <span class="custom-checkbox"></span>
+                <label for="id_politica">
+                  <a href="{% url 'pagina:page' page.id page.title|slugify %}" aria-label="Aceptar la política de privacidad">Aceptar política de privacidad </a>
+                </label>
+              </p>
+            </div>
+            <div class="col s12 m4 right">
+              <!-- reCAPTCHA input -->
+              <input type="hidden" id="g-recaptcha-response1" name="g-recaptcha-response">
+              <button class="button-mb little right" type="submit" name="action">
+                Enviar
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 {% endblock %}
 
