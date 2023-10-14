@@ -694,6 +694,7 @@
 }
 
 .item-contact img {
+  border-radius: 10px;
   display: none;
   object-fit: cover;
   width: 100%;
