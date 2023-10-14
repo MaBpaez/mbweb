@@ -4,20 +4,21 @@
 .contact::before {
   position: absolute;
   top: 0;
-  right: 60px;
-  content: "";
-  width: 31%;
+  right: 0;
+  content: '';
+  width: 75%;
   height: 90%;
-  background-image: url('../img/contacto/bg_contacto.png');
-  background-size: contain;
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #181818),
+    url('../img/contacto/cabecera_contacto.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: right;
-  z-index: -1;
+  background-position: top;
+  opacity: 0.75;
 }
 
 .header-contact h2,
 .header-about-us h2 {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: clamp(1rem, 1rem + 3.5vw, 2rem);
   color: #c2c2c2;
   max-width: 600px;
@@ -38,14 +39,14 @@
 }
 
 .item--form-contact:first-child {
-  -webkit-box-shadow: -1rem 0 2rem #000;
-  box-shadow: -1rem 0 2rem #000;
+  -webkit-box-shadow: 0.5rem 0 0.5rem #0f0f0f;
+  box-shadow: 0.5rem 0 0.5rem #0f0f0f;
   border-radius: 8px;
 }
 
 .item--form-contact:nth-child(2) h2 {
   font-size: 2.3rem;
-  font-family: "Gudea", sans-serif;
+  font-family: 'Gudea', sans-serif;
   margin: 2.3rem 0 1.424rem 0;
   text-align: center;
   font-weight: 700;
@@ -53,7 +54,7 @@
 }
 
 .item--form-contact:last-child {
-  padding: 10px 0;
+  padding: 60px 0;
 }
 
 .contact-address,
@@ -61,19 +62,19 @@
   margin-left: 10%;
 }
 
-.contact-address>li {
+.contact-address > li {
   line-height: 1.6;
 }
 
 .contact-address p {
-  font-family: "Gudea", sans-serif;
+  font-family: 'Gudea', sans-serif;
   font-weight: 700;
   text-shadow: 1px 1px 3px #201c29;
   text-transform: uppercase;
 }
 
 table {
-  font-family: "Gudea", sans-serif;
+  font-family: 'Gudea', sans-serif;
   font-weight: 700;
   text-shadow: 1px 1px 3px #201c29;
   text-transform: uppercase;
