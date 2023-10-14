@@ -9,13 +9,14 @@
   top: 0;
   right: 0;
   content: '';
-  width: 51%;
+  width: 75%;
   height: 90%;
-  background-image: url('../img/nosotros/blog-mbsocialweb.png');
-  background-size: 74%;
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #181818),
+    url('../img/nosotros/cabecera_blog.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* opacity: 0.75; */
+  /* opacity: 0.95; */
 }
 
 @media only screen and (max-width: 790px) {
@@ -47,17 +48,18 @@
   border: 2px solid #da1b60;
 }
 
-.item--blog-content article > img {
+.item--blog-content article>img {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   width: 100%;
-  height: 290px;
+  /* height: 290px; */
+  height: 380px;
   /* si debajo de la imagen no va contenido o el contenido va sobre la imagen entonces lo activamos */
   /* height: 100%; */
   object-fit: cover;
 }
 
-.item--blog-content .short-content > h3 {
+.item--blog-content .short-content>h3 {
   font-size: 1.68rem;
   text-align: left !important;
 }
@@ -69,7 +71,7 @@
   align-self: flex-start;
 }
 
-.blog-grid .categories > h3 {
+.blog-grid .categories>h3 {
   font-size: 1.92rem;
   line-height: 110%;
   margin: 1.46rem 0 1.168rem 0;
@@ -90,12 +92,12 @@
   justify-content: center;
 }
 
-.blog-grid .categories .collapsible > li:first-child .collapsible-header {
+.blog-grid .categories .collapsible>li:first-child .collapsible-header {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-.blog-grid .categories .collapsible > li:last-child .collapsible-header {
+.blog-grid .categories .collapsible>li:last-child .collapsible-header {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -108,9 +110,9 @@
   border-bottom: 0;
 }
 
-.post-categories > li,
-.last-posts > li,
-.all-tags > li {
+.post-categories>li,
+.last-posts>li,
+.all-tags>li {
   padding: 2%;
 }
 
@@ -123,9 +125,9 @@
 }
 
 .title:hover h1 a,
-.post-categories > li > a:hover,
-.last-posts > li > a:hover,
-.all-tags > li > a:hover,
+.post-categories>li>a:hover,
+.last-posts>li>a:hover,
+.all-tags>li>a:hover,
 .sub-category strong,
 .collapsible-header i {
   background: -webkit-gradient(linear, left top, right top, from(#ff8a00), to(#da1b60));
@@ -199,7 +201,7 @@
   grid-column: 1/2;
 }
 
-.item-detail:not(:first-child) > .content-detail h2 {
+.item-detail:not(:first-child)>.content-detail h2 {
   font-size: 2.56rem;
 }
 
@@ -207,13 +209,13 @@
   color: #fff;
 }
 
-.item-detail:nth-child(4) > .content-detail h2 {
+.item-detail:nth-child(4)>.content-detail h2 {
   font-size: clamp(1.8rem, 1.8rem + 0.2vw, 3rem);
   margin: 0;
 }
 
-.item-detail:nth-child(3) > .content-detail,
-.item-detail:nth-child(4) > .content-detail {
+.item-detail:nth-child(3)>.content-detail,
+.item-detail:nth-child(4)>.content-detail {
   padding: 1.2rem;
 }
 
@@ -243,47 +245,47 @@ article .content-detail ul li:last-child {
   padding: 1.2rem 0 0 1.2rem;
 }
 
-.content-detail-comment > h2 {
+.content-detail-comment>h2 {
   font-size: 2.56rem;
 }
 
-article > .content-detail {
+article>.content-detail {
   background-color: #fff;
   border-radius: 9px;
   color: #141414;
 }
 
-article > .content-detail a {
+article>.content-detail a {
   color: #0d6efd;
   cursor: pointer;
 }
 
-article > .content-detail img {
+article>.content-detail img {
   border-radius: 16px;
   max-width: 100%;
   height: auto;
 }
 
-article > .content-detail h3 {
+article>.content-detail h3 {
   font-size: 1.17em;
   line-height: 1.7em;
 }
 
-article > .content-detail strong {
+article>.content-detail strong {
   font-weight: 700;
 }
 
-article > .content-detail h2::after,
+article>.content-detail h2::after,
 article .content-detail h1::after,
-article > .content-detail h3::after,
-article > .content-detail h4::after,
-article > .content-detail p::after {
+article>.content-detail h3::after,
+article>.content-detail h4::after,
+article>.content-detail p::after {
   content: '';
   display: block;
   margin-bottom: 20px;
 }
 
-article > .content-detail .clear-after p::after {
+article>.content-detail .clear-after p::after {
   margin-bottom: 0 !important;
 }
 
@@ -359,7 +361,7 @@ nav.bread-crumb {
   grid-column: 2 / span 1;
 }
 
-.comment-success-grid .message > h2 {
+.comment-success-grid .message>h2 {
   font-size: 2.56rem;
   color: #c2c2c2;
   text-shadow: 1px 1px 3px #201c29;
