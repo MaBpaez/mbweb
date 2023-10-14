@@ -14,28 +14,30 @@
   position: absolute;
   top: 0;
   right: 0;
-  content: "";
-  width: 55%;
-  height: 100%;
-  background-image: url('../img/nosotros/equipo_trabajo.png');
-  background-size: 90%;
+  content: '';
+  width: 75%;
+  height: 90%;
+  background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #181818),
+    url('../img/nosotros/cabecera_nosotros.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  opacity: 0.95;
 }
 
-.about-us::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 31%;
-  bottom: 0;
-  width: 100%;
-  background-image: url('../img/cloud_gradient.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-}
+/* .about-us::after { */
+/*   content: ''; */
+/*   position: absolute; */
+/*   top: 0; */
+/*   right: 0; */
+/*   left: 31%; */
+/*   bottom: 0; */
+/*   width: 100%; */
+/*   background-image: url('../img/cloud_gradient.svg'); */
+/*   background-repeat: no-repeat; */
+/*   background-size: cover; */
+/*   z-index: -1; */
+/* } */
 
 .about-us-grid,
 .history-grid,
@@ -131,8 +133,8 @@
   background-color: #222;
   border-radius: 50%;
   height: 100%;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  /* -webkit-filter: grayscale(100%); */
+  /* filter: grayscale(100%); */
   object-fit: contain;
   transform: rotate(-90deg);
   width: 100%;
