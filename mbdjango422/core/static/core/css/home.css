@@ -79,7 +79,7 @@
 /* } */
 
 .welcome-content h1 {
-  font-size: 3.4rem;
+  font-size: calc(2.5em + 1vw);
   font-weight: 700;
   text-align: center;
 }
