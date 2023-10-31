@@ -447,6 +447,8 @@ ul.collapsible{
   border-radius: 9px;
   padding: 4%;
   overflow: auto;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .content__item .wrapper-content__item p > img {
@@ -483,12 +485,12 @@ ul.collapsible{
 
 .content__item .wrapper-content__item ul li {
   list-style-type: initial;
-  list-style-position: inside;
+  /* list-style-position: inside; */
 }
 
 .content__item .wrapper-content__item ol li {
   list-style-type: decimal;
-  list-style-position: inside;
+  /* list-style-position: inside; */
 }
 
 .content__item.content__item--show {
@@ -677,6 +679,12 @@ ul.collapsible{
 }
 
 /* Media queries */
+@media only screen and (max-width: 426px) {
+  h3 {
+    font-size: 2.5rem;
+  }
+}
+
 @media only screen and (max-width: 470px) {
   .meta {
     width: 85%;
