@@ -29,9 +29,9 @@
   align-self: flex-start;
   background-color: #0f0f0f;
   background-image: url('../img/img-noise.png');
-  border-radius: 8px;
-  border: 2px solid #da1b60;
-  box-shadow: 0 0 1.5rem rgb(0 0 0 / 85%);
+  border-radius: 12px;
+  border: 1px solid #f05f26;
+  /* box-shadow: 0 0 1.5rem rgb(0 0 0 / 85%); */
   /* Poner si no hay ninguna categoría */
   /* height: 500px; */
   margin-bottom: 40px;
@@ -48,11 +48,11 @@ ul.collapsible {
 
 .collapsible-header {
   background-color: #181818;
-  border-bottom: 1px solid #0f0f0f;
+  border-bottom: 1px solid #f05f26;
   background-image: url('../img/img-noise.png');
   color: #00f4d9;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   justify-content: center;
 }
 
@@ -74,8 +74,8 @@ ul.collapsible {
 }
 
 .item__portfolio {
-  border-radius: 8px;
-  border: 2px solid #da1b60;
+  border-radius: 12px;
+  border: 2px solid #181818;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -91,7 +91,7 @@ ul.collapsible {
 
 .grid__item::before {
   background-color: rgb(0 0 0 / 60%);
-  border-radius: 5px;
+  border-radius: 10px;
   position: absolute;
   content: '';
   top: 0;
@@ -449,17 +449,50 @@ ul.collapsible {
 }
 
 .content__item .wrapper-content__item {
-  background-color: #fff;
+  /* background-color: #e3e1e1; */
+  background-image: linear-gradient(
+    90deg,
+    rgb(239, 242, 247) 0%,
+    7.60286%,
+    rgb(237, 240, 249) 15.2057%,
+    20.7513%,
+    rgb(235, 239, 248) 26.297%,
+    27.6386%,
+    rgb(235, 239, 248) 28.9803%,
+    38.2826%,
+    rgb(231, 237, 249) 47.585%,
+    48.1216%,
+    rgb(230, 236, 250) 48.6583%,
+    53.1306%,
+    rgb(228, 236, 249) 57.6029%,
+    61.5385%,
+    rgb(227, 234, 250) 65.4741%,
+    68.7835%,
+    rgb(222, 234, 250) 72.093%,
+    75.7603%,
+    rgb(219, 230, 248) 79.4275%,
+    82.8265%,
+    rgb(216, 229, 248) 86.2254%,
+    87.8354%,
+    rgb(213, 228, 249) 89.4454%,
+    91.8605%,
+    rgb(210, 226, 249) 94.2755%,
+    95.4383%,
+    rgb(209, 225, 248) 96.6011%,
+    98.3005%,
+    rgb(208, 224, 247) 100%
+  );
   -webkit-box-shadow: -1rem 0 2rem rgba(0, 0, 0, 0.51);
   box-shadow: -1rem 0 2rem rgba(0, 0, 0, 0.51);
-  border-radius: 9px;
+  border-radius: 12px;
   padding: 4%;
   overflow: auto;
-  margin: 0 auto;
   width: 90%;
+  margin: 0 auto;
 }
 
 .content__item .wrapper-content__item p > img {
+  border-radius: 18px;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -492,8 +525,9 @@ ul.collapsible {
 }
 
 .content__item .wrapper-content__item ul li {
-  list-style-type: initial;
+  list-style-type: disc;
   /* list-style-position: inside; */
+  margin-bottom: 15px;
 }
 
 .content__item .wrapper-content__item ol li {
@@ -709,13 +743,14 @@ ul.collapsible {
 @media only screen and (max-width: 599px) {
   .content__item {
     font-size: initial;
+    /* padding: 60px 20px 80px 20px; */
     padding: 60px 0 80px;
   }
   .content__item .wrapper-content__item {
     background-color: #fff;
     box-shadow: none;
     border-radius: 9px;
-    padding: 6%;
+    padding: 6% 10px 6%;
   }
   .title--full {
     font-size: 2rem;
@@ -770,5 +805,143 @@ ul.collapsible {
   }
   .grid__item--loading.grid__item::before {
     opacity: 0;
+  }
+}
+
+/************************ Estilos de ajedrezmalaga ************************/
+
+.contenedor {
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 360px 220px 150px 360px;
+  /* height: 100vh; */
+  margin: 20px auto;
+  gap: 20px;
+  /* width: 98%; */
+}
+
+.contenedor p {
+  margin: 0;
+  text-align: left;
+}
+
+.contenedor a {
+  color: #181818;
+}
+
+.texto,
+.imagen-pequena,
+.imagen-grande,
+.boton {
+  background-color: #141414;
+  border-radius: 16px;
+}
+
+.boton {
+  background-image: url('../img/portfolio/arrow.svg');
+  background-repeat: no-repeat;
+  /* background-size: 44%; */
+  background-size: 100% 100%;
+  background-position: center;
+  background-color: #141414;
+}
+
+.texto {
+  background-color: #a599e9;
+  color: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem;
+  font-size: 18px;
+}
+
+.texto h1 {
+  font-size: clamp(1.2rem, 1rem + 1.5vw, 4rem);
+  position: relative;
+}
+
+.texto h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 50%;
+  border: 1px solid #181818;
+}
+
+.imagen-pequena {
+  background-image: url('../img/portfolio/11.png');
+  background-repeat: no-repeat;
+  /*background-size: 131%;*/
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.imagen-grande {
+  background-image: url('../img/portfolio/mockup_website.webp');
+  background-repeat: no-repeat;
+  background-position: center 37%;
+  background-size: cover;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.imagen-interior {
+  background-image: url('../img/portfolio/computer_screen.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 75%;
+}
+
+@media only screen and (max-width: 992px) {
+  .contenedor {
+    grid-template-columns: auto;
+  }
+  .texto h1 {
+    font-size: clamp(1.2rem, 1rem + 4.5vw, 4rem);
+  }
+  /* .boton { */
+  /*   background-size: 12%; */
+  /* } */
+}
+
+@media only screen and (min-width: 993px) {
+  .contenedor {
+    grid-template-rows: 360px 180px;
+  }
+  .texto {
+    grid-column: 1 / 7;
+    grid-row: 1 / 2;
+  }
+  .imagen-pequena {
+    grid-column: 1 / 5;
+  }
+  .boton {
+    grid-column: 5 / 7;
+    grid-row: 2;
+  }
+  .imagen-grande {
+    grid-column: 7 / -1;
+    grid-row: 1 / -1;
+  }
+}
+
+@media only screen and (min-width: 793px) {
+  .texto h1 {
+    font-size: clamp(1.2rem, 1rem + 2.5vw, 4rem);
+  }
+}
+
+@media only screen and (min-width: 1274px) {
+  .imagen-grande {
+    background-size: 174%;
   }
 }
