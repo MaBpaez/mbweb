@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Category, Post, Comment
+from core.notification import enviar_notificacion
 
 
 @admin.register(Category)
@@ -23,6 +24,16 @@ class PostAdmin(admin.ModelAdmin):
             [c.name for c in obj.categories.all().order_by('name')])
 
     PostCategories.short_description = 'Categorías'
+
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
+        enviar_notificacion(
+            request,
+            objeto=obj,
+            key='blog',
+            contents_es='Nuevo artículo añadido.',
+            web_buttons_text='Ir al artículo.',
+        )
 
 
 @admin.register(Comment)
