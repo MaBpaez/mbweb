@@ -880,6 +880,10 @@ ul.collapsible {
   text-align: center;
 }
 
+.imagen-pequena.apm {
+  background-image: url('../img/portfolio/temario.png');
+}
+
 .imagen-grande {
   background-image: url('../img/portfolio/mockup_website.webp');
   background-repeat: no-repeat;
@@ -888,6 +892,10 @@ ul.collapsible {
   display: flex;
   position: relative;
   justify-content: center;
+}
+
+.imagen-grande.apm {
+  background-image: url('../img/portfolio/sobre_alfonso.png');
 }
 
 .imagen-interior {
@@ -941,7 +949,7 @@ ul.collapsible {
 }
 
 @media only screen and (min-width: 1274px) {
-  .imagen-grande {
+  .imagen-grande:not(.imagen-grande.apm) {
     background-size: 174%;
   }
 }
