@@ -267,8 +267,9 @@ article>.content-detail img {
 }
 
 article>.content-detail h3 {
-  font-size: 1.17em;
-  line-height: 1.7em;
+  font-family: 'Archivo Narrow';
+  font-size: 2rem;
+  line-height: 1.2em;
 }
 
 article>.content-detail strong {
