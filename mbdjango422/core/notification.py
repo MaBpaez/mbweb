@@ -1,6 +1,7 @@
 import requests
 import json
 
+from django.conf import settings
 
 def enviar_notificacion(
     request, objeto, key, contents_es, web_buttons_text, url_objeto=None
@@ -10,7 +11,7 @@ def enviar_notificacion(
 
     header = {
         "Content-Type": "application/json",
-        "Authorization": "Basic NjNkY2UzNTQtZDVlMy00MjE2LWI2YWQtMDYwZTA4MjVhMTAz",
+        "Authorization": f"Basic {settings.API_KEY_SIGNAL}",
         "accept": "application/json",
     }
 

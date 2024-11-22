@@ -172,6 +172,8 @@ AUTH_PASSWORD_VALIDATORS = [
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 
+# OneSignal
+API_KEY_SIGNAL = env('API_KEY_SIGNAL')
 
 # Redis Cache
 # https://docs.djangoproject.com/en/4.2/topics/cache/#redis
