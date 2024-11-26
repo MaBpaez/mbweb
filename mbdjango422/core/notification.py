@@ -39,7 +39,7 @@ def enviar_notificacion(
     }
 
     response = requests.post(
-        "https://onesignal.com/api/v1/notifications",
+        "https://api.onesignal.com/notifications",
         headers=header,
         data=json.dumps(payload),
     )
